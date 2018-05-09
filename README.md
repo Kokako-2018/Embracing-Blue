@@ -67,15 +67,15 @@ As a user:
 Run the following commands in your terminal:
 
 ```sh
-npm install (or yarn install)
+yarn install
 knex migrate:latest
 knex seed:run
 
 ```
 
-  `npm run dev` || `yarn dev` for bundling, watch and nodemon
+  `yarn dev` for bundling, watch and nodemon
 
-  `npm start` only runs server (setup for heroku)
+  `yarn start` only runs server (setup for heroku)
 
 
 ## Heroku!!!
@@ -98,13 +98,13 @@ Check that pg has been added by running `heroku addons` to ensure the postgresql
 
 I have created several npm scripts that will be useful for deploying your app to heroku easily.
 
-`npm run h:deploy` will push your local master branch to your heroku app
+`yarn run heroku:deploy` will push your local master branch to your heroku app
 
-`npm run h:migrate` will run your knex migrations on your deployed heroku app
+`yarn run heroku:migrate` will run your knex migrations on your deployed heroku app
 
-`npm run h:seed` will run your seeds on your deployed app
+`yarn run heroku:seed` will run your seeds on your deployed app
 
-If ever you need to rollback, you can also just use `npm run h:rollback`
+If ever you need to rollback, you can also just use `yarn run heroku:rollback`
 
 
 ### Ta-Da!
