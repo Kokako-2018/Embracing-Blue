@@ -9,13 +9,13 @@ button {
 .tile {
 
   display: inline-block;
-  margin: 10px;
+  margin: 20px;
 }
 
 .tileImage {
 
   height: 250px;
-  width: 400px;
+  width: 430px;
 }
 
 .linkText {
@@ -28,4 +28,19 @@ button {
   margin-left: 2px;
   margin-right: 2px;
 
+}
+.navlink {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.header {
+
+  background-color: lightblue
+}
+
+.header-title {
+  text-align: center;
+  font-size: 50px;
 }
