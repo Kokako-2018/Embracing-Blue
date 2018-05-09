@@ -1,0 +1,6 @@
+node_modules
+dev.sqlite3
+coverage
+yarn-error.log
+public/bundle.js
+public/bundle.js.map
