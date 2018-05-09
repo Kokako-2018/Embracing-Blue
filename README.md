@@ -1,7 +1,7 @@
 # Out Of The Blue
 Mental health resources for those affected and their communities
 
-Built by Mark, Priya, Theta, Sam, Hammeet, and Annette
+Built by Mark, Priya, Theta, Sam, Hameet, and Annette
 
 .
 .
