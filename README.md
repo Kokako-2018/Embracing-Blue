@@ -41,7 +41,7 @@ As a user:
 * <Route><Route/> and path =  are defined here
  
 ### Resources - just functional
-* Suicide.jsx
+* Prevention.jsx
 * Anxiety.jsx
 * Depression.jsx
 
@@ -98,7 +98,7 @@ Store will be in the index.js in clients side
 ### resources.js
 * router.get('/depression')
 * router.get('/anxiety')
-* router.get('/suicide')
+* router.get('/prevention')
 
 ### identities.js
 * router.get('/young')
@@ -110,15 +110,14 @@ Store will be in the index.js in clients side
 
 ## posts.js
 * router.get('/posts') - link to db function getAllPosts() --show all posts
-* router.get('/posts/:id') -link to getPost() --after clicking on a post will go to page displaying entire post
-* router.post('/posts/addpost') - link to addPost() --click on add post button and redirect to a form?
+* router.post('/posts') - link to addPost() --click on add post button and redirect to a form?
 * router.put('/posts/:id') - link to editPost() -- edit existing post (user id must match user id of created post)
 * router.delete('/posts/:id) - link to deletePost() -- delete post matching id
 
 * router.get('/posts/:id/comments) - link to getComments() --get all comments on an individual post
-* router.post('/posts/:id/addcomment) - link to addComment() -- add comment to specific post
-* router.put('/posts/:id/comment/:id) - link to editComment() -- edit your own comment on a post
-* router.delete('/posts/:id/comment/:id) - link to deleteComment() -- delete your own comment on a post
+* router.post('/posts/:id) - link to addComment() -- add comment to specific post
+* router.put('/posts/:id/comments/:id) - link to editComment() -- edit your own comment on a post
+* router.delete('/posts/:id/comments/:id) - link to deleteComment() -- delete your own comment on a post
 
 
 
