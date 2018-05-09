@@ -3,9 +3,9 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('comments', table => {
     table.increments('id')
     table.integer('user_id')
-    table.integer('forum_id')
+    table.integer('post_id')
     table.text('comment')
-    table.boolean('approved')
+    table.boolean('is_approved')
   })
 };
 
