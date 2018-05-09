@@ -74,11 +74,11 @@ As a user:
 ## Login/Logout Actions (client side)
 | type | data | purpose |
 | --- | --- | --- |
-| REQUEST_LOGIN |  |  |
-| RECEIVE_LOGIN |  |  |
-| LOGIN_ERROR |  |  |
-| REQUEST_LOGOUT |  |  |
-| RECEIVE_LOGOUT |  |  |
+| LOGIN_REQUEST | isFetching: true, isAuthenticated: false |  |
+| LOGIN_SUCCESS | isFetching: false, isAuthenticated: true, user |  |
+| LOGIN_FAILURE | isFetching: false, isAuthenticated: false, message |  |
+| LOGOUT_REQUEST | isFetching: true, isAuthenticated: true |  |
+| LOGOUT_SUCCESS | isFetching: false, isAuthenticated: false |  |
 
 
 ## Reducer folders
