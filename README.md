@@ -48,6 +48,7 @@ As a user:
  | user_id | intger |
  | relevant_info | string |
  | photo | string |
+ | approved | boolean |
 
 ### Users (join to forum)
  | Column Name | Data Type |
