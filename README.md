@@ -134,7 +134,6 @@ Store will be in the index.js in clients side
 
 ### posts.js
 * getAllPosts
-* getPost
 * addPost
 * editPost
 * deletePost
