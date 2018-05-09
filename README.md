@@ -150,18 +150,18 @@ Store will be in the index.js in clients side
  | --- | --- |
  | id | integer |
  | user_id | intger |
- | relevant_info | text |
- | photo | string |
- | approved | boolean |
+ | content | text |
+ | image_url | string |
+ | is_approved | boolean |
  
  ### Comments
   Column Name | Data Type |
  | --- | --- |
  | id | integer |
  | user_id | intger |
- | posts_id | integer |
+ | post_id | integer |
  | comment | text |
- | approved | boolean |
+ | is_approved | boolean |
  
 
 ### Users (join to forum)
