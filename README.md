@@ -40,7 +40,11 @@ As a user:
 * Renders other components
 * <Route><Route/> and path =  are defined here
  
+ ### components
+ * Header Component 
+ * spacer image component
 ### Resources - just functional
+
 * Prevention.jsx
 * Anxiety.jsx
 * Depression.jsx
