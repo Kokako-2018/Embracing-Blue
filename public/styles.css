@@ -5,3 +5,27 @@ body {
 button {
   background-color: "red";
 }
+
+.tile {
+
+  display: inline-block;
+  margin: 10px;
+}
+
+.tileImage {
+
+  height: 250px;
+  width: 400px;
+}
+
+.linkText {
+
+  position: absolute;
+  margin-top: -44px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-left: 2px;
+  margin-right: 2px;
+
+}
