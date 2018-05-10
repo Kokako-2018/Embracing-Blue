@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {addPostAction} from '../actions/posts'
+import { addPostAction, apiEditPost } from '../actions/posts'
 
 
 class PostForm extends React.Component {
@@ -19,9 +19,13 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+    this.props.dispatch(apiAddPost())
+  }
+
   updateDetails(e) {
     console.log(e.target.value)
-    this.setState({[e.target.title]: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   

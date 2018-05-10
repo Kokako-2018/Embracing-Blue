@@ -7,7 +7,7 @@ import Prevention from './Prevention'
 import Anxiety from './Anxiety'
 import Depression from './Depression'
 
-import Register from './Register'
+// import Register from './Register'
 
 import Young from './Young'
 
