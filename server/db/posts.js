@@ -6,7 +6,11 @@ var db = Knex(config)
 
 function getAllPosts(testDb) {  //selecting all posts from 'posts' table
   const conn = testDb || db    //where they have been 
+<<<<<<< HEAD
+  return conn('posts')   
+=======
   return conn('posts')        //approved by admin
+>>>>>>> 54bf4e1fcdcf70f9f3973999b8df2b68ac91c597
     .where('is_approved', true)
     .select()
 }
@@ -15,11 +19,11 @@ function getAllPosts(testDb) {  //selecting all posts from 'posts' table
 function addPost (post, testDb) {
   const conn = testDb || db
   return conn('posts')            //adding post to 'posts' table
-    .where('is_approved', true)   //where appoved by admin
     .insert(post)   
     .then(id => {
       return conn('posts')     //matches id comlumn with id
-        .where({id: id[0]})    //of first post
+        .where({id: id[0]})
+        .first()
     })
 }
 
