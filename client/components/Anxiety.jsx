@@ -7,9 +7,7 @@ const Anxiety = () => {
         return  (
             <div>
                 <div className='infoButton'>
-                    <a href="/">
-                        <img src = 'clickables/1.png'/>
-                    </a>
+                    <h1>Hello Anxiety</h1>
                 </div>
             </div> 
         )
