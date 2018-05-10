@@ -38,7 +38,7 @@ class App extends React.Component {
             } />
           </div>
 
-          {/* Anxiety */}
+          {/* resources */}
           <div className="resources">
 
             <Route path="/" component={Depression} />
@@ -46,7 +46,7 @@ class App extends React.Component {
             <Route exact path="/young" component={Young} />
 
           </div>
-        </div>
+
 
 
           <div>
@@ -71,7 +71,7 @@ class App extends React.Component {
           {/* this is where we're trying to get the 3 colums to render, still not working but currently slightly aligned  */}
 
           <div className='container'>
-            <div class="row">
+          <div class="row">
               <div class="twelve columns">
                 <div class="six columns offset-by-five">
 
