@@ -73,8 +73,8 @@ router.post('/posts/:id', function (req, res) {
 
 })
 
-router.put('/posts/:id/comments/:id', function (req, res) {
-  posts.editComment(req.params.id)
+router.put('/posts/:id/comments/:comment_id', function (req, res) {
+  posts.editComment(req.params.comment_id)
     .then(post => {
       res.json(post)
     })
@@ -84,8 +84,8 @@ router.put('/posts/:id/comments/:id', function (req, res) {
 
 })
 
-router.delete('/posts/:id/comments/:id', function (req, res) {
-  posts.deleteComment(req.params.id)
+router.delete('/posts/:id/comments/:comment_id', function (req, res) {
+  posts.deleteComment(req.params.comment_id,)
     .then(post => {
       res.json(post)
     })
