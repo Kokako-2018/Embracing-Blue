@@ -3,10 +3,10 @@ var config = require('../../knexfile')[process.env.NODE_ENV || 'development']
 var db = Knex(config)
 
 
-function getComments(testDb) {
+function getComments(post_id, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .where('is_apporoved', true)
+    .where({post_id, is_approved: true})
     .select()
 }
 
@@ -14,7 +14,6 @@ function getComments(testDb) {
 function addComment(comment, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .where('is_approved', true)
     .insert(comment)
     .then(id => {
       return conn('comments')
