@@ -6,8 +6,7 @@ var db = Knex(config)
 
 function getAllPosts(testDb) {  //selecting all posts from 'posts' table
   const conn = testDb || db    //where they have been 
-  return conn('posts')   
-  console.log(db)      //approved by admin
+  return conn('posts')        //approved by admin
     .where('is_approved', true)
     .select()
 }
@@ -18,7 +17,6 @@ function addPost (post, testDb) {
   return conn('posts')            //adding post to 'posts' table
     .where('is_approved', true)   //where appoved by admin
     .insert(post)   
-    console.log(post)
     .then(id => {
       return conn('posts')     //matches id comlumn with id
         .where({id: id[0]})    //of first post

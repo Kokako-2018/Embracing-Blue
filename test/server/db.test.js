@@ -15,9 +15,8 @@ afterEach(() => env.cleanup(testDb))
 // Tests
 
 test('get all posts function', () => {
-  console.log('this is ' + postsDb)
   return postsDb.getAllPosts(testDb)
     .then(posts => {
-      expect(posts.length).toBe(3)
+      expect(posts.length).toBe()
     })
 })
