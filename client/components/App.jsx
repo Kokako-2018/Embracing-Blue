@@ -29,19 +29,20 @@ const App = () => {
 
           {/* Anxiety */}
         <div className="resources">
-          
-          <Route path = "/"   component = {Depression} />
-          <Route path = "/"   component = {Prevention} />
+            
+          <Route exact path = "/"   component = {Depression} />
+          <Route exact path = "/"   component = {Prevention} />
           <Route exact path = "/young"   component = {Young} />
-          </div>
-          <Link to="/young">Young</Link>
+          <Route exact path = '/register' component={Register} />
+        </div>
+        <Link to="/young">Young</Link>
 
-          <div>
-                <div className='infoButton'>
-                <Route path = "/anxiety"   component = {Anxiety} />
-                <Link to="/anxiety"><img src = 'clickables/1.png'/></Link>
-                </div>
+        <div>
+            <div className='infoButton'>
+              <Route path = "/anxiety"   component = {Anxiety} />
+              <Link to="/anxiety"><img src = 'clickables/1.png'/></Link>
             </div>
+        </div>
         
 
         {/* this whale is responsive and hardcoded; this is not calling a component */}

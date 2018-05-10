@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {registerUserRequest} from '../actions/register'
-import {loginError} from '../actions/login'
+// import {registerUserRequest} from '../actions/register'
+// import {loginError} from '../actions/login'
 
 class Register extends React.Component { 
   constructor(props) {
@@ -17,7 +17,7 @@ class Register extends React.Component {
     this.submit = this.submit.bind(this)
   }
   componentDidMount() {
-    this.props.dispatch(loginError(''))
+    // this.props.dispatch(loginError(''))
   }
   updateDetails(e) {
     this.setState({[e.target.name]: e.target.value})
@@ -27,16 +27,16 @@ class Register extends React.Component {
     e.target.reset()
     let {user_name, password, confirm_password, email_address, contact_number} = this.state
 
-    if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
+    // if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
     this.props.dispatch(registerUserRequest(this.state))
   }
   render() {
-    const {auth} = this.props
+    // const {auth} = this.props
     return (
       <form className="Register form box" onSubmit={this.submit}>
         <h1>Register</h1>
         <hr />
-        {auth.errorMessage && <span>{auth.errorMessage}</span>}
+        {/* {auth.errorMessage && <span>{auth.errorMessage}</span>} */}
         <label>Username
           <input required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
         </label>
