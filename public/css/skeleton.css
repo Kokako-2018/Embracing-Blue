@@ -1,4 +1,4 @@
-/*
+/* /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
 * www.getskeleton.com
@@ -28,6 +28,22 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.tile {
+
+  display: inline-block;
+  margin: 20px;
+  padding: 100px;
+  margin: 80px;
+}
+
+.tileImage {
+
+  height: 250px;
+  width: 430px;
+  padding: 80px;
+ 
+}
 .container {
     position: relative;
     width: 100%;
@@ -77,6 +93,11 @@
     .two-thirds.column              { width: 65.3333333333%; }
   
     .one-half.column                { width: 48%; }
+
+    .col-3.columns { 
+      width: 25;
+      padding-right: 10px;
+  }
   
     /* Offsets */
     .offset-by-one.column,
@@ -110,6 +131,10 @@
     .offset-by-one-half.column,
     .offset-by-one-half.columns     { margin-left: 52%; }
   
+    .container .one-third.column                { width: 236px; }
+    .container .two-thirds.column               { width: 492px; }
+    .container .one-fifth.column                { width: 137.6px; }
+
   }
   
   
@@ -415,4 +440,4 @@
   @media (min-width: 1000px) {}
   
   /* Larger than Desktop HD */
-  @media (min-width: 1200px) {}
+  @media (min-width: 1200px) {} 
