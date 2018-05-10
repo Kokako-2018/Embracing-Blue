@@ -23,7 +23,7 @@ function addComment(comment, testDb) {
 }
 
 
-function editPost(id, commentData, testDb) {
+function editComment(id, commentData, testDb) {
   const conn = testDb || db
   return conn('comments')
     .where('id'. id)
