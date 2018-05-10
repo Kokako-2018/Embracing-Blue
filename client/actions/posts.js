@@ -2,6 +2,38 @@ import request from 'superagent'
 
 
 
+export const receiveAllPosts = (posts) => {
+  return {
+    type: 'RECEIVE_ALL_POSTS',
+    posts
+  }
+}
+
+export const addPostAction = (post) => {
+  return {
+    type: 'ADD_POST',
+    post
+  }
+}
+
+
+export const editPostAction = (id, post) => {
+  return {
+    type: 'EDIT_POST',
+    id,
+    post
+  }
+}
+
+export const deletePostAction = (id) => {
+  return {
+    type: 'DELETE_POST',
+    id
+  }
+}
+
+
+
 export function apiGetAllPosts () {
   return (dispatch) => {
     request
@@ -17,6 +49,7 @@ export function apiGetAllPosts () {
 }
 
 
+
 export function apiAddPost (post) {
   return (dispatch) => {
     request
@@ -27,7 +60,7 @@ export function apiAddPost (post) {
           console.error(err.message)
           return
         }
-        dispatch(addPost(res.body))
+        dispatch(addPostAction(res.body))
       })
   }
 }
@@ -42,7 +75,7 @@ export function apiEditPost (id, post) {
           console.error(err.message)
           return
         }
-        dispatch(editPost(res.body))
+        dispatch(editPostAction(res.body))
       })
   }
 }
@@ -56,7 +89,7 @@ export function apiDeletePost (id) {
           console.error(err.message)
           return
         }
-        dispatch(deletePost(res.body))
+        dispatch(deletePostAction(res.body))
       })
   }
 }

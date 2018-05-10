@@ -1,10 +1,8 @@
 import {combineReducers} from 'redux'
+
+import postsReducer from './posts'
  
 
 export default combineReducers({
-    reducer: (state = [], action) => {
-        switch(action.type) {
-            default: return state
-        }
-    }
+   postsReducer
 })
