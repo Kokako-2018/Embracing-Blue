@@ -31,7 +31,7 @@ function editPost (id, postData, testDb) {
     .update({'title': postData.title, //updates follwing collumns
              'thread_content': postData.thread_content,
              'image_url': postData.image_url
-            })
+    })
 }
 
 

@@ -62,7 +62,6 @@ As a user:
 | type | data | purpose |
 | --- | --- | --- |
 | RECEIVE_ALL_POSTS | posts | For retreving all user posts from the server response |
-| RECEIVE_POST | post | (unsure if necessary) For retreiving a single user post from server |
 | ADD_POST | post | For adding a post to the client store after is had been added to the db |
 | EDIT_POST | id | For editing a post |
 | DELETE_POST | id | For deleting a post from the db |

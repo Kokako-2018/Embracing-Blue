@@ -22,7 +22,7 @@ router.get('/posts', function (req, res) {
 router.post('/posts', function (req, res) {
   posts.addPost(req.body)
     .then(post => {
-      res.json(post)
+      res.status(201).json(post)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
