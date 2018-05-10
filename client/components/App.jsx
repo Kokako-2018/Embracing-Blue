@@ -1,6 +1,5 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
-import Greetings from './Greetings'
 import Tile from './Tile'
 import Header from './Header';
 

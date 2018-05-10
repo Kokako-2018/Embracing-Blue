@@ -17,7 +17,6 @@ afterEach(() => env.cleanup(testDb))
 test('get all posts function', () => {
   return postsDb.getAllPosts(testDb)
     .then(posts => {
-      expect(posts.length).toBe(3)
-      expect(posts[0].hasOwnProperty('text')).toBeTruthy()
+      expect(posts.length).toBe()
     })
 })
