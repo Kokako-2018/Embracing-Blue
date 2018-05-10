@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
+import Login from './Login'
 
 class Header extends React.Component {
     render() {
@@ -25,7 +26,10 @@ class Header extends React.Component {
                     <Link to="/forum">forum</Link>
                   </li>
                   <li className="navlink">
-                    <Link to="/Register">Register</Link>
+                    <Link to="/register">Register</Link>
+                  </li>
+                  <li className="navlink">
+                    <Link to="/login">Login</Link>
                   </li>
                 </ul>
               </div>  
