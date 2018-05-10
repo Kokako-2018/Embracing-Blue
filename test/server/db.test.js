@@ -1,7 +1,7 @@
 const request = require('supertest')
 
 const env = require('./test-environment')
-const postsDb = require('../../server/db/posts')
+const posts = require('../../server/db/posts')
 
 // Manage the test database
 
@@ -14,10 +14,20 @@ afterEach(() => env.cleanup(testDb))
 
 // Tests
 
-test('get all posts function', () => {
-  console.log('this is ' + postsDb)
-  return postsDb.getAllPosts(testDb)
+test('getAllposts function gets all posts', () => {
+  const expected = 3
+  return posts.getAllPosts(testDb)
     .then(posts => {
-      expect(posts.length).toBe(3)
+      const actual = posts.length
+      expect(actual).toBe(expected)
+    })
+})
+
+test('addPost functions adds a post', () => {
+  const expected = 0
+  return posts.addPost(testDb)
+    .then(posts => {
+      const actual = posts.length
+      expect(actual).toBe(expected)
     })
 })
