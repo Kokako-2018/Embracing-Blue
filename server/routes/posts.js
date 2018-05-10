@@ -6,7 +6,7 @@ const posts = require('../db/posts')
 
 const request = require('superagent')
 
-//db functions for these have yet to be made
+
 
 router.get('/posts', function (req, res) {
   posts.getAllPosts()
