@@ -5,8 +5,8 @@ exports.up = function(knex, Promise) {
     table.integer('user_id')
     table.string('title')
     table.text('thread_content')
-    table.string('photo_url')
-    table.boolean('approved')
+    table.string('image_url')
+    table.boolean('is_approved')
   })
 };
 
