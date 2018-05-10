@@ -6,11 +6,7 @@ var db = Knex(config)
 
 function getAllPosts(testDb) {  //selecting all posts from 'posts' table
   const conn = testDb || db    //where they have been 
-<<<<<<< HEAD
   return conn('posts')   
-=======
-  return conn('posts')        //approved by admin
->>>>>>> 54bf4e1fcdcf70f9f3973999b8df2b68ac91c597
     .where('is_approved', true)
     .select()
 }
