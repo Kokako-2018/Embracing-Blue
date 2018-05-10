@@ -7,6 +7,7 @@ const Anxiety = () => {
         return  (
             <div>
                 <div className='infoButton'>
+                {/* onclick will disbatch an action to change the page */}
                     <h1>Hello Anxiety</h1>
                 </div>
             </div> 
