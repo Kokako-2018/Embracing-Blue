@@ -37,7 +37,7 @@ export const deletePostAction = (id) => {
 export function apiGetAllPosts () {
   return (dispatch) => {
     request
-      .get(`/api/posts`) //this is where we are sending the request to
+      .get(`/api/posts`) //this is where we are sending the request to db
       .end((err, res) => {
         if (err) {
           console.error(err.message)
