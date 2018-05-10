@@ -44,8 +44,10 @@ class App extends React.Component {
             <Route path="/" component={Depression} />
             <Route path="/" component={Prevention} />
             <Route exact path="/young" component={Young} />
+
           </div>
-          <Link to="/young">Young</Link>
+        </div>
+
 
           <div>
             <div className='infoButton'>
@@ -78,6 +80,7 @@ class App extends React.Component {
             </div>
           </div>
 
+
           {/* priya's original tiles/links: */}
 
 
@@ -99,6 +102,7 @@ class App extends React.Component {
       </Router>
     )
   }
+
 }
 
 export default connect()(App)
