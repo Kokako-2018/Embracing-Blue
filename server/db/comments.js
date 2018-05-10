@@ -37,3 +37,11 @@ function deleteComment(id, testDb) {
     .where('id'. id)
     .del()
 }
+
+
+module.exports = {
+  getComments,
+  addComment,
+  editComment,
+  deleteComment
+}

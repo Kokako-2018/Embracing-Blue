@@ -4,7 +4,7 @@ var db = Knex(config)
 
 
 
-function getAllPosts(testDb) {  //selecting all posts
+function getAllPosts(testDb) {  //selecting all posts from 'posts' table
   const conn = testDb || db    //where they have been 
   return conn('posts')   
   console.log(db)      //approved by admin
@@ -42,4 +42,12 @@ function deletePost (id, testDb) {
   return conn('posts')
     .where('id', id) //deleting post from table where id
     .del()           //selected by user matches one in table
+}
+
+
+module.exports = {
+  getAllPosts,
+  addPost,
+  editPost,
+  deletePost
 }

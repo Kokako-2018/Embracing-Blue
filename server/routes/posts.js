@@ -10,8 +10,8 @@ const request = require('superagent')
 
 router.get('/posts', function (req, res) {
   posts.getAllPosts()
-    .then(post => {
-      res.json(post)
+    .then(posts => {
+      res.json(posts)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -94,3 +94,5 @@ router.delete('/posts/:id/comments/:comment_id', function (req, res) {
   })
 
 })
+
+module.exports = router
