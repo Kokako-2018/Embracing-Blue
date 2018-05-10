@@ -24,10 +24,24 @@ test('getAllposts function gets all posts', () => {
 })
 
 test('addPost functions adds a post', () => {
-  const expected = 0
-  return posts.addPost(testDb)
+  
+  const fakePost = {
+    thread_content: 'Test',
+    title: 'Test title',
+    image_url: 'fake/blah',
+    user_id: 1
+  }
+  const expected = {
+    ...fakePost,
+    id: 4,
+    is_approved: 0
+  }
+  return posts.addPost(fakePost, testDb)
+    .then(actual => {
+      expect(actual).toEqual(expected)
+      return testDb('posts')
+    })
     .then(posts => {
-      const actual = posts.length
-      expect(actual).toBe(expected)
+      expect(posts.length).toBe(4)
     })
 })

@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('title')
     table.text('thread_content')
     table.string('image_url')
-    table.boolean('is_approved')
+    table.boolean('is_approved').defaultTo(false)
   })
 };
 
