@@ -3,6 +3,9 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import Tile from './Tile'
 import Header from './Header'
 import Prevention from './Prevention'
+import Anxiety from './Anxiety'
+import Depression from './Depression'
+
 // import Whale from './Whale'
 
 const App = () => {
@@ -19,8 +22,18 @@ const App = () => {
           } />
         </div>
 
-          {/* Prevention */}
+          {/* Anxiety */}
         <div className="resources">
+          <Route path = "/"   component = {Anxiety} />
+        </div>
+
+          {/* Depression */}
+          <div className="resources">
+          <Route path = "/"   component = {Depression} />
+        </div>
+
+          {/* Prevention */}
+          <div className="resources">
           <Route path = "/"   component = {Prevention} />
         </div>
 
