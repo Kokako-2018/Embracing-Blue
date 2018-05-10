@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const server = require('../server')
 
-const posts = require('../db/posts') 
+const posts = require('../db/posts')
+const comments = require('../db/comments')
 
 const request = require('superagent')
 
@@ -52,7 +53,7 @@ router.delete('/posts/:id', function (req, res) {
 })
 
 router.get('/posts/:id/comments', function (req, res) {
-  posts.getComments()
+  comments.getComments()
     .then(post => {
       res.json(post)
     })
@@ -63,7 +64,7 @@ router.get('/posts/:id/comments', function (req, res) {
 })
 
 router.post('/posts/:id', function (req, res) {
-  posts.addComment(req.body)
+  comments.addComment(req.body)
     .then(post => {
       res.json(post)
     })
@@ -74,7 +75,7 @@ router.post('/posts/:id', function (req, res) {
 })
 
 router.put('/posts/:id/comments/:comment_id', function (req, res) {
-  posts.editComment(req.params.comment_id)
+  comments.editComment(req.params.comment_id)
     .then(post => {
       res.json(post)
     })
@@ -85,7 +86,7 @@ router.put('/posts/:id/comments/:comment_id', function (req, res) {
 })
 
 router.delete('/posts/:id/comments/:comment_id', function (req, res) {
-  posts.deleteComment(req.params.comment_id,)
+  comments.deleteComment(req.params.comment_id,)
     .then(post => {
       res.json(post)
     })
