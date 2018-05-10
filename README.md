@@ -40,7 +40,11 @@ As a user:
 * Renders other components
 * <Route><Route/> and path =  are defined here
  
+ ### components
+ * Header Component 
+ * spacer image component
 ### Resources - just functional
+
 * Prevention.jsx
 * Anxiety.jsx
 * Depression.jsx
@@ -130,7 +134,6 @@ Store will be in the index.js in clients side
 
 ### posts.js
 * getAllPosts
-* getPost
 * addPost
 * editPost
 * deletePost
