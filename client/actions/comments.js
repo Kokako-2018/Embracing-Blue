@@ -18,7 +18,7 @@ export function apiGetAllComments (id) {
 export function apiAddComment (id, comment) {
   return (dispatch) => {
     request
-      .post(`/api/posts/${id}/comments`)
+      .post(`/api/posts/${id}/comments`) //passing in req.params.id--$(id)
       .send(comment)
       .end((err, res) => {
         if (err) {
