@@ -94,6 +94,7 @@ class App extends React.Component {
             <Route exact path="/young" component={Young} />
 
           </div>
+        
 
           <div>
             <Route path='/posts' component={Posts} />
@@ -145,7 +146,7 @@ class App extends React.Component {
           </div> */}
 
       </Router>
-    )
+      )
   }
 
 }
