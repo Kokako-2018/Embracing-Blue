@@ -54,7 +54,7 @@ class App extends React.Component {
               <Route exact path="/young" component={Young} />
 
             </div>
-          </div>
+          
 
           <div>
             <Route path='/posts' component={Posts} />
@@ -97,6 +97,7 @@ class App extends React.Component {
             <Tile src="images/pexels-photo-842548.jpeg" linkText="LGBT" />
             <Tile src="images/pexels-photo-939702.jpeg" linkText="Multicultural" />
           </div> */}
+
         </div>
       </Router>
     )
