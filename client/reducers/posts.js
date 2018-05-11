@@ -11,8 +11,8 @@ function posts (state = [], action) {
       return [...newState, action.post]
 
     case 'EDIT_POST':
-      let edited = newState.find(post => post.id == action.id)
-      edited.post = action.post
+      let idx = newState.findIndex(post => post.id == action.id)
+      newState[idx] = action.newPost
       return newState
 
     case 'DELETE_POST':
