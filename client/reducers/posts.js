@@ -1,4 +1,4 @@
-function postsReducer (state = [], action) {
+function posts (state = [], action) {
 
   let newState = [...state]
 
@@ -25,4 +25,4 @@ function postsReducer (state = [], action) {
 
 }
 
-export default postsReducer
+export default posts

@@ -20,6 +20,13 @@ import Lgbt from './identities/Lgbt'
 // import PostForm from './PostForm'
 // import Posts from './Posts'
 // import { apiGetAllPosts } from '../actions/posts'
+import Register from './Register'
+import Login from './Login'
+
+
+import PostForm from './PostForm'
+import Posts from './Posts'
+import { apiGetAllPosts } from '../actions/posts'
 
 // import Whale from './Whale'
 
@@ -55,14 +62,22 @@ class App extends React.Component {
             <Route exact path="/women" component={Women} />
             <Route exact path="/lgbt" component={Lgbt} />
             <Route exact path="/multicultural" component={Multicultural} />
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register} />
 
           </div>
+          <div>
           <Link to="/young">Young</Link> <br/>
           <Link to="/men">Men</Link> <br/>
           <Link to="/women">Women</Link> <br/>
           <Link to="/lgbt">LGBT</Link> <br/>
           <Link to="/old">Old</Link> <br/>
           <Link to="/multicultural">Multicultural</Link>
+          
+          </div>
+          
+        
+
 
           <div>
             <div className='infoButton'>
@@ -75,6 +90,10 @@ class App extends React.Component {
             <Route path='/posts' component={Posts} />
             <Route path='/posts' component={PostForm} />
           </div> */}
+          <div>
+            <Route path='/posts' component={Posts} />
+            <Route path='/posts' component={PostForm} />
+          </div>
 
 
           {/* this whale is responsive and hardcoded; this is not calling a component */}
@@ -86,20 +105,21 @@ class App extends React.Component {
           {/* this is where we're trying to get the 3 colums to render, still not working but currently slightly aligned  */}
 
           <div className='container'>
-            <div class="row">
-              <div class="twelve columns">
-                <div class="six columns offset-by-five">
+            <div className="row">
+              <div className="twelve columns">
+                <div className="six columns offset-by-five">
 
                 </div>
               </div>
             </div>
           </div>
 
+
           {/* priya's original tiles/links: */}
 
 
 
-          {/* <div>
+          <div>
           <Tile src="images/pexels-photo-697243.jpeg" linkText="Young" /> 
           <Tile src="images/pexels-photo-842548.jpeg" linkText="Men" />
           <Tile src="images/pexels-photo-939702.jpeg" linkText="Women" />
@@ -108,13 +128,14 @@ class App extends React.Component {
           <Tile src="images/pexels-photo-697243.jpeg" linkText="Old" />
           <Tile src="images/pexels-photo-842548.jpeg" linkText="LGBT" />
           <Tile src="images/pexels-photo-939702.jpeg" linkText="Multicultural" />
-        </div> */}
+        </div>
 
-
+        
         </div>
       </Router>
     )
   }
+
 }
 
 export default connect()(App)
