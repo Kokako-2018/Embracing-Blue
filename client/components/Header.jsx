@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Router, Route, Link } from 'react-router-dom'
 import Login from './Login'
+import {logoutUser} from '../actions/logout'
 
 class Header extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Header extends React.Component {
   }
     render() {
 
-      const {auth, logout} = this.props 
+      const {auth} = this.props 
       const {showBurger} = this.state
 
       return (
@@ -39,15 +40,22 @@ class Header extends React.Component {
                   <li className="navlink">
                     <Link to="/posts">Forum</Link>
                   </li>
-                  <li className="navlink">
-                    <Link to="/register">Register</Link>
-                  </li>
-                  <li className="navlink">
-                     <Link to="/login">Login</Link>
-                  </li>
-                  <li className="navlink">
-                     <Link to="/" onClick={() => this.logout()}>Logout</Link>
-                  </li>
+                  {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
+                  {!auth.isAuthenticated 
+                    ? [
+                        <li key={1} className="navlink">
+                          <Link to="/register">Register</Link>
+                        </li>,
+                        <li key={2} className="navlink">
+                          <Link to="/login">Login</Link>
+                        </li>
+                      ]
+                    : <li className="navlink">
+                        <Link to="/" onClick={() => this.props.dispatch(logoutUser())}>Logout</Link>
+                      </li>
+                  }
+                  
+                 
                </ul>
               </div>  
               {/* <img src={pots} className="Header-pots" alt="header" /> */}
@@ -58,7 +66,10 @@ class Header extends React.Component {
       );
     }
   }
+
+  const mapStateToProps = ({auth}) => ({auth})
+
   
-  export default Header;
+  export default connect(mapStateToProps)(Header)
   
   
