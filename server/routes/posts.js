@@ -31,7 +31,7 @@ router.post('/posts', function (req, res) {
 })
 
 router.put('/posts/:id', function (req, res) {
-  posts.editPost(req.params.id)
+  posts.editPost(req.params.id, req.body)
     .then(post => {
       res.json(post)
     })

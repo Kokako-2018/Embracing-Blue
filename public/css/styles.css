@@ -39,17 +39,17 @@ button {
 
   background-color: lightblue
 }*/
-.clickable-color {
+/* .clickable-color {
   background-color: darkorchid;
-}
+} */
 
 .header-title {
   text-align: center;
   font-size: 50px;
 } 
 
-.clickables {
-  width: 365px;
+.infoButton {
+  width: 200px;
   display:inline-block;
 }
 
@@ -69,16 +69,12 @@ button {
   
 }
 
-nav ul {
 
-  list-style: none
-}
-
-.navLink {
+/* .navLink {
 
   display: inline-block;
   margin: 10px;
-}
+} */
 
 .linkText {
 
@@ -94,4 +90,8 @@ nav ul {
   font-family: 'Times New Roman', Times, serif;
   font-size: x-large;
   font-weight: bold;
+}
+
+.justify-center {
+  justify-content: center;
 }

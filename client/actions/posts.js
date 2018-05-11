@@ -37,13 +37,13 @@ export const deletePostAction = (id) => {
 export function apiGetAllPosts () {
   return (dispatch) => {
     request
-      .get(`/api/posts`) //this is where we are sending the request to
+      .get(`/api/posts`) //this is where we are sending the request to db
       .end((err, res) => {
         if (err) {
           console.error(err.message)
           return
         }
-        dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
+         dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
       })                                    // the res.body of all the posts
   }
 }
@@ -75,7 +75,7 @@ export function apiEditPost (id, post) {
           console.error(err.message)
           return
         }
-        dispatch(editPostAction(res.body))
+        dispatch(editPostAction(id, post))
       })
   }
 }
@@ -89,7 +89,7 @@ export function apiDeletePost (id) {
           console.error(err.message)
           return
         }
-        dispatch(deletePostAction(res.body))
+        dispatch(deletePostAction(id))
       })
   }
 }

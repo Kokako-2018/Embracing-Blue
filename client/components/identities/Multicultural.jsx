@@ -1,0 +1,19 @@
+import React from 'react'
+
+export default class Multicultural extends React.Component {
+    render () {
+        return (
+            
+            <div className='section'>
+                <figure className="image">
+                    <img src ='https://www.bridgeportedu.net/cms/lib/CT02210097/Centricity/Domain/367/multicultural-day_header-2.jpg'/>
+                </figure>
+                <div className="section">
+                <h1>Multicultural</h1>
+                    <h3 className="is-size-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.</h3>
+                </div>
+            </div>
+        )
+    }
+}

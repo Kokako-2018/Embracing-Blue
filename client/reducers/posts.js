@@ -1,4 +1,4 @@
-function postsReducer (state = [], action) {
+function posts (state = [], action) {
 
   let newState = [...state]
 
@@ -11,12 +11,13 @@ function postsReducer (state = [], action) {
       return [...newState, action.post]
 
     case 'EDIT_POST':
-      let edited = newState.find(post => post.id == action.id)
-      edited.post = action.post
+      let idx = newState.findIndex(post => post.id == action.id)
+      newState[idx] = action.post
       return newState
 
     case 'DELETE_POST':
-      return state.filter((post) => post.id !== action.id)
+      return [...newState].filter((post) => post.id != action.id)
+      // return state.filter((post) => post.id !== action.id)
 
     default:
       return state
@@ -25,4 +26,4 @@ function postsReducer (state = [], action) {
 
 }
 
-export default postsReducer
+export default posts
