@@ -6,6 +6,7 @@ const Prevention = () => {
     
         return  (
             <div>
+                <img className="u-full-width" src="/resourcesImgs/prevention..jpg"/>
                 <div className='header'>
                     <h1>What is Prevention? </h1>
                     Suicide is the leading cause of death for Australians aged between 15 and 44, with around 3,000 people dying by suicide every year. That's an average of eight people every day.1 For every suicide, there are tragic ripple effects for friends, families, colleagues and the broader community.

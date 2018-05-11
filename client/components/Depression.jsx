@@ -6,6 +6,7 @@ const Depression = () => {
     
         return  (
             <div>
+                <img className="u-full-width" src="/resourcesImgs/depression.jpg"/>
                 <div className='header'>
                     <h1>What is depression? </h1>
                     <p>
