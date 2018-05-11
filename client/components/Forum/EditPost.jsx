@@ -13,7 +13,6 @@ class EditPost extends React.Component {
     this.editPostDetails = this.editPostDetails.bind(this)
   }
 
-
   editPostDetails(e) {
     let {newPost} = this.state
     newPost[e.target.name] = e.target.value

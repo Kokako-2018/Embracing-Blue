@@ -23,6 +23,7 @@ const Posts = (props) => {
             <h2 className='title'>{post.title}</h2>
             <img className='post-image' src={post.image_url}/>
             <p className='thread-content'>{post.thread_content}</p>
+            <button onClick={<Link></Link>}>Edit Post</button>
             {/* <button className='detetebutton' onClick={}>Delete</button> */}
           </div>
         
