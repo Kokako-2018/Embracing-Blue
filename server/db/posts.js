@@ -4,8 +4,8 @@ var db = Knex(config)
 
 
 
-function getAllPosts() {  //selecting all posts from 'posts' table
-  const conn = db    //where they have been 
+function getAllPosts(testDb) {  //selecting all posts from 'posts' table
+  const conn = testDb || db    //where they have been 
   return conn('posts')   
     // .where('is_approved', true)
     .select()
