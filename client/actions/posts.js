@@ -75,7 +75,7 @@ export function apiEditPost (id, post) {
           console.error(err.message)
           return
         }
-        dispatch(editPostAction(res.body))
+        dispatch(editPostAction(id, post))
       })
   }
 }
@@ -89,7 +89,7 @@ export function apiDeletePost (id) {
           console.error(err.message)
           return
         }
-        dispatch(deletePostAction(res.body))
+        dispatch(deletePostAction(id))
       })
   }
 }

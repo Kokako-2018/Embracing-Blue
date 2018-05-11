@@ -26,22 +26,22 @@ class App extends React.Component {
 
     return (
       <Router>
-        <div>
+          <div>
 
-          {/* header */}
-          <div className='container'>
-            <Route path="/" render={
-              () => {
-                return (<Header title="Embracing Blue" />)
-              }
-            } />
-          </div>
+            {/* header */}
+            <div className='container'>
+              <Route path="/" render={
+                () => {
+                  return (<Header title="Embracing Blue" />)
+                }
+              } />
+            </div>
 
-          {/* resources button class */}
-          <div className="resources">
-            <Route exact path="/" component={Resources} />
+            {/* resources button class */}
+            <div className="resources">
+              <Route exact path="/" component={Resources} />
 
-          {/* components that render on different pages */}
+              {/* components that render on different pages */}
 
               <div>
                 <div className='infoButton'>
