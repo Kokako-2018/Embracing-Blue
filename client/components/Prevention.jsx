@@ -6,9 +6,10 @@ const Prevention = () => {
     
         return  (
             <div>
-                <div className='infoButton'>
+                {/* <div className='infoButton'> */}
+                <div className="four columns">
                     <a href="/">
-                        <img src = 'clickables/3.png'/>
+                        <img className='clickables'src = 'clickables/3.png'/>
                     </a>
                 </div>
             </div> 

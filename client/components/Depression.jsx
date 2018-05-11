@@ -6,9 +6,10 @@ const Depression = () => {
     
         return  (
             <div>
-                <div className='infoButton'>
+                {/* <div className='infoButton'> */}
+                <div className="four columns">
                     <a href="/">
-                        <img src = 'clickables/2.png'/>
+                        <img className='clickables'src = 'clickables/2.png'/>
                     </a>
                 </div>
             </div> 

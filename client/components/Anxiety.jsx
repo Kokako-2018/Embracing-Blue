@@ -2,16 +2,33 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { link } from 'react-router-dom'
 
-const Anxiety = () => {
+// const Anxiety = () => {
     
-        return  (
+//         return  (
+//             <div>
+//                 {/* <div className='infoButton'> */}
+//                 <div className="four columns">
+//                     <a href='/'>
+//                         <img className='clickables'src= 'clickables/1.png'/>
+//                     </a>
+//                 </div>
+//             </div> 
+//         )
+// }
+
+class Anxiety extends React.Component {
+
+    render() {
+        return (
             <div>
-                <div className='infoButton'>
-                    <h1>Hello Anxiety</h1>
+                <div className="four columns">
+                    <a href='/'>
+                        <img className='twelve columns' src={this.props.img}/>
+                    </a>
                 </div>
             </div> 
         )
+    }
 }
-
 
 export default Anxiety

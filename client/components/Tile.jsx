@@ -5,7 +5,7 @@ class Tile extends React.Component {
 
     render() {
         return (
-            <div className="tile">
+            <div className="tileDiv">
                 <a href="" >
                     <div >
                         <img className="tileImage" src={this.props.src}/>
