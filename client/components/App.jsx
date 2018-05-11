@@ -3,14 +3,12 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import Tile from './Tile'
 import Header from './Header'
+import Resources from './Resources'
 import Prevention from './Prevention'
 import Anxiety from './Anxiety'
 import Depression from './Depression'
-
 import Register from './Register'
-
 import Young from './Young'
-
 import PostForm from './PostForm'
 import Posts from './Posts'
 import { apiGetAllPosts } from '../actions/posts'
@@ -38,23 +36,27 @@ class App extends React.Component {
             } />
           </div>
 
-          {/* resources */}
+          {/* resources button class */}
           <div className="resources">
+            <Route path="/" component={Resources} />
 
-            <Route path="/" component={Depression} />
-            <Route path="/" component={Prevention} />
+          {/* components that render on different pages */}
+
+          <div>
+            <div className='infoButton'>
+              <Route path="/anxiety" component={Anxiety} />
+              <Route path="/depression" component={Depression} />
+              <Route path="/prevention" component={Prevention} />
+            </div>
+          </div> 
+
             <Route exact path="/young" component={Young} />
 
           </div>
 
 
 
-          <div>
-            <div className='infoButton'>
-              <Route path="/anxiety" component={Anxiety} />
-              <Link to="/anxiety"><img src='clickables/1.png' /></Link>
-            </div>
-          </div>
+
 
           <div>
             <Route path='/posts' component={Posts} />
