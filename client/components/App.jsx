@@ -97,6 +97,7 @@ class App extends React.Component {
             <Tile src="images/pexels-photo-842548.jpeg" linkText="LGBT" />
             <Tile src="images/pexels-photo-939702.jpeg" linkText="Multicultural" />
           </div> */}
+
         </div>
       </Router>
       )
