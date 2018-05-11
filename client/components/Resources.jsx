@@ -1,27 +1,27 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Resources = () => {
     
         return  (
             <div>
                 <div className='infoButton'>
-                    <a href="/anxiety">
+                    <Link to="/anxiety">
                         <img src = 'clickables/1.png'/>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className='infoButton'>
-                    <a href="/depression">
+                    <Link to="/depression">
                         <img src = 'clickables/2.png'/>
-                    </a>
+                    </Link>
                 </div>
 
               <div className='infoButton'>
-                  <a href="/prevention">
+                  <Link to="/prevention">
                       <img src = 'clickables/3.png'/>
-                  </a>
+                  </Link>
               </div>
             </div> 
         )

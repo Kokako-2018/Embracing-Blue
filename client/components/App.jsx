@@ -42,16 +42,13 @@ class App extends React.Component {
 
           {/* components that render on different pages */}
 
-            {/* <div>
+          <div>
             <div className='infoButton'>
               <Route path="/anxiety" component={Anxiety} />
-                <Link to="/anxiety"><img src='clickables/1.png' /></Link>
               <Route path="/depression" component={Depression} />
-                <Link to="/depression"><img src='clickables/2.png' /></Link>
               <Route path="/prevention" component={Prevention} />
-                <Link to="/prevention"><img src='clickables/3.png' /></Link>
             </div>
-          </div> */}
+          </div> 
 
             <Route exact path="/young" component={Young} />
 
