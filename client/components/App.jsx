@@ -42,22 +42,24 @@ class App extends React.Component {
 
     return (
       <Router>
-        <div>
+          <div>
 
-          {/* header */}
-          <div className='container'>
-            <Route path="/" render={
-              () => {
-                return (<Header title="Embracing Blue" />)
-              }
-            } />
-          </div>
+            {/* header */}
+            <div className='container'>
+              <Route path="/" render={
+                () => {
+                  return (<Header title="Embracing Blue" />)
+                }
+              } />
+            </div>
 
           {/* resources button class */}
           <div className="resources">
             <div>
               <Route exact path="/" component={Resources} />
-
+            </div>
+            </div>  
+            <div className="resourceLinks">
               <Route path="/" component={Depression} />
               <Route path="/" component={Prevention} />
               <Route exact path="/young" component={Young} />
@@ -68,8 +70,8 @@ class App extends React.Component {
               <Route exact path="/multicultural" component={Multicultural} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
-
             </div>
+            
             <div>
               <Link to="/young">Young</Link> <br />
               <Link to="/men">Men</Link> <br />
@@ -90,10 +92,6 @@ class App extends React.Component {
                 <Route exact path="/prevention" component={Prevention} />
               </div>
             </div>
-
-            
-
-          </div>
         
 
           <div>
@@ -121,7 +119,7 @@ class App extends React.Component {
             </div>
           </div>
 
-        </div>
+        
 
         {/* <div>
             <Route path='/posts' component={Posts} />
@@ -145,7 +143,8 @@ class App extends React.Component {
             <Tile src="images/pexels-photo-939702.jpeg" linkText="Multicultural" />
           </div> */}
 
-      </Router>
+      </div>
+     </Router>
       )
   }
 
