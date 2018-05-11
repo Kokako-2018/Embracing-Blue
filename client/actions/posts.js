@@ -43,7 +43,7 @@ export function apiGetAllPosts () {
           console.error(err.message)
           return
         }
-        dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
+         dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
       })                                    // the res.body of all the posts
   }
 }

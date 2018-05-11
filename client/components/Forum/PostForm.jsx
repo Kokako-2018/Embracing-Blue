@@ -24,7 +24,6 @@ class PostForm extends React.Component {
   // }
 
   updateDetails(e) {
-    console.log(e.target.value)
     this.setState({[e.target.name]: e.target.value})
   }
 
@@ -37,7 +36,6 @@ class PostForm extends React.Component {
 
 
   render () {
-    console.log(this.state)
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add your story</h2>
