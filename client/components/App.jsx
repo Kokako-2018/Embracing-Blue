@@ -30,9 +30,9 @@ class App extends React.Component {
 
           {/* header */}
           <div className='container'>
-            <Route exact path="/" render={
+            <Route path="/" render={
               () => {
-                return (<Header title="Embracing Blue !!!" />)
+                return (<Header title="Embracing Blue" />)
               }
             } />
           </div>

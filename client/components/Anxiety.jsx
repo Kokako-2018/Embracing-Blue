@@ -6,6 +6,7 @@ const Anxiety = () => {
     
         return  (
             <div>
+                <img className="u-full-width" src="/resourcesImgs/anxiety.jpg"/>
                 <div className='header'>
                     <h1>What is Anxiety? </h1>
                     <p>
