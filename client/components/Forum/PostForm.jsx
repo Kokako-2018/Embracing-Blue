@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import { apiAddPost, apiEditPost } from '../actions/posts'
+import { apiAddPost } from '../../actions/posts'
 
 
 class PostForm extends React.Component {

@@ -11,8 +11,8 @@ import Depression from './Depression'
 
 import Young from './Young'
 
-import PostForm from './PostForm'
-import Posts from './Posts'
+import PostForm from './Forum/PostForm'
+import Posts from './Forum/Posts'
 import { apiGetAllPosts } from '../actions/posts'
 
 // import Whale from './Whale'
