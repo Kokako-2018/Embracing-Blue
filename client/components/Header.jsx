@@ -15,7 +15,7 @@ class Header extends React.Component {
                   </li>
 
                   <li className="navBar-item">                 
-                    <Link className ="navBar-link" to="/">Our Stories</Link>
+                    <Link className ="navBar-link" to="/ourStories">Our Stories</Link>
                   </li>
 
                   <li className="navBar-item">                 
