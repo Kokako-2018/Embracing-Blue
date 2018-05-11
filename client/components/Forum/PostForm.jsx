@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {addPostAction} from '../actions/posts'
+import { apiAddPost } from '../../actions/posts'
 
 
 class PostForm extends React.Component {
@@ -19,21 +19,23 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  // componentWillMount() {
+  //   this.props.dispatch(apiAddPost())
+  // }
+
   updateDetails(e) {
-    console.log(e.target.value)
-    this.setState({[e.target.title]: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   
   handleSubmit(e) {
     e.preventDefault()
     const post = this.state
-    this.props.dispatch(addPostAction(post))
+    this.props.dispatch(apiAddPost(post))
   }
 
 
   render () {
-    console.log(this.state)
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add your story</h2>
