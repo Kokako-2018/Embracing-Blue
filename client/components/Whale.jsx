@@ -2,19 +2,17 @@
 // THE IMAGE IS HARDCODED IN APP.JSX ------>
 
 
-// import React from 'react'
+import React from 'react'
 
 
-// const Whale = () => {
-//     // render() {
-//         return (
-//             <div className="backgroundImg">
-//                     <div>
-//                         <img className="spreadImg" src="../../../public/backgrounds/1.png"/>
-//                     </div>
-//             </div>   
-//         )
-//     // }
-// }
+const Whale = () => {
+        return (
+            <div className="backgroundImg">
+                    <div>
+                        <img className="u-full-width" src="/backgrounds/1.png"/>
+                    </div>
+            </div>   
+        )
+     }
 
-// export default Whale
+export default Whale
