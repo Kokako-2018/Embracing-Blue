@@ -12,6 +12,7 @@ import Young from './Young'
 import PostForm from './PostForm'
 import Posts from './Posts'
 import { apiGetAllPosts } from '../actions/posts'
+import Whale from './Whale'
 
 // import Whale from './Whale'
 
@@ -38,15 +39,15 @@ class App extends React.Component {
 
           {/* resources button class */}
           <div className="resources">
-            <Route path="/" component={Resources} />
+            <Route exact path="/" component={Resources} />
 
           {/* components that render on different pages */}
 
           <div>
             <div className='infoButton'>
-              <Route path="/anxiety" component={Anxiety} />
-              <Route path="/depression" component={Depression} />
-              <Route path="/prevention" component={Prevention} />
+              <Route exact path="/anxiety" component={Anxiety} />
+              <Route exact path="/depression" component={Depression} />
+              <Route exact path="/prevention" component={Prevention} />
             </div>
           </div> 
 
@@ -64,11 +65,12 @@ class App extends React.Component {
           </div>
 
 
-          {/* this whale is responsive and hardcoded; this is not calling a component */}
+          {/* whale */}
 
           <div>
-            <img className="u-full-width" src="backgrounds/1.png" />
+            <Route exact path='/' component={Whale} />
           </div>
+             {/* <img className="u-full-width" src="backgrounds/2.png" /> */}
 
           {/* this is where we're trying to get the 3 colums to render, still not working but currently slightly aligned  */}
 
