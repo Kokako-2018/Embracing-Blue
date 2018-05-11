@@ -21,7 +21,7 @@ class EditPost extends React.Component {
 
   submitEdit(e) {
     e.preventDefault()
-    this.props.dispatch(apiEditPost(this.state.oldPost, this.state.newPost))
+    this.props.dispatch(apiEditPost(this.state.oldPost.id, this.state.newPost))
     this.props.submit()
   }
 

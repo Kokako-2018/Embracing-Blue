@@ -12,11 +12,12 @@ function posts (state = [], action) {
 
     case 'EDIT_POST':
       let idx = newState.findIndex(post => post.id == action.id)
-      newState[idx] = action.newPost
+      newState[idx] = action.post
       return newState
 
     case 'DELETE_POST':
-      return state.filter((post) => post.id !== action.id)
+      return [...newState].filter((post) => post.id != action.id)
+      // return state.filter((post) => post.id !== action.id)
 
     default:
       return state

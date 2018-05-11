@@ -3,19 +3,19 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
-import { apiEditPost } from '../../actions/posts'
+import { apiEditPost, apiDeletePost } from '../../actions/posts'
 
 class Posts extends React.Component {
   constructor(props) {
     console.log(props)
     super(props)
     this.state = {
-      posts: props.posts || [],
       editPostTarget: null
     }
   }
 
   componentWillReceiveProps({ posts }) {
+    console.log(posts)
     this.setState({ posts })
   }
 
@@ -26,7 +26,7 @@ class Posts extends React.Component {
 
   render() {
     
-    let {posts} = this.state
+    let {posts} = this.props
 
     return (
       <div>
@@ -51,7 +51,7 @@ class Posts extends React.Component {
               }
               
               <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
-              {/* <button className='detetebutton' onClick={}>Delete</button> */}
+              <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
             </div>
 
           })}
