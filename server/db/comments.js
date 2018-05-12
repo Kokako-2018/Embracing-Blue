@@ -6,26 +6,27 @@ var db = Knex(config)
 function getComments(post_id, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .where({post_id, is_approved: true})
+    //.where({post_id, is_approved: true})
     .select()
 }
 
 
-function addComment(id, comment, testDb) {
+function addComment(comment, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .insert(post_id: id, comment)
-    // .then(id => {
-    //   return conn('comments')
-    //     .where({id: id[0]})
-    // })
+    .insert(comment)
+    .then(id => {
+      return conn('comments')
+        .where({id: id[0]})
+        .first()
+    })
 }
 
 
 function editComment(id, commentData, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .where('id'. id)
+    .where('id', id)
     .update({'comment': commentData.comment})
 }
 
@@ -33,7 +34,7 @@ function editComment(id, commentData, testDb) {
 function deleteComment(id, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .where('id'. id)
+    .where('id', id)
     .del()
 }
 
