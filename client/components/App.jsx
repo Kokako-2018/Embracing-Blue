@@ -9,7 +9,7 @@ import Anxiety from './Anxiety'
 import Depression from './Depression'
 
 
-// import Register from './Register'
+ import Register from './Register'
 
 import Young from './identities/Young'
 import Old from './identities/Old'
@@ -18,19 +18,11 @@ import Women from './identities/Women'
 import Multicultural from './identities/Multicultural'
 import Lgbt from './identities/Lgbt'
 
-// import PostForm from './PostForm'
-// import Posts from './Posts'
-// import { apiGetAllPosts } from '../actions/posts'
+import PostForm from './Forum/PostForm'
+ import Posts from './Forum/Posts'
+ import { apiGetAllPosts } from '../actions/posts'
 
 import Login from './Login'
-import Register from './Register'
-
-import PostForm from './Forum/PostForm'
-import Posts from './Forum/Posts'
-import { apiGetAllPosts } from '../actions/posts'
-import Whale from './Whale'
-
-// import Whale from './Whale'
 
 class App extends React.Component {
 
@@ -42,10 +34,11 @@ class App extends React.Component {
 
     return (
       <Router>
-          <div>
+          <div className="app-container">
+            <div className="section">
 
             {/* header */}
-            <div className='container'>
+            <div>
               <Route path="/" render={
                 () => {
                   return (<Header title="Embracing Blue" />)
@@ -58,94 +51,54 @@ class App extends React.Component {
             <div>
               <Route exact path="/" component={Resources} />
             </div>
-            </div>  
-            <div className="resourceLinks">
-              <Route path="/" component={Depression} />
-              <Route path="/" component={Prevention} />
-              <Route exact path="/young" component={Young} />
-              <Route exact path="/old" component={Old} />
-              <Route exact path="/men" component={Men} />
-              <Route exact path="/women" component={Women} />
-              <Route exact path="/lgbt" component={Lgbt} />
-              <Route exact path="/multicultural" component={Multicultural} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-            </div>
+          </div>  
             
-            <div>
-              <Link to="/young">Young</Link> <br />
-              <Link to="/men">Men</Link> <br />
-              <Link to="/women">Women</Link> <br />
-              <Link to="/lgbt">LGBT</Link> <br />
-              <Link to="/old">Old</Link> <br />
-              <Link to="/multicultural">Multicultural</Link>
+          <Route className="column" exact path="/anxiety" component={Anxiety} />
+          <Route className="column" exact path="/depression" component={Depression} />
+          <Route className="column" exact path="/prevention" component={Prevention} />
+          
+          <Route path='/posts' component={PostForm} />
+          <Route path='/posts' component={Posts} />
+          
+          
+            <Route exact path="/" render={
+              () => {
+                return (
+                  <div>  
+                    <div className="columns">
+                      <Link className="column" to="/Young"><Tile src="https://images.pexels.com/photos/1021145/pexels-photo-1021145.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Young" /></Link>
+                      <Link className="column" to="/Women"><Tile src="https://images.pexels.com/photos/206296/pexels-photo-206296.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Women" /></Link>
+                      <Link className="column" to="/Men"><Tile src="https://images.pexels.com/photos/36463/person-human-guitar-players.jpg?auto=compress&cs=tinysrgb&h=350" linkText="Men" /></Link>
+                    </div>
 
-            </div>
+                    <div className="columns" >
+                      <Link className="column" to="Old"><Tile src="https://images.pexels.com/photos/34761/old-people-couple-together-connected.jpg?auto=compress&cs=tinysrgb&h=350" linkText="Old" /></Link>
+                      <Link className="column" to="LGBT"> <Tile src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1467022337000/photosp/c74b1166-11fb-4f4b-88c1-aa5996c220bd/stock-photo-summer-concert-music-festival-pride-event-festival-parade-lgbt-activism-c74b1166-11fb-4f4b-88c1-aa5996c220bd.jpg" linkText="LGBT" /></Link>
+                      <Link className="column" to="Multicultural"><Tile src="https://images.pexels.com/photos/863964/pexels-photo-863964.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Multicultural" /></Link>
+                    </div>
+                  </div> 
 
-
-            {/* components that render on different pages */}
-
-            <div>
-              <div className='infoButton'>
-                <Route exact path="/anxiety" component={Anxiety} />
-                <Route exact path="/depression" component={Depression} />
-                <Route exact path="/prevention" component={Prevention} />
-              </div>
-            </div>
+                )
+              }
+            } />
         
-
           <div>
-            <Route path='/posts' component={Posts} />
-            <Route path='/posts' component={PostForm} />
+            <Route exact path="/Young"  component={Young} /> 
+            <Route exact path="/Women"  component={Women} /> 
+            <Route exact path="/Men"  component={Men} /> 
+            <Route exact path="/Lgbt"  component={Lgbt} /> 
+            <Route exact path="/Old"  component={Old} /> 
+            <Route exact path="/Multicultural"  component={Multicultural} /> 
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
           </div>
-
-
-          {/* whale */}
-
-          <div>
-            <Route exact path='/' component={Whale} />
-          </div>
-          {/* <img className="u-full-width" src="backgrounds/2.png" /> */}
-
-          {/* this is where we're trying to get the 3 colums to render, still not working but currently slightly aligned  */}
-
-          <div className='container'>
-            <div className="row">
-              <div className="twelve columns">
-                <div className="six columns offset-by-five">
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        
-
-        {/* <div>
-            <Route path='/posts' component={Posts} />
-            <Route path='/posts' component={PostForm} />
-          </div> */}
-
-
-        {/* priya's original tiles/links: */}
-
-
-
-        {/* <div>
-            <Tile src="images/pexels-photo-697243.jpeg" linkText="Young" /> 
-            <Tile src="images/pexels-photo-842548.jpeg" linkText="Men" />
-            <Tile src="images/pexels-photo-939702.jpeg" linkText="Women" />
-          </div>
-
-          <div>
-            <Tile src="images/pexels-photo-697243.jpeg" linkText="Old" />
-            <Tile src="images/pexels-photo-842548.jpeg" linkText="LGBT" />
-            <Tile src="images/pexels-photo-939702.jpeg" linkText="Multicultural" />
-          </div> */}
-
+        </div>
       </div>
-     </Router>
-      )
+      
+    </Router>
+    
+  )
+  
   }
 
 }

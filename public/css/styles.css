@@ -38,9 +38,60 @@ button {
 .header {
 
   background-color: lightblue
-}
+}*/
+/* .clickable-color {
+  background-color: darkorchid;
+} */
 
 .header-title {
   text-align: center;
   font-size: 50px;
+} 
+
+.infoButton {
+  width: 200px;
+  display:inline-block;
+}
+
+.tileDiv {
+
+  display: inline-block;
+  margin: 10px;
+  /* padding: 100px; */
+  /* margin: -77px; */
+}
+
+ .tileImage {
+
+  height: 250px;
+  width: 400px;
+  padding: 23px;
+  
+}
+
+
+/* .navLink {
+
+  display: inline-block;
+  margin: 10px;
 } */
+
+.linkText {
+
+  position: absolute;
+  margin-top: -75px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  margin-left: 26px;
+  margin-right: 2px;
+  width: 374px;
+  color: purple;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.justify-center {
+  justify-content: center;
+}

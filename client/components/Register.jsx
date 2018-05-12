@@ -50,31 +50,50 @@ class Register extends React.Component {
   render() {
     const {auth} = this.props
     return (
-      <form className="Register form box" onSubmit={this.submit}>
+      <form onSubmit={this.submit}>
         <h1>Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
-        <label>Username
-          <input required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
-        </label>
-        <div>
-          <label>Contact Number
-            <input required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails}/>
-          </label>
-          <label>Email Address
-            <input required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails}/>
-          </label>
+        
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label>Username</label >
+          </div>
+           <input   className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
         </div>
-        <br />
-        <div>
-          <label>Password
-            <input required placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
-          </label>
-          <label>Confirm Password
-            <input required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
-          </label>
+        
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label>Contact Number</label>
+          </div>  
+          <input className="input is-medium"required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails}/>
+        </div>  
+
+          <div className="field is-horizontal">
+            <div className="field-label is-normal">
+              <label>Email Address</label>
+            </div>
+            <div className="field-body">
+                <div className="field">
+                  <input className="input is-medium"required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails}/>
+                </div>  
+            </div>
+          </div>
+    
+        <div className="field is-horizontal">
+          <div className="field is-horizontal">
+            <label>Password</label>
+          </div>
+            <input className="input is-medium"required placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
         </div>
-        <input value="Register" type="submit" />
+        <div className="field is-horizontal">
+          <div className="field is-horizontal">
+            <label>Confirm Password</label>
+          </div>
+            <input className="input is-medium"required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
+         </div>
+        <input className="button is-primary" value="Register" type="submit" />
+        
       </form>
     )
   }

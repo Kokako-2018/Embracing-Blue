@@ -16,7 +16,7 @@ Built by Mark, Priya, Theta, Sam, Hameet, and Annette
 ### MVP
 
 As a user:
-* I want to be able to clearly see resources available on suicide, depression, and anxiety that I can click on to view more information. I also want to be able to do this without the use of a mouse (through tab-indexes) and also on my mobile
+* I want to be able to clearly see resources available on prevention, depression, and anxiety that I can click on to view more information. I also want to be able to do this without the use of a mouse (through tab-indexes) and also on my mobile
 * I want to be able to access resources directly relevent to my identity
 * I want to be able to register/login and discuss on a forum my own experiences and contribute to other discussions
 
@@ -24,8 +24,12 @@ As a user:
 
 As an admin:
 * I want to be able to vet the contributions of useres before they are posted
+* As an admin I would like to be able fill out a template
 
 As a user:
+* I would be able to receive an email verification upon registering
+* I would like to have the option to sign up for a mailing list
+* I would like to be able to see FAQ
 * I would like to be able approach/understand mental health through the eyes of the Maori culture
 * I want the ability to download information for when I need it and may not have access to internet
 

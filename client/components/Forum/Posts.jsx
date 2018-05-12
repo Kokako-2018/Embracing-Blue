@@ -29,12 +29,10 @@ class Posts extends React.Component {
     let {posts} = this.props
 
     return (
-      <div>
-        <div className='homebutton'>
-          <Link className='button' to='/'>Home</Link>
+      <div className='box'>
+        <div className='content'>
+          <h1 className='is-size-3'>Stories</h1>
         </div>
-
-        <h1>Stories</h1>
 
         <div className='posts'>
 

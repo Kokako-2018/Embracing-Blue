@@ -37,28 +37,80 @@ class PostForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Add your story</h2>
-        <div className='form-container'>
-          <div>
-            <label>Title of Post</label>
-            <input name='title' type="text" value={this.state.title} onChange={this.updateDetails}/>
-          </div>
-
-          <div>
-            <label>Content</label>
-            <input name='thread_content' type="text" value={this.state.thread_content} onChange={this.updateDetails}/>
-          </div>
-
-          <div>
-            <label>Photo:</label>
-            <input name='image_url' type="text" value={this.state.image_url} onChange={this.updateDetails}/>
+      <div className="box">
+        <form onSubmit={this.handleSubmit}>
+          <div className="content">
+            <h1 className="is-size-3">Add your story</h1>
           </div>
           
-        </div>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Title of Post</label>
+              </div>  
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <input 
+                        className="input is-medium" 
+                        name='title' 
+                        type="text" 
+                        value={this.state.title} onChange={this.updateDetails}
+                        placeholder="Post title"/>
 
-        <input type="submit" value='Submit'/>
-      </form>
+                  </p>
+                </div>  
+              </div>  
+            </div>
+
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Content</label>
+              </div>  
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <textarea 
+                        className="textarea is-medium" 
+                        name='thread_content' 
+                        type="text"
+                        value={this.state.thread_content} onChange={this.updateDetails}
+                        placeholder="Post content here...."/>
+                  </p>
+                </div>  
+              </div>  
+            </div>
+
+            {/* TODO: why do we need a photo ???? */}
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Photo</label>
+              </div>  
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <input 
+                        className="input is-medium" 
+                        name='image_url' 
+                        type="text" 
+                        value={this.state.image_url} onChange={this.updateDetails}
+                        placeholder="Upload image"/>
+                  </p>
+                </div>    
+              </div>
+            </div>
+            
+            <div className="field is-grouped is-grouped-right">
+              <div className="control">
+                <input className="button is-primary" type="submit" value='Submit'/>
+                </div>
+                <p className="control">
+                    <a className="button is-light">
+                        Cancel
+                    </a>
+                </p>
+                </div>
+        </form>
+      </div>  
     )
   }
 }
