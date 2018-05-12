@@ -46,6 +46,7 @@
     "body-parser": "^1.15.2",
     "bulma": "^0.7.1",
     "cors": "^2.8.3",
+    "cypress": "^2.1.0",
     "dotenv": "^5.0.1",
     "express": "^4.14.0",
     "express-jwt": "^5.3.1",

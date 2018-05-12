@@ -38,7 +38,7 @@ class Posts extends React.Component {
 
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
-            return <div className='post'>
+            return <div className='post box'>
               {showEdit 
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
@@ -48,7 +48,7 @@ class Posts extends React.Component {
                 </div>
               }
               
-              <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+              <button className='button' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
               <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
             </div>
 

@@ -52,19 +52,27 @@ class Register extends React.Component {
           <div className="field-label is-normal">
             <label>Username</label >
           </div>
-           <input   className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
+          <div className="field-body">
+          <div className="field">
+           <input className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
         </div>
-        
+        </div>
+        </div>
+
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label>Contact Number</label>
-          </div>  
+          </div> 
+          <div className="field-body">
+          <div className="field"> 
           <input className="input is-medium"required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails}/>
-        </div>  
+        </div> 
+        </div>
+        </div> 
 
           <div className="field is-horizontal">
             <div className="field-label is-normal">
-              <label>Email Address</label>
+              <label>Email</label>
             </div>
             <div className="field-body">
                 <div className="field">
@@ -74,18 +82,37 @@ class Register extends React.Component {
           </div>
     
         <div className="field is-horizontal">
-          <div className="field is-horizontal">
+          <div className="field-label is-normal">
             <label>Password</label>
           </div>
-            <input className="input is-medium"required placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
+          <div className="field-body">
+            <div className="field">
+              <input className="input is-medium"required placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
+            </div>
+          </div>
         </div>
+
         <div className="field is-horizontal">
-          <div className="field is-horizontal">
+          <div className="field-label is-normal">
             <label>Confirm Password</label>
           </div>
-            <input className="input is-medium"required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
+          <div className="field-body">
+            <div className="field">
+              <input className="input is-medium"required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
+            </div>
+          </div>
          </div>
-        <input className="button is-primary" value="Register" type="submit" />
+
+            <div className="field is-grouped is-grouped-centered">
+              <div className="control">
+                <input className="button is-primary" type="submit" value='Register'/>
+              </div>
+              <p className="control">
+                <a className="button is-light">
+                    Cancel
+                </a>
+              </p>
+            </div>
         
       </form>
     )

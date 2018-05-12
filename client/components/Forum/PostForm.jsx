@@ -99,16 +99,16 @@ class PostForm extends React.Component {
               </div>
             </div>
             
-            <div className="field is-grouped is-grouped-right">
+            <div className="field is-grouped is-grouped-centered">
               <div className="control">
                 <input className="button is-primary" type="submit" value='Submit'/>
-                </div>
-                <p className="control">
-                    <a className="button is-light">
-                        Cancel
-                    </a>
-                </p>
-                </div>
+              </div>
+              <p className="control">
+                <a className="button is-light">
+                    Cancel
+                </a>
+              </p>
+            </div>
         </form>
       </div>  
     )
