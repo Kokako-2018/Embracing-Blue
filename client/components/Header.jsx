@@ -28,15 +28,24 @@ class Header extends React.Component {
         <header className="header">
 
 
-
             <section className="hero is-primary">
+
               <div className="hero-body">
-                <div className="container has-text-centered">
+              <img src='backgrounds/sunset.gif' id='selector'/>
+              </div>
+            </section>  
+
+            <section className="hero is-light is-bold">
+              <div className="hero-body">
+                <div className="container has-text-centered">  
                   <h1 className="title is-1">{this.props.title}</h1>
+                  <p className="subtitle is-3">A mental health resource for all Kiwis</p>
                 </div>
               </div>
             </section>
 
+            
+            
             <nav className="navbar has-background-grey-lighter justify-center">
 
                   <Link className="navbar-item" to="/">Home</Link>
@@ -61,7 +70,7 @@ class Header extends React.Component {
                     <input className="input" type="text" placeholder="Find a story" />
                   </div>
                   <div className="control">
-                    <a className="button is-info">
+                    <a className="button is-info tabindex=8">
                       Search
                     </a>
                   </div>
