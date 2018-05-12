@@ -11,14 +11,14 @@ function getComments(post_id, testDb) {
 }
 
 
-function addComment(comment, testDb) {
+function addComment(id, comment, testDb) {
   const conn = testDb || db
   return conn('comments')
-    .insert(comment)
-    .then(id => {
-      return conn('comments')
-        .where({id: id[0]})
-    })
+    .insert(post_id: id, comment)
+    // .then(id => {
+    //   return conn('comments')
+    //     .where({id: id[0]})
+    // })
 }
 
 
