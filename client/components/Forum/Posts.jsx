@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
 import { apiEditPost, apiDeletePost } from '../../actions/posts'
+import { apiGetAllComments } from '../../actions/comments'
+
 
 class Posts extends React.Component {
   constructor(props) {
-    console.log(props)
     super(props)
     this.state = {
       editPostTarget: null
@@ -25,7 +26,7 @@ class Posts extends React.Component {
   }
 
   render() {
-    
+
     let {posts} = this.props
 
     return (
@@ -39,7 +40,7 @@ class Posts extends React.Component {
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             return <div className='post'>
-              {showEdit 
+              {showEdit
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
                   <h2 className='title'>{post.title}</h2>
@@ -47,9 +48,10 @@ class Posts extends React.Component {
                   <p className='thread-content'>{post.thread_content}</p>
                 </div>
               }
-              
+
               <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
               <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
+              {/* <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button> */}
             </div>
 
           })}
@@ -61,9 +63,10 @@ class Posts extends React.Component {
   }
 }
 
-const mapStateToProps = ({ posts }) => {
+const mapStateToProps = ({ posts, comments }) => {
   return {
-    posts
+    posts,
+    comments
   }
 }
 
