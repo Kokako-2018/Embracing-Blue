@@ -66,15 +66,15 @@ class App extends React.Component {
                 return (
                   <div>  
                     <div className="columns">
-                      <Link className="column" to="/Young"><Tile src="https://images.pexels.com/photos/1021145/pexels-photo-1021145.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Young" /></Link>
-                      <Link className="column" to="/Women"><Tile src="https://images.pexels.com/photos/206296/pexels-photo-206296.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Women" /></Link>
-                      <Link className="column" to="/Men"><Tile src="https://images.pexels.com/photos/36463/person-human-guitar-players.jpg?auto=compress&cs=tinysrgb&h=350" linkText="Men" /></Link>
+                      <Link className="column" to="/Young"><Tile src="identity/youth2.jpeg" linkText="Young" /></Link>
+                      <Link className="column" to="/Women"><Tile src="identity/woman1.jpeg" linkText="Women" /></Link>
+                      <Link className="column" to="/Men"><Tile src="identity/men1.jpeg" linkText="Men" /></Link>
                     </div>
 
                     <div className="columns" >
-                      <Link className="column" to="Old"><Tile src="https://images.pexels.com/photos/34761/old-people-couple-together-connected.jpg?auto=compress&cs=tinysrgb&h=350" linkText="Old" /></Link>
-                      <Link className="column" to="LGBT"> <Tile src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1467022337000/photosp/c74b1166-11fb-4f4b-88c1-aa5996c220bd/stock-photo-summer-concert-music-festival-pride-event-festival-parade-lgbt-activism-c74b1166-11fb-4f4b-88c1-aa5996c220bd.jpg" linkText="LGBT" /></Link>
-                      <Link className="column" to="Multicultural"><Tile src="https://images.pexels.com/photos/863964/pexels-photo-863964.jpeg?auto=compress&cs=tinysrgb&h=350" linkText="Multicultural" /></Link>
+                      <Link className="column" to="Old"><Tile src="identity/grandma2.jpeg" linkText="Old" /></Link>
+                      <Link className="column" to="LGBT"> <Tile src="identity/lgbt2.jpeg" linkText="LGBT" /></Link>
+                      <Link className="column" to="Multicultural"><Tile src="identity/multicultural1.jpeg" linkText="Multicultural" /></Link>
                     </div>
                   </div> 
 
