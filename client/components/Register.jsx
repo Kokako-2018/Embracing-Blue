@@ -28,10 +28,17 @@ class Register extends React.Component {
     e.preventDefault()
     e.target.reset()
     let {user_name, password, confirm_password, email_address, contact_number} = this.state
-    if (!this.validateEmail(email_address)) return (this.props.dispatch(loginError('Email is Invalid')))
-    if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
+    function confirmation (){
+      if (confirm_password != password)
+        return false
+      else
+        return true
+    }
+    console.log(confirmation())
+    if (!this.validateEmail(email_address) && confirm_password != password ) return (this.props.dispatch(loginError('Email/Password error')))
+    //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
     this.props.dispatch(registerUserRequest(this.state))
-  }
+    }
 
   //this just checks if the email is valid or not. 
   validateEmail(email) {
