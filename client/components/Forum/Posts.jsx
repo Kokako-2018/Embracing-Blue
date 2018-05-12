@@ -3,13 +3,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
-import Comments from './Comments'
 
-<<<<<<< HEAD
+
+
+
 import { apiEditPost, apiDeletePost } from '../../actions/posts'
-=======
-import { apiEditPost, apiDeletePost, apiGetAllPosts } from '../../actions/posts'
->>>>>>> 74bd77340c2149b274e834e8cf164bbea23d90c9
 import { apiGetAllComments } from '../../actions/comments'
 
 
@@ -45,7 +43,7 @@ class Posts extends React.Component {
         </div>
 
         <div className='posts'>
-        <Comments/>
+        
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             return <div className='post'>
