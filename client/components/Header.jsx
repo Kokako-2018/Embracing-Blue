@@ -69,7 +69,7 @@ class Header extends React.Component {
                     <input className="input" type="text" placeholder="Find a story" />
                   </div>
                   <div className="control">
-                    <a className="button is-info">
+                    <a className="button is-info tabindex=8">
                       Search
                     </a>
                   </div>
