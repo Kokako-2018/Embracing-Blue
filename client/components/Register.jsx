@@ -34,17 +34,24 @@ class Register extends React.Component {
       else
         return true
     }
-    console.log(confirmation())
-    if (!this.validateEmail(email_address) && confirm_password != password ) return (this.props.dispatch(loginError('Email/Password error')))
+    console.log('Does password match?', confirmation())
+    const isEmail = this.validateEmail(email_address)
+    const passwordsNotSame = (confirm_password != password)
+
+    console.log('isEmail valid :' + isEmail)
+    console.log('passwords not same:' + passwordsNotSame)
+
+    if (!isEmail ||  passwordsNotSame) return this.props.dispatch(loginError('Email/Password error'))
     //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
-    this.props.dispatch(registerUserRequest(this.state))
+    else return this.props.dispatch(registerUserRequest(this.state))
     }
 
   //this just checks if the email is valid or not. 
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var isValid = re.test(String(email).toLowerCase());
-    console.log('No joke', {isValid})
+    // console.log('No joke', isValid) 
+    return isValid
   }
 
   render() {
