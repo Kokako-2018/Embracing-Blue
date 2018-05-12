@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
+import Comments from './Comments'
+
 import { apiEditPost, apiDeletePost } from '../../actions/posts'
 import { apiGetAllComments } from '../../actions/comments'
 
@@ -25,6 +27,8 @@ class Posts extends React.Component {
     this.setState({ editPostTarget: post })
   }
 
+  
+
   render() {
 
     let {posts} = this.props
@@ -36,7 +40,7 @@ class Posts extends React.Component {
         </div>
 
         <div className='posts'>
-
+        <Comments/>
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             return <div className='post'>
@@ -48,10 +52,10 @@ class Posts extends React.Component {
                   <p className='thread-content'>{post.thread_content}</p>
                 </div>
               }
-
+              
               <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
               <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
-              {/* <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button> */}
+              <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
             </div>
 
           })}

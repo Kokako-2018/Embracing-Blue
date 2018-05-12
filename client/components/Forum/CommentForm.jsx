@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit (e) {
-    e.preventDefault() z
+    e.preventDefault() 
     const {comment} = this.state
     this.setState({errorMessage: null})
     this.props.dispatch(apiAddComment(comment))
