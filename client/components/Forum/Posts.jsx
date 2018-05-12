@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
-import { apiEditPost, apiDeletePost } from '../../actions/posts'
+import Comments from './Comments'
+
+import { apiEditPost, apiDeletePost, apiGetAllPosts } from '../../actions/posts'
 import { apiGetAllComments } from '../../actions/comments'
 
 
@@ -30,6 +32,7 @@ class Posts extends React.Component {
     let {posts} = this.props
 
     return (
+      
       <div className='box'>
         <div className='content'>
           <h1 className='is-size-3'>Stories</h1>
@@ -51,7 +54,7 @@ class Posts extends React.Component {
 
               <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
               <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
-              {/* <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button> */}
+              <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
             </div>
 
           })}

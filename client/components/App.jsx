@@ -20,10 +20,10 @@ import Women from './identities/Women'
 import Multicultural from './identities/Multicultural'
 import Lgbt from './identities/Lgbt'
 
-import PostForm from './forum/PostForm'
-import Posts from './forum/Posts'
+import PostForm from './Forum/PostForm'
+import Posts from './Forum/Posts'
 
-
+import { apiGetAllPosts } from '../actions/posts'
 
 
 class App extends React.Component {
