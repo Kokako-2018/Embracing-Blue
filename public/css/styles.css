@@ -69,7 +69,9 @@ button {
   
 }
 
-
+.searchbar {
+  margin-top: 1.5%;
+}
 /* .navLink {
 
   display: inline-block;
@@ -92,9 +94,9 @@ button {
   font-weight: bold;
 }
 
-.justify-center {
+/* .justify-center {
   justify-content: center;
-}
+} */
 
 .card-shaddow {
   width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)

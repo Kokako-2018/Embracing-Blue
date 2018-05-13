@@ -12,7 +12,6 @@ class PostForm extends React.Component {
       user_id: '',
       title: '',
       thread_content: '',
-      image_url: '',
       is_approved: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -75,25 +74,6 @@ class PostForm extends React.Component {
                         type="text"
                         value={this.state.thread_content} onChange={this.handleChange}
                         placeholder="Post content here...."/>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* TODO: why do we need a photo ???? */}
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label>Photo</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control is-expanded has-icons-left">
-                    <input
-                        className="input is-medium"
-                        name='image_url'
-                        type="text"
-                        value={this.state.image_url} onChange={this.handleChange}
-                        placeholder="Upload image"/>
                   </p>
                 </div>
               </div>
