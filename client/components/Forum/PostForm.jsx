@@ -4,16 +4,17 @@ import {Link} from 'react-router-dom'
 
 import { apiAddPost } from '../../actions/posts'
 
+const initalState = {
+  title: '',
+  thread_content: '',
+  image_url: '',
+  is_approved: false
+}
 
 class PostForm extends React.Component {
   constructor(props) {
    super(props)
-    this.state = {
-      user_id: '',
-      title: '',
-      thread_content: '',
-      is_approved: false
-    }
+    this.state = {...initalState}
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -23,14 +24,22 @@ class PostForm extends React.Component {
   // }
 
   handleChange(e) {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value, isSuccess: false})
   }
 
 
   handleSubmit(e) {
     e.preventDefault()
     const post = this.state
-    this.props.dispatch(apiAddPost(post))
+    delete post.isSuccess
+    delete post.isLoading
+    this.setState({
+      ...initalState,
+      isLoading: true
+    })
+    this.props.dispatch(apiAddPost(post, (success) => {
+      this.setState({isSuccess: true, isLoading: false})
+    }))
   }
 
 
@@ -53,7 +62,8 @@ class PostForm extends React.Component {
                         className="input is-medium"
                         name='title'
                         type="text"
-                        value={this.state.title} onChange={this.handleChange}
+                        value={this.state.title}
+                        onChange={this.handleChange}
                         placeholder="Post title"/>
 
                   </p>
@@ -80,8 +90,9 @@ class PostForm extends React.Component {
             </div>
 
             <div className="field is-grouped is-grouped-right">
+              {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
               <div className="control">
-                <input className="button is-primary" type="submit" value='Submit'/>
+                <input className={`button is-primary ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
                 </div>
                 <p className="control">
                     <a className="button is-light">

@@ -29,8 +29,8 @@ class Header extends React.Component {
 
 
         <section className="hero is-primary">
-
           <div className="hero-body">
+            {!auth.isAuthenticated ? '' : <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
           </div>
         </section>
 
@@ -44,7 +44,6 @@ class Header extends React.Component {
         </section>
 
 
-
         <nav className="navbar has-background-grey-lighter">
 
           <div className='leftnav navbar-item'>
@@ -52,7 +51,6 @@ class Header extends React.Component {
             <Link className="navbar-item" to="/">Home</Link>
             <Link className="navbar-item" to="/ourStories">Our Stories</Link>
             <Link className="navbar-item" to="/posts">Forum</Link>
-
 
             <div className="navbar-item dropdown is-hoverable">
               <div className="dropdown-trigger">
@@ -97,33 +95,33 @@ class Header extends React.Component {
 
           <div className='navbar-item navbar-end'>
 
-          <div className="searchbar field has-addons navbar-item">
-            <div className="control">
-              <input className="input" type="text" placeholder="Find a story" />
-            </div>
-            <div className="control">
-              <a className="button is-info tabindex=8">
-                Search
+            <div className="searchbar field has-addons navbar-item">
+              <div className="control">
+                <input className="input" type="text" placeholder="Find a story" />
+              </div>
+              <div className="control">
+                <a className="button is-info tabindex=8">
+                  Search
               </a>
+              </div>
             </div>
+
+            {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
+            {!auth.isAuthenticated
+              ? [
+                <Link key={1} className="navbar-item" to="/register">Register</Link>,
+                <Link key={2} className="navbar-item" to="/login">Login</Link>
+
+              ]
+              :
+              <Link className="navbar-item" to="/" onClick={() => this.props.dispatch(logoutUser())}>Logout</Link>
+
+            }
+
           </div>
 
-          {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
-          {!auth.isAuthenticated
-            ? [
-              <Link key={1} className="navbar-item" to="/register">Register</Link>,
-              <Link key={2} className="navbar-item" to="/login">Login</Link>
-
-            ]
-            :
-            <Link className="navbar-item" to="/" onClick={() => this.props.dispatch(logoutUser())}>Logout</Link>
-
-          }
-
-          </div>
 
         </nav>
-
 
 
       </header>

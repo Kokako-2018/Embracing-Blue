@@ -20,7 +20,6 @@ class Posts extends React.Component {
   }
 
   componentWillReceiveProps({ posts }) {
-    console.log(posts)
     this.setState({ posts })
   }
 
