@@ -20,11 +20,14 @@ router.get('/posts', function (req, res) {
 })
 
 router.post('/posts', function (req, res) {
-  posts.addPost(req.body)
+  const data = req.body
+  data.user_id = 1
+  posts.addPost(data)
     .then(post => {
       res.status(201).json(post)
     })
     .catch(err => {
+      console.log({err})
       res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 
