@@ -7,12 +7,11 @@ class EditPost extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      oldPost: props.post,
-      newPost: props.post
+      oldPost: {...props.post},
+      newPost: {...props.post}
     }
     this.editPostDetails = this.editPostDetails.bind(this)
   }
-
 
   editPostDetails(e) {
     let {newPost} = this.state
@@ -22,8 +21,8 @@ class EditPost extends React.Component {
 
   submitEdit(e) {
     e.preventDefault()
-    this.props.dispatch(apiEditPost(this.state.oldPost, this.state.newPost))
-    this.props.submit
+    this.props.dispatch(apiEditPost(this.state.oldPost.id, this.state.newPost))
+    this.props.submit()
   }
 
   render () {
@@ -35,7 +34,7 @@ class EditPost extends React.Component {
       <div className='form-container'>
         <div>
           <label>Title of Post</label>
-          <input name='title' type="text" value={newPost.name} onChange={this.editPostDetails}/>
+          <input name='title' type="text" value={newPost.title} onChange={this.editPostDetails}/>
         </div>
 
         <div>
@@ -57,8 +56,4 @@ class EditPost extends React.Component {
 }
 
 
-const mapStateToProps = ({post}) => {
-  return ({post})
-}
-
-export default connect(mapStateToProps)(EditPost)
+export default connect()(EditPost)

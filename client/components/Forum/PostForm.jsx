@@ -4,18 +4,18 @@ import {Link} from 'react-router-dom'
 
 import { apiAddPost } from '../../actions/posts'
 
+const initalState = {
+  title: '',
+  thread_content: '',
+  image_url: '',
+  is_approved: false
+}
 
 class PostForm extends React.Component {
   constructor(props) {
    super(props)
-    this.state = {
-      user_id: '',
-      title: '',
-      thread_content: '',
-      image_url: '',
-      is_approved: false
-    }
-    this.updateDetails = this.updateDetails.bind(this)
+    this.state = {...initalState}
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -23,42 +23,104 @@ class PostForm extends React.Component {
   //   this.props.dispatch(apiAddPost())
   // }
 
-  updateDetails(e) {
-    this.setState({[e.target.name]: e.target.value})
+  handleChange(e) {
+    this.setState({[e.target.name]: e.target.value, isSuccess: false})
   }
 
-  
+
   handleSubmit(e) {
     e.preventDefault()
     const post = this.state
-    this.props.dispatch(apiAddPost(post))
+    delete post.isSuccess
+    delete post.isLoading
+    this.setState({
+      ...initalState,
+      isLoading: true
+    })
+    this.props.dispatch(apiAddPost(post, (success) => {
+      this.setState({isSuccess: true, isLoading: false})
+    }))
   }
 
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Add your story</h2>
-        <div className='form-container'>
-          <div>
-            <label>Title of Post</label>
-            <input name='title' type="text" value={this.state.title} onChange={this.updateDetails}/>
+      <div className="box">
+        <form onSubmit={this.handleSubmit}>
+          <div className="content">
+            <h1 className="is-size-3">Add your story</h1>
           </div>
 
-          <div>
-            <label>Content</label>
-            <input name='thread_content' type="text" value={this.state.thread_content} onChange={this.updateDetails}/>
-          </div>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Title of Post</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <input
+                        className="input is-medium"
+                        name='title'
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.handleChange}
+                        placeholder="Post title"/>
 
-          <div>
-            <label>Photo:</label>
-            <input name='image_url' type="text" value={this.state.image_url} onChange={this.updateDetails}/>
-          </div>
-          
-        </div>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <input type="submit" value='Submit'/>
-      </form>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Content</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <textarea
+                        className="textarea is-medium"
+                        name='thread_content'
+                        type="text"
+                        value={this.state.thread_content} onChange={this.handleChange}
+                        placeholder="Post content here...."/>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* TODO: why do we need a photo ???? */}
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label>Photo</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <p className="control is-expanded has-icons-left">
+                    <input
+                        className="input is-medium"
+                        name='image_url'
+                        type="text"
+                        value={this.state.image_url} onChange={this.handleChange}
+                        placeholder="Upload image"/>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="field is-grouped is-grouped-right">
+              {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
+              <div className="control">
+                <input className={`button is-primary ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
+                </div>
+                <p className="control">
+                    <a className="button is-light">
+                        Cancel
+                    </a>
+                </p>
+                </div>
+        </form>
+      </div>
     )
   }
 }

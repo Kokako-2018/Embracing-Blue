@@ -50,7 +50,7 @@ export function apiGetAllPosts () {
 
 
 
-export function apiAddPost (post) {
+export function apiAddPost (post, cb) {
   return (dispatch) => {
     request
       .post(`/api/posts`)
@@ -61,6 +61,7 @@ export function apiAddPost (post) {
           return
         }
         dispatch(addPostAction(res.body))
+        cb(!err)
       })
   }
 }
@@ -75,7 +76,7 @@ export function apiEditPost (id, post) {
           console.error(err.message)
           return
         }
-        dispatch(editPostAction(res.body))
+        dispatch(editPostAction(id, post))
       })
   }
 }
@@ -89,7 +90,7 @@ export function apiDeletePost (id) {
           console.error(err.message)
           return
         }
-        dispatch(deletePostAction(res.body))
+        dispatch(deletePostAction(id))
       })
   }
 }

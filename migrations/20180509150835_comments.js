@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('comments', table => {
     table.increments('id')
     table.integer('user_id')
-    table.integer('post_id')
+    table.integer('post_id').references('post.id')
     table.text('comment')
     table.boolean('is_approved').defaultTo(false)
   })

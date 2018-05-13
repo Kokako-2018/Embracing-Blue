@@ -4,18 +4,19 @@ var db = Knex(config)
 
 
 
-function getAllPosts() {  //selecting all posts from 'posts' table
-  const conn = db    //where they have been 
-  return conn('posts')   
+function getAllPosts(testDb) {  //selecting all posts from 'posts' table
+  const conn = testDb || db    //where they have been
+  return conn('posts')
     // .where('is_approved', true)
     .select()
 }
 
 
 function addPost (post, testDb) {
+  console.log({post})
   const conn = testDb || db
   return conn('posts')            //adding post to 'posts' table
-    .insert(post)   
+    .insert(post, 'id')
     .then(id => {
       return conn('posts')     //matches id comlumn with id
         .where({id: id[0]})

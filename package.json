@@ -31,8 +31,6 @@
   "devDependencies": {
     "enzyme": "^2.8.2",
     "jest": "^22.4.3",
-    "nodemon": "^1.11.0",
-    "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
   },
   "dependencies": {
@@ -44,12 +42,18 @@
     "babel-register": "^6.24.1",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.15.2",
+    "bulma": "^0.7.1",
     "cors": "^2.8.3",
+    "dotenv": "^5.0.1",
     "express": "^4.14.0",
+    "express-jwt": "^5.3.1",
     "jsdom": "^11.0.0",
+    "jsonwebtoken": "^8.2.1",
     "jsx-loader": "^0.13.2",
-    "knex": "^0.14.6",
+    "jwt-decode": "^2.2.0",
+    "knex": "^0.13.0",
     "nock": "^9.2.5",
+    "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "pg": "^6.2.3",
     "react": "^15.5.4",
@@ -60,6 +64,7 @@
     "redux": "^3.6.0",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
+    "sqlite3": "^3.1.8",
     "superagent": "^2.2.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
