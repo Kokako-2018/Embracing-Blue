@@ -50,7 +50,7 @@ export function apiGetAllPosts () {
 
 
 
-export function apiAddPost (post) {
+export function apiAddPost (post, cb) {
   return (dispatch) => {
     request
       .post(`/api/posts`)
@@ -61,6 +61,7 @@ export function apiAddPost (post) {
           return
         }
         dispatch(addPostAction(res.body))
+        cb(!err)
       })
   }
 }
