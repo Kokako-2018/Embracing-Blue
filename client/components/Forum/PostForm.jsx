@@ -44,6 +44,7 @@ class PostForm extends React.Component {
 
 
   render () {
+    const {auth} = this.props
     return (
       <div className="box">
         <form onSubmit={this.handleSubmit}>
@@ -62,6 +63,7 @@ class PostForm extends React.Component {
                         className="input is-medium"
                         name='title'
                         type="text"
+                        required="true"
                         value={this.state.title}
                         onChange={this.handleChange}
                         placeholder="Post title"/>
@@ -82,6 +84,7 @@ class PostForm extends React.Component {
                         className="textarea is-medium"
                         name='thread_content'
                         type="text"
+                        required="true"
                         value={this.state.thread_content} onChange={this.handleChange}
                         placeholder="Post content here...."/>
                   </p>
@@ -92,7 +95,10 @@ class PostForm extends React.Component {
             <div className="field is-grouped is-grouped-right">
               {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
               <div className="control">
-                <input className={`button is-primary ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
+              {auth.isAuthenticated
+                ? <input className={`button is-primary ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
+                : <Link to="/login" className="button is-light has-text-info">Please Login</Link>
+              }
                 </div>
                 <p className="control">
                     <a className="button is-light">
@@ -106,5 +112,6 @@ class PostForm extends React.Component {
   }
 }
 
+const mapStateToProps = ({auth}) => ({auth})
 
-export default connect()(PostForm)
+export default connect(mapStateToProps)(PostForm)

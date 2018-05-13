@@ -29,8 +29,9 @@ class Header extends React.Component {
 
 
         <section className="hero is-primary">
+
           <div className="hero-body">
-            {!auth.isAuthenticated ? '' : <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
+            {auth.isAuthenticated && <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
           </div>
         </section>
 
@@ -38,11 +39,10 @@ class Header extends React.Component {
           <div className="hero-body">
             <div className="container has-text-centered">
               <h1 className="title is-1">{this.props.title}</h1>
-              <p id='subtitle' className="subtitle is-3">A mental health resource for all Kiwis</p>
+              <p className="subtitle is-3">A mental health resource for all Kiwis</p>
             </div>
           </div>
         </section>
-
 
         <nav className="navbar has-background-grey-lighter">
 
@@ -119,7 +119,6 @@ class Header extends React.Component {
             }
 
           </div>
-
 
         </nav>
 
