@@ -25,6 +25,7 @@ router.post('/posts', function (req, res) {
       res.status(201).json(post)
     })
     .catch(err => {
+      console.log({err})
       res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 
