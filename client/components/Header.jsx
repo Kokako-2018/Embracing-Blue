@@ -4,16 +4,22 @@ import { Router, Route, Link } from 'react-router-dom'
 import Login from './auth/Login'
 import { logoutUser } from '../actions/logout'
 
+import ConfirmLogout from './ConfirmLogout'
+
 class Header extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      showBurger: false
+      showBurger: false,
+      showConfirmLogout: false
     }
     this.toggleBurger = this.toggleBurger.bind(this)
+    this.toggleConfirmLogout = this.toggleConfirmLogout.bind(this)
   }
-
+  toggleConfirmLogout() {
+    this.setState({showConfirmLogout: !this.state.showConfirmLogout})
+  }
   toggleBurger() {
     this.setState({ showBurger: !this.state.showBurger })
   }
@@ -21,13 +27,13 @@ class Header extends React.Component {
   render() {
 
     const { auth } = this.props
-    const { showBurger } = this.state
+    const { showBurger, showConfirmLogout } = this.state
 
     return (
 
       <header className="header">
 
-
+        {(showConfirmLogout ) && <ConfirmLogout close={this.toggleConfirmLogout} />}
         <section className="hero is-primary">
 
           <div className="hero-body">
@@ -61,7 +67,7 @@ class Header extends React.Component {
 
             ]
             :
-            <Link className="navbar-item" to="/" onClick={() => this.props.dispatch(logoutUser())}>Logout</Link>
+            <Link className="navbar-item" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
 
           }
 
