@@ -31,6 +31,7 @@ class Header extends React.Component {
             <section className="hero is-primary">
 
               <div className="hero-body">
+                {!auth.isAuthenticated ? '' : <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
               </div>
             </section>
 
