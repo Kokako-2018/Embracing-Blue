@@ -39,26 +39,26 @@ class Posts extends React.Component {
       
       <div className='box'>
         <div className='content'>
-          <h1 className='is-size-3'>Stories</h1>
+          <h1 className='story is-size-2'>Stories</h1>
         </div>
 
         <div className='posts'>
         
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
-            return <div className='post'>
+            return <div id='post'>
               {showEdit
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
-                  <h2 className='title'>{post.title}</h2>
+                  <h2 id='post-title' className='is-size-3'>{post.title}</h2>
                   <img className='post-image' src={post.image_url} />
-                  <p className='thread-content'>{post.thread_content}</p>
+                  <p id='post-para' className='is-size-5'>{post.thread_content}</p>
                 </div>
               }
               
-              <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
-              <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
-              <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
+              <button id='post-button' className='button is-primary is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+              <button id='post-button' className='button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
+              <button id='post-button' className='button is-primary is-centered' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
             </div>
 
           })}

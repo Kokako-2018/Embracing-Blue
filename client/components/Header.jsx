@@ -31,7 +31,6 @@ class Header extends React.Component {
             <section className="hero is-primary">
 
               <div className="hero-body">
-              <img src='backgrounds/sunset.gif' id='selector'/>
               </div>
             </section>  
 
@@ -39,7 +38,7 @@ class Header extends React.Component {
               <div className="hero-body">
                 <div className="container has-text-centered">  
                   <h1 className="title is-1">{this.props.title}</h1>
-                  <p className="subtitle is-3">A mental health resource for all Kiwis</p>
+                  <p id='subtitle' className="subtitle is-3">A mental health resource for all Kiwis</p>
                 </div>
               </div>
             </section>
