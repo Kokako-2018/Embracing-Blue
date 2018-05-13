@@ -22,6 +22,7 @@ import Lgbt from './identities/Lgbt'
 
 import PostForm from './Forum/PostForm'
 import Posts from './Forum/Posts'
+import Footer from './Footer'
 
 import { apiGetAllPosts } from '../actions/posts'
 
@@ -94,6 +95,8 @@ class App extends React.Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </div>
+            <Route exact path="/" component={Footer} />
+
           </div>
         </div>
 

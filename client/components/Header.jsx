@@ -34,7 +34,7 @@ class Header extends React.Component {
               </div>
             </section>
 
-            <section className="hero is-light is-bold">
+            <section className="hero is-light is-light">
               <div className="hero-body">
                 <div className="container has-text-centered">
                   <h1 className="title is-1">{this.props.title}</h1>
