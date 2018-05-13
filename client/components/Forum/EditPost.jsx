@@ -41,11 +41,6 @@ class EditPost extends React.Component {
           <label>Content</label>
           <input name='thread_content' type="text" value={newPost.thread_content} onChange={this.editPostDetails}/>
         </div>
-
-        <div>
-          <label>Photo:</label>
-          <input name='image_url' type="text" value={newPost.image_url} onChange={this.editPostDetails}/>
-        </div>
         
       </div>
 
