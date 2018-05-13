@@ -16,6 +16,7 @@ class Register extends React.Component {
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
     this.validateEmail = this.validateEmail.bind(this)
+    this.validatePassword = this.validatePassword.bind(this)
   }
   componentDidMount() {
     this.props.dispatch(loginError(''))
@@ -37,12 +38,15 @@ class Register extends React.Component {
     console.log('Does password match?', confirmation())
     const isEmail = this.validateEmail(email_address)
     const passwordsNotSame = (confirm_password != password)
+    const isPass = this.validatePassword(password)
 
     console.log('isEmail valid :' + isEmail)
     console.log('passwords not same:' + passwordsNotSame)
+    console.log('Is the password valid?' + isPass)
 
-    if (!isEmail ||  passwordsNotSame) return this.props.dispatch(loginError('Email/Password error'))
+    if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError("Incorrect email/Passwords don't match"))
     //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
+    else if (!isPass) return this.props.dispatch(loginError('Password strength must be 8 or above and must include atleast one number '))
     else return this.props.dispatch(registerUserRequest(this.state))
     }
 
@@ -53,6 +57,14 @@ class Register extends React.Component {
     // console.log('No joke', isValid)
     return isValid
   }
+
+  validatePassword(pass) {
+    var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    var isPasswordValid = re.test(String(pass));
+    return isPasswordValid
+  }
+
+
 
   render() {
     const {auth} = this.props
