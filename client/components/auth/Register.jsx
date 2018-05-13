@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {registerUserRequest} from '../actions/register'
-import {loginError} from '../actions/login'
+import {registerUserRequest} from '../../actions/register'
+import {loginError} from '../../actions/login'
 
-class Register extends React.Component { 
+class Register extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,21 +23,35 @@ class Register extends React.Component {
   updateDetails(e) {
     this.setState({[e.target.name]: e.target.value})
   }
-  //if the email addresss is not valid we need to STOP IT. 
+  //if the email addresss is not valid we need to STOP IT.
   submit(e) {
     e.preventDefault()
     e.target.reset()
     let {user_name, password, confirm_password, email_address, contact_number} = this.state
-    if (!this.validateEmail(email_address)) return (this.props.dispatch(loginError('Email is Invalid')))
-    if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
-    this.props.dispatch(registerUserRequest(this.state))
-  }
+    function confirmation (){
+      if (confirm_password != password)
+        return false
+      else
+        return true
+    }
+    console.log('Does password match?', confirmation())
+    const isEmail = this.validateEmail(email_address)
+    const passwordsNotSame = (confirm_password != password)
 
-  //this just checks if the email is valid or not. 
+    console.log('isEmail valid :' + isEmail)
+    console.log('passwords not same:' + passwordsNotSame)
+
+    if (!isEmail ||  passwordsNotSame) return this.props.dispatch(loginError('Email/Password error'))
+    //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
+    else return this.props.dispatch(registerUserRequest(this.state))
+    }
+
+  //this just checks if the email is valid or not.
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var isValid = re.test(String(email).toLowerCase());
-    console.log('No joke', {isValid})
+    // console.log('No joke', isValid)
+    return isValid
   }
 
   render() {
@@ -47,28 +61,24 @@ class Register extends React.Component {
         <h1>Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
-        
+
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label>Username</label >
           </div>
           <div className="field-body">
-          <div className="field">
-           <input className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
-        </div>
-        </div>
-        </div>
+            <div className="field">
+              <input className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
+            </div>
+          </div>
+        </div>    
 
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label>Contact Number</label>
-          </div> 
-          <div className="field-body">
-          <div className="field"> 
+          </div>
           <input className="input is-medium"required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails}/>
-        </div> 
         </div>
-        </div> 
 
           <div className="field is-horizontal">
             <div className="field-label is-normal">
@@ -77,10 +87,10 @@ class Register extends React.Component {
             <div className="field-body">
                 <div className="field">
                   <input className="input is-medium"required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails}/>
-                </div>  
+                </div>
             </div>
           </div>
-    
+
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label>Password</label>
@@ -113,6 +123,7 @@ class Register extends React.Component {
                 </a>
               </p>
             </div>
+            
         
       </form>
     )

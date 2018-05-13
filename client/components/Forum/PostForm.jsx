@@ -15,7 +15,7 @@ class PostForm extends React.Component {
       image_url: '',
       is_approved: false
     }
-    this.updateDetails = this.updateDetails.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -23,11 +23,11 @@ class PostForm extends React.Component {
   //   this.props.dispatch(apiAddPost())
   // }
 
-  updateDetails(e) {
+  handleChange(e) {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  
+
   handleSubmit(e) {
     e.preventDefault()
     const post = this.state
@@ -42,60 +42,60 @@ class PostForm extends React.Component {
           <div className="content">
             <h1 className="is-size-3">Add your story</h1>
           </div>
-          
+
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label>Title of Post</label>
-              </div>  
+              </div>
               <div className="field-body">
                 <div className="field">
                   <p className="control is-expanded has-icons-left">
-                    <input 
-                        className="input is-medium" 
-                        name='title' 
-                        type="text" 
-                        value={this.state.title} onChange={this.updateDetails}
+                    <input
+                        className="input is-medium"
+                        name='title'
+                        type="text"
+                        value={this.state.title} onChange={this.handleChange}
                         placeholder="Post title"/>
 
                   </p>
-                </div>  
-              </div>  
+                </div>
+              </div>
             </div>
 
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label>Content</label>
-              </div>  
+              </div>
               <div className="field-body">
                 <div className="field">
                   <p className="control is-expanded has-icons-left">
-                    <textarea 
-                        className="textarea is-medium" 
-                        name='thread_content' 
+                    <textarea
+                        className="textarea is-medium"
+                        name='thread_content'
                         type="text"
-                        value={this.state.thread_content} onChange={this.updateDetails}
+                        value={this.state.thread_content} onChange={this.handleChange}
                         placeholder="Post content here...."/>
                   </p>
-                </div>  
-              </div>  
+                </div>
+              </div>
             </div>
 
             {/* TODO: why do we need a photo ???? */}
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label>Photo</label>
-              </div>  
+              </div>
               <div className="field-body">
                 <div className="field">
                   <p className="control is-expanded has-icons-left">
-                    <input 
-                        className="input is-medium" 
-                        name='image_url' 
-                        type="text" 
-                        value={this.state.image_url} onChange={this.updateDetails}
+                    <input
+                        className="input is-medium"
+                        name='image_url'
+                        type="text"
+                        value={this.state.image_url} onChange={this.handleChange}
                         placeholder="Upload image"/>
                   </p>
-                </div>    
+                </div>
               </div>
             </div>
             
@@ -110,7 +110,7 @@ class PostForm extends React.Component {
               </p>
             </div>
         </form>
-      </div>  
+      </div>
     )
   }
 }

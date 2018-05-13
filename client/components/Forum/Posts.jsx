@@ -3,11 +3,16 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
+
+
+
+
 import { apiEditPost, apiDeletePost } from '../../actions/posts'
+import { apiGetAllComments } from '../../actions/comments'
+
 
 class Posts extends React.Component {
   constructor(props) {
-    console.log(props)
     super(props)
     this.state = {
       editPostTarget: null
@@ -24,18 +29,21 @@ class Posts extends React.Component {
     this.setState({ editPostTarget: post })
   }
 
+  
+
   render() {
-    
+
     let {posts} = this.props
 
     return (
+      
       <div className='box'>
         <div className='content'>
           <h1 className='is-size-3'>Stories</h1>
         </div>
 
         <div className='posts'>
-
+        
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             return <div className='post box'>
@@ -48,8 +56,9 @@ class Posts extends React.Component {
                 </div>
               }
               
-              <button className='button' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+              <button onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
               <button className='detetebutton' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
+              <button className='viewcomments' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
             </div>
 
           })}
@@ -61,9 +70,10 @@ class Posts extends React.Component {
   }
 }
 
-const mapStateToProps = ({ posts }) => {
+const mapStateToProps = ({ posts, comments }) => {
   return {
-    posts
+    posts,
+    comments
   }
 }
 

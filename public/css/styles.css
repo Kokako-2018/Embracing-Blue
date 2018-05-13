@@ -43,31 +43,31 @@ button {
   background-color: darkorchid;
 } */
 
-.header-title {
+/* .header-title {
   text-align: center;
   font-size: 50px;
-} 
+}  */
 
-.infoButton {
+/* .infoButton {
   width: 200px;
   display:inline-block;
-}
+} */
 
-.tileDiv {
+ /* .tileDiv {
 
   display: inline-block;
   margin: 10px;
-  /* padding: 100px; */
-  /* margin: -77px; */
+   padding: 100px; 
+   margin: -77px; 
 }
 
- .tileImage {
+   .tileImage { 
 
   height: 250px;
   width: 400px;
   padding: 23px;
   
-}
+}   */
 
 
 /* .navLink {
@@ -76,7 +76,7 @@ button {
   margin: 10px;
 } */
 
-.linkText {
+/* .linkText {
 
   position: absolute;
   margin-top: -75px;
@@ -90,8 +90,38 @@ button {
   font-family: 'Times New Roman', Times, serif;
   font-size: x-large;
   font-weight: bold;
-}
+} */
 
-.justify-center {
+ .justify-center {
   justify-content: center;
-}
+} 
+
+/* .card-shaddow {
+  width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)
+} */
+
+  /* #selector {
+    width:100%;
+    height:100%;
+} 
+
+ h1 {
+	font-family: Anton; 
+	font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  line-height: 26.4px;
+  padding-top: 400px;
+}  */
+
+/* h2 {
+  font-family: "Merriweather";
+	font-size: 8px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  line-height: 26.4px;
+  padding-top: 400px;
+} */
+

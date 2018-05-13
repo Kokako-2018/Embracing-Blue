@@ -1,5 +1,34 @@
 import request from 'superagent'
 
+export const recieveAllComments = (comments) => {
+  return {
+    type: 'RECEIVE_ALL_COMMENTS',
+    comments
+  }
+}
+
+export const addCommentAction = (comment) => {
+  return {
+    type: 'ADD_COMMENT',
+    comments
+  }
+}
+
+export const editCommentAction = (id, comment) => {
+  return {
+    type: 'EDIT_COMMENT',
+    id,
+    comment
+  }
+}
+
+export const deleteCommentAction = (id) => {
+  return {
+    type: 'DELETE_COMMENT',
+    id
+  }
+}
+
 export function apiGetAllComments (id) {
   return (dispatch) => {
     request
