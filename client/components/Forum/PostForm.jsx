@@ -31,6 +31,7 @@ class PostForm extends React.Component {
     e.preventDefault()
     const post = this.state
     this.props.dispatch(apiAddPost(post))
+    e.target.reset()
   }
 
 
