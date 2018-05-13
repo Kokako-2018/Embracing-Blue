@@ -32,19 +32,19 @@ class Header extends React.Component {
 
               <div className="hero-body">
               </div>
-            </section>  
+            </section>
 
             <section className="hero is-light is-bold">
               <div className="hero-body">
-                <div className="container has-text-centered">  
+                <div className="container has-text-centered">
                   <h1 className="title is-1">{this.props.title}</h1>
-                  <p id='subtitle' className="subtitle is-3">A mental health resource for all Kiwis</p>
+                  <p className="subtitle is-3">A mental health resource for all Kiwis</p>
                 </div>
               </div>
             </section>
 
-            
-            
+
+
             <nav className="navbar has-background-grey-lighter justify-center">
 
                   <Link className="navbar-item" to="/">Home</Link>
