@@ -9,7 +9,6 @@ class PostForm extends React.Component {
   constructor(props) {
    super(props)
     this.state = {
-      user_id: '',
       title: '',
       thread_content: '',
       image_url: '',
