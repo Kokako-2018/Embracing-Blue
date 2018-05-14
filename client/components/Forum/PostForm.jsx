@@ -92,37 +92,6 @@ class PostForm extends React.Component {
               </div>
             </div>
 
-<<<<<<< HEAD
-            {/* TODO: why do we need a photo ???? */}
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label>Photo</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control is-expanded has-icons-left">
-                    <input
-                        className="input is-medium"
-                        name='image_url'
-                        type="text"
-                        value={this.state.image_url} onChange={this.handleChange}
-                        placeholder="Upload image"/>
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="field is-grouped is-grouped-centered">
-              <div className="control">
-                <input className="button is-primary" type="submit" value='Submit'/>
-              </div>
-              <p className="control">
-                <a className="button is-light">
-                    Cancel
-                </a>
-              </p>
-            </div>
-=======
             <div className="field is-grouped is-grouped-right">
               {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
               <div className="control">
@@ -137,7 +106,6 @@ class PostForm extends React.Component {
                     </a>
                 </p>
                 </div>
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
         </form>
       </div>
     )

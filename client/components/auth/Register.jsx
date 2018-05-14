@@ -123,22 +123,9 @@ class Register extends React.Component {
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
 
-<<<<<<< HEAD
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label>Username</label >
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <input className="input is-medium"required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
-            </div>
-          </div>
-        </div>    
-=======
         <label className="label">Username
 <input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
         </label >
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
 
         <label className="label">Contact Number
 <input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
@@ -149,54 +136,6 @@ class Register extends React.Component {
 <input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
         </label>
 
-<<<<<<< HEAD
-          <div className="field is-horizontal">
-            <div className="field-label is-normal">
-              <label>Email</label>
-            </div>
-            <div className="field-body">
-                <div className="field">
-                  <input className="input is-medium"required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails}/>
-                </div>
-            </div>
-          </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label>Password</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <input className="input is-medium"required placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
-            </div>
-          </div>
-        </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label>Confirm Password</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <input className="input is-medium"required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails}/>
-            </div>
-          </div>
-         </div>
-
-            <div className="field is-grouped is-grouped-centered">
-              <div className="control">
-                <input className="button is-primary" type="submit" value='Register'/>
-              </div>
-              <p className="control">
-                <a className="button is-light">
-                    Cancel
-                </a>
-              </p>
-            </div>
-            
-        
-      </form>
-=======
         <div className="columns">
           <label className="column is-6 label">Password
 <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
@@ -212,7 +151,6 @@ class Register extends React.Component {
         <input className="button is-primary" value="Register" type="submit" />
 
       </form >
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
     )
   }
 }

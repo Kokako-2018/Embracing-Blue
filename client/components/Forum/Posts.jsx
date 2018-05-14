@@ -45,13 +45,8 @@ class Posts extends React.Component {
         
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
-<<<<<<< HEAD
-            return <div className='post box'>
-              {showEdit 
-=======
-            return <div id='post'>
+            return <div id='post' className="post box">
               {showEdit
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
                   <h2 id='post-title' className='is-size-3'>{post.title}</h2>
