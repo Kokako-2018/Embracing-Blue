@@ -49,8 +49,18 @@ class Header extends React.Component {
             </div>
           </div>
         </section>
-
-        <nav className="navbar has-background-grey-lighter">
+        
+        
+       <section className="hero is-light is-light">
+         <div className="hero-body">
+            <div className="container has-text-centered">
+              <h1 className="title is-1">{this.props.title}</h1>
+                <p className="subtitle is-3">A mental health resource for all Kiwis</p>
+               </div>
+             </div>
+           </section>
+        
+         <nav className="navbar has-background-grey-lighter">
 
           <div className='leftnav navbar-item'>
 
@@ -67,6 +77,7 @@ class Header extends React.Component {
                   </span>
                 </button>
               </div>
+              
               <div className="dropdown-menu" id="dropdown-menu3" role="menu">
                 <div className="dropdown-content">
                   <Link to="/anxiety" className="dropdown-item">Anxiety</Link>
@@ -74,7 +85,7 @@ class Header extends React.Component {
                   <Link to="/prevention" className="dropdown-item">Prevention</Link>
                 </div>
               </div>
-            </div>
+             </div>
 
             <div className="navbar-item dropdown is-hoverable">
               <div className="dropdown-trigger">
