@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import EditPost from './EditPost'
 
-
+import Comments from './Comments'
 
 
 import { apiEditPost, apiDeletePost } from '../../actions/posts'
@@ -15,12 +15,9 @@ class Posts extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      editPostTarget: null
+      editPostTarget: null,
+      showCommentsForPostId: null
     }
-  }
-
-  componentWillReceiveProps({ posts }) {
-    this.setState({ posts })
   }
 
   toggleEdit(post) {
@@ -28,38 +25,52 @@ class Posts extends React.Component {
     this.setState({ editPostTarget: post })
   }
 
-  
+  showComments(postId) {
+    if (this.state.showCommentsForPostId == postId) postId = null
+    this.setState({ showCommentsForPostId: postId })
+  }
 
   render() {
 
-    let {posts} = this.props
+    let { posts } = this.props
 
     return (
-      
+
       <div className='box'>
         <div className='content'>
           <h1 className='story is-size-2'>Stories</h1>
         </div>
 
         <div className='posts'>
-        
+
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
-            return <div id='post' className="post box">
+            const showComments = this.state.showCommentsForPostId
+
+            return <div id='post box'>
+
               {showEdit
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
-                  <h2 id='post-title' className='is-size-3'>{post.title}</h2>
-                  <p id='post-para' className='is-size-5'>{post.thread_content}</p>
+                  <h2 className='post-title is-size-3'>{post.title}</h2>
+                  <p className='post-para is-size-5'>{post.thread_content}</p>
                 </div>
               }
-              
-              <button id='post-button' className='button is-primary is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
-              <button id='post-button' className='button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
-              <button id='post-button' className='button is-primary is-centered' onClick={() => this.props.dispatch(apiGetAllComments(comment.id))}>View Comments</button>
+
+              {showComments
+                ? <Comments post_id={post.id} submit={() => this.showComments(null)} />
+                : ''}
+
+              <button className='post-button button is-primary is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+
+              <button className='post-button button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>
+
+              <button id='comment-button' className='post-button button is-primary is-centered' onClick={() => this.showComments(post.id)}>{showComments ? 'Hide Comments' : 'View Comments'}</button>
+
             </div>
 
           })}
+
         </div>
 
       </div>
