@@ -8,13 +8,13 @@ const Resources = () => {
             <div>
                 
                 
-                {/* <img className="is-flex-mobile" src="banners/frontpageBanner1.png" /> */}
-                <div className="has-text-centered">
-                    <h1 className="title is-size-1">
+                {/* <img className="is-flex-mobile" src="banners/frontpageBanner1.png" />  */}
+                   <div className="has-text-centered">
+                    <h1 className="title is-size-1"> 
                         <span className="has-text-info">One in six</span> Kiwi adults
                     </h1>
                     <h3 className="subtitle is-size-3">will receive a mental health diagnosis in their lifetime.</h3>    
-                </div>    
+                </div>   
                 
                 
                 <div className="section columns marginCircles is-flex-mobile">

@@ -21,7 +21,7 @@ export default class Lgbt extends React.Component {
 
         </div>
 
-        <Link to='/'><button className='button is-primary is-centered'>Back</button></Link>
+        <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
 
       </div>
     )

@@ -10,10 +10,10 @@ class Tile extends React.Component {
             
                 <div id='card' className="card">
                     <a href="" >
-                        <div className="card-image card-shadow img">
+                        <div className="card-image card-shadow img justify-content: center">
                             <img src={this.props.src} />
                         </div>
-                        <div className="card-content has-background-info">
+                        <div className="card-content has-background-info has-text-light has-text-weight-bold is-size-3 has-text-centered">
                             {this.props.linkText}
                         </div>
                     </a>

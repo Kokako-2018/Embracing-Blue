@@ -88,7 +88,7 @@ class Header extends React.Component {
                 <div className="dropdown-trigger">
                   <button className="button has-background-link has-text-light" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>Identities</span>
-                    <span className="icon is-small">
+                    <span className="icon is-medium">
                       <i className="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </button>
@@ -124,8 +124,8 @@ class Header extends React.Component {
               {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
               {!auth.isAuthenticated
                 ? [
-                  <Link key={1} className="navbar-item" to="/register">Register</Link>,
-                  <Link key={2} className="navbar-item" to="/login">Login</Link>
+                  <Link key={1} className="navbar-item has-text-light" to="/register">Register</Link>,
+                  <Link key={2} className="navbar-item has-text-light" to="/login">Login</Link>
 
               ]
               :

@@ -21,7 +21,7 @@ class Anxiety extends React.Component {
                         Anxiety is common, but the sooner people with anxiety get support, the more likely they are to recover.
                     </p>
                 </div>
-                <Link to='/'><button className='button is-primary is-centered'>Back</button></Link>
+                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
             </div>
 
 
