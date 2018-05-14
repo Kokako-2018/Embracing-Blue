@@ -10,6 +10,13 @@ const Depression = () => {
                     <img src="/resourcesImgs/depression.jpg"/>
                 </figure>
 
+            <div className="has-text-centered">
+                    <h1 className="title is-size-1">
+                        <span className="has-text-info">One in seven New Zealanders</span> 
+                    </h1>
+                    <h3 className="subtitle is-size-3"> will experience depression before the age of 24.</h3>
+                </div>
+
                 {/* TODO: still to work on alignment of the section below, probably add padding */}
                 <div className="section">
                     <p className="is-size-3">What is depression? </p>
