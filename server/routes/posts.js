@@ -89,6 +89,7 @@ router.put('/posts/:id/comments/:comment_id', function (req, res) {
 })
 
 router.delete('/posts/:id/comments/:comment_id', function (req, res) {
+  console.log(req.params)
   comments.deleteComment(req.params.comment_id,)
     .then(post => {
       res.json(post)

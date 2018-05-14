@@ -29,6 +29,8 @@ export const deleteCommentAction = (id) => {
   }
 }
 
+
+
 export function apiGetAllComments (id, cb) {
   // return (dispatch) => {
     request
@@ -36,7 +38,6 @@ export function apiGetAllComments (id, cb) {
       .end(cb)                            // the res.body of all the comments
   // }
 }
-
 
 export function apiAddComment (id, comment) {
   return (dispatch) => {
@@ -48,7 +49,7 @@ export function apiAddComment (id, comment) {
           console.error(err.message)
           return
         }
-        dispatch(addComment(res.body))
+        dispatch(addCommentAction(res.body))
       })
   }
 }
@@ -63,21 +64,23 @@ export function apiEditComment (id, comment) {
           console.error(err.message)
           return
         }
-        dispatch(editComment(res.body))
+        dispatch(editCommentAction(res.body))
       })
   }
 }
 
-export function apiDeleteComment (id, comment) {
+export function apiDeleteComment (postId, commentId, cb) {
   return (dispatch) => {
+    console.log({commentId})
     request
-      .delete(`/api/posts/${id}/comments/${comment.id}`)
+      .delete(`/api/posts/${postId}/comments/${commentId}`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)
           return
         }
-        dispatch(deleteComment(res.body))
+        cb(err)
+        // dispatch(deleteCommentAction(commentId))
       })
   }
 }
