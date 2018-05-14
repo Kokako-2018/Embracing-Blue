@@ -31,10 +31,10 @@ class Login extends React.Component {
         <h1 id='form-title' className="title is-2 has-text-centered">Login</h1>
         <hr />
         {/* {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>} */}
-        <label id='form-input' className="label is-large has-text-centered">Username
+        <label id='form-input' className="form-input label is-large has-text-centered">Username
           <input required className="input has-text-centered is-large" placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails}/>
         </label>
-        <label  id='form-input' className="label is-large has-text-centered">Password
+        <label  id='form-input' className="form-input label is-large has-text-centered">Password
           <input required className="input has-text-centered is-large" placeholder="Password" type="password" name="password" onChange={this.updateDetails}/>
         </label>
         <div className='buttons'>
