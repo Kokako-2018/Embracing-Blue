@@ -8,10 +8,10 @@ class Tile extends React.Component {
             <div className="column">
                 <div id='card' className="card">
                     <a href="" >
-                        <div className="card-image card-shadow">
+                        <div className="card-image card-shadow img">
                             <img src={this.props.src}/>
                         </div>
-                        <div className="card-content">
+                        <div className="card-content" className="has-background-info">
                             {this.props.linkText}
                         </div>
                     </a>

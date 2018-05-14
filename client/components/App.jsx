@@ -67,17 +67,17 @@ class App extends React.Component {
             <Route exact path="/" render={
               () => {
                 return (
-                  <div>
-                    <div className="columns">
-                      <Link className="column" to="/Young"><Tile src="identity/youth2.jpeg" linkText="Young" /></Link>
-                      <Link className="column" to="/Women"><Tile src="identity/woman1.jpeg" linkText="Women" /></Link>
-                      <Link className="column" to="/Men"><Tile src="identity/men1.jpeg" linkText="Men" /></Link>
+                  <div className="section">
+                    <div className="columns card-content">
+                      <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Young"  /></Link>
+                      <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
+                      <Link className="column" to="/Men"><Tile src="images/men2.jpg" linkText="Men" /></Link>
                     </div>
 
                     <div className="columns" >
-                      <Link className="column" to="Old"><Tile src="identity/grandma2.jpeg" linkText="Old" /></Link>
-                      <Link className="column" to="LGBT"> <Tile src="identity/lgbt2.jpeg" linkText="LGBT" /></Link>
-                      <Link className="column" to="Multicultural"><Tile src="identity/multicultural1.jpeg" linkText="Multicultural" /></Link>
+                      <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
+                      <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
+                      <Link className="column" to="Multicultural"><Tile src="images/multi.jpg" linkText="Multicultural" /></Link>
                     </div>
                   </div>
 
