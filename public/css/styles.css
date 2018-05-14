@@ -1,173 +1,28 @@
-/* body {
-  background-color: "blue";
-}
-
-button {
-  background-color: "red";
-}
-
-.tile {
-
-  display: inline-block;
-  margin: 20px;
-}
-
-.tileImage {
-
-  height: 250px;
-  width: 430px;
-}
-
-.linkText {
-
-  position: absolute;
-  margin-top: -44px;
-  background-color: white;
-  padding: 10px;
-  text-align: center;
-  margin-left: 2px;
-  margin-right: 2px;
-
-}
 .navlink {
   margin: 10px;
   padding: 10px;
   display: inline-block;
 }
 
-.header {
-
-  background-color: lightblue
-}*/
-/* .clickable-color {
-  background-color: darkorchid;
-} */
-
-<<<<<<< HEAD
-/* .header-title {
-  text-align: center;
-  font-size: 50px;
-}  */
-=======
-
 .header-title {
   text-align: center;
   font-size: 50px;
-}
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
-
-/* .infoButton {
-  width: 200px;
-  display:inline-block;
-} */
-
- /* .tileDiv {
-
-  display: inline-block;
-  margin: 10px;
-   padding: 100px; 
-   margin: -77px; 
-}
-
-   .tileImage { 
-
-  height: 254px;
-  width: 400px;
-  padding: 23px;
-<<<<<<< HEAD
-  
-}   */
-=======
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
-
 }
 
 .searchbar {
   margin-top: 1.5%;
 }
-/* .navLink {
 
-  display: inline-block;
-  margin: 10px;
-} */
 
-/* .linkText {
-
-  position: absolute;
-  margin-top: -75px;
-  background-color: white;
-  padding: 10px;
-  text-align: center;
-  margin-left: 26px;
-  margin-right: 2px;
-  width: 374px;
-  color: red;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: x-large;
-  font-weight: bold;
-} */
-<<<<<<< HEAD
-
- .justify-center {
-  justify-content: center;
-} 
-
-/* .card-shaddow {
-  width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)
-} */
-
-  /* #selector {
-    width:100%;
-    height:100%;
-} 
-
- h1 {
-	font-family: Anton; 
-	font-size: 48px;
-=======
-/*
 .justify-center {
   justify-content: center;
-} */
+} 
 
-.card-shadow {
-  width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)
-} */
-
-/* #selector {
-    width:100%;
-    height:100%;
-} */
-
-h1 {
-	font-family: 'Roboto Slab', serif;
-	font-size: 60px;
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-  line-height: 26.4px;
-<<<<<<< HEAD
-  padding-top: 400px;
-}  */
-=======
-}
->>>>>>> b552daf44ef99176a87e69f3a263cc3f1ca9c252
-
-/* h2 {
-  font-family: "Merriweather";
-	font-size: 80px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-  line-height: 26.4px;
-  padding-top: 400px;
-} */
 
 .title {
   font-size: 300px;
   margin-top: 5%;
-}
+} 
 
 .subtitle {
   padding-top: 2%;
@@ -182,7 +37,7 @@ h1 {
 #reg-input {
   margin-left: 5%;
   margin-right: 15%;
-}
+} 
 
 #submit-auth {
   margin: 0 auto;
@@ -207,7 +62,8 @@ h1 {
 #page-title {
   padding-top: 2%;
   padding-bottom: 2%;
-}
+} 
+
 
 #paras {
   margin-top: 3%;
@@ -230,7 +86,7 @@ h1 {
 
 #post{
   margin-left: 5%
-}
+} 
 
 .story {
   text-align: center;
@@ -238,37 +94,23 @@ h1 {
 }
 
 .resources {
-  margin-top: 5%;
-  margin-bottom: 8%;
+  /* margin-top: 21%; */
+  /* margin-bottom: 8%; */
+  width: 90%;
 }
-.has-background-info {
+
+/* .has-background-info {
   line-height: 1.5;
-  color: white;
-  
-  
-}
+  color: white;  
+} */
  
 .card-image img {
   height: 240px;
-  
-  
-  
-}
-a {
-
-  text-align: center;
-  font-size: 2rem;
-  
-}
+} 
 
 .card {
-  border: 2px solid  #679dc1;
+  border: 2px solid #679dc1;
 }
-/* .card-image card-shadow women {
-  height: 392px;
-} */
-
-
 
 /* Style all font awesome icons */
 .fa {
@@ -279,12 +121,12 @@ a {
   text-decoration: none;
   border-radius: 50%;
 
-}
+} 
 
-/* Add a hover effect if you want */
+/* Add a hover effect if you want*/
 .fa:hover {
   opacity: 0.7;
-}
+} 
 
 /* Set a specific color for each brand */
 
@@ -302,12 +144,29 @@ a {
 .fa-twitter {
   background: #55ACEE;
   color: white;
-}
+} 
 
+/* 
 .is-pulled-left {
   font-size: 2em;
+} */
+
+.bannerWidth { 
+  width:710px;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
-.footer {
-  margin-top: 10%;
+.hero-is-light{
+  background-color:  #3590ce;
 }
+
+.marginCircles {
+  margin-top: 60px;
+}
+
+.hero-body {
+  padding:1rem;
+  margin-top: -3rem;
+  height:265px;
+} 

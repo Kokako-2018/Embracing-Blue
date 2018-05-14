@@ -50,15 +50,12 @@ class App extends React.Component {
             </div>
 
             {/* resources button class */}
-            <div className="resources">
-              <div>
-                <Route exact path="/" component={Resources} />
-              </div>
-            </div>
-
-            <Route className="column" exact path="/anxiety" component={Anxiety} />
-            <Route className="column" exact path="/depression" component={Depression} />
-            <Route className="column" exact path="/prevention" component={Prevention} />
+            
+            <Route exact path="/" component={Resources} />
+            
+            <Route className="column is-one-fifth" exact path="/anxiety" component={Anxiety} />
+            <Route className="column is-half" exact path="/depression" component={Depression} />
+            <Route className="column is-half" exact path="/prevention" component={Prevention} />
 
             <Route path='/posts' component={PostForm} />
             <Route path='/posts' component={Posts} />
@@ -67,19 +64,27 @@ class App extends React.Component {
             <Route exact path="/" render={
               () => {
                 return (
-                  <div className="section">
-                    <div className="columns card-content">
-                      <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Young"  /></Link>
-                      <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
-                      <Link className="column" to="/Men"><Tile src="images/men2.jpg" linkText="Men" /></Link>
+                  <div className="section is-paddingless">
+
+                    <div className="column">
+                      <h1 className="has-text-centered is-size-3 has-text-weight-bold has-text-info">Information For</h1>
                     </div>
 
-                    <div className="columns" >
-                      <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
-                      <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
-                      <Link className="column" to="Māori"><Tile src="images/multi.jpg" linkText="Māori" /></Link>
+                    <div className="section is-paddingless">
+                      
+                      <div className="columns card-content">
+                        <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Young"  /></Link>
+                        <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
+                        <Link className="column" to="/Men"><Tile src="images/men2.jpg" linkText="Men" /></Link>
+                      </div>
+
+                      <div className="columns card-content" >
+                        <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
+                        <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
+                        <Link className="column" to="Māori"><Tile src="images/multi.jpg" linkText="Māori" /></Link>
+                      </div>
                     </div>
-                  </div>
+                  </div>  
 
                 )
               }
