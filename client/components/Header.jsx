@@ -33,102 +33,113 @@ class Header extends React.Component {
 
       <header className="header">
 
-        {(showConfirmLogout ) && <ConfirmLogout close={this.toggleConfirmLogout} />}
-        <section className="hero is-primary">
+        {/* {(showConfirmLogout ) && <ConfirmLogout close={this.toggleConfirmLogout} />}
+        
 
           <div className="hero-body">
             {auth.isAuthenticated && <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
-          </div>
+          </div> */}
+        
+        
+        <section className="has-text-link">
+          {(showConfirmLogout ) && <ConfirmLogout close={this.toggleConfirmLogout} />}
+        
+
+          {/* <div className="hero-body"> */}
+          
+          {/* </div> */}
+            <div className="hero-body has-background-info">
+                <div className="container has-text-centered ">
+                  <h1 className="title is-1 has-text-light">{this.props.title}</h1>
+                  <p className="subtitle is-3">A mental health resource for all Kiwis</p>
+                  
+                </div>                
+             </div>
         </section>
         
-       <section className="hero is-light is-light">
-         <div className="hero-body">
-            <div className="container has-text-centered">
-              <h1 className="title is-1">{this.props.title}</h1>
-                <p className="subtitle is-3">A mental health resource for all Kiwis</p>
-               </div>
-             </div>
-           </section>
-        
-         <nav className="navbar has-background-grey-lighter">
+         <nav className="navbar has-background-link">
 
-          <div className='leftnav navbar-item'>
+            <div className='leftnav navbar-item'>
 
-            <Link className="navbar-item" to="/">Home</Link>
-            <Link className="navbar-item" to="/ourStories">Our Stories</Link>
-            <Link className="navbar-item" to="/posts">Forum</Link>
+              <Link className="navbar-item has-text-light" to="/">Home</Link>
+              <Link className="navbar-item has-text-light" to="/ourStories">Our Stories</Link>
+              <Link className="navbar-item has-text-light" to="/posts">Forum</Link>
 
-            <div className="navbar-item dropdown is-hoverable">
-              <div className="dropdown-trigger">
-                <button className="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                  <span>Resources</span>
-                  <span className="icon is-small">
-                    <i className="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              
-              <div className="dropdown-menu" id="dropdown-menu3" role="menu">
-                <div className="dropdown-content">
-                  <Link to="/anxiety" className="dropdown-item">Anxiety</Link>
-                  <Link to="/depression" className="dropdown-item">Depression</Link>
-                  <Link to="/prevention" className="dropdown-item">Prevention</Link>
+              <div className="navbar-item dropdown is-hoverable">
+                <div className="dropdown-trigger">
+                  <button className="button has-background-link has-text-light" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Resources</span>
+                    <span className="icon is-small">
+                      <i className="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                
+                <div className="dropdown-menu" id="dropdown-menu3" role="menu">
+                  <div className="dropdown-content">
+                    <Link to="/anxiety" className="dropdown-item">Anxiety</Link>
+                    <Link to="/depression" className="dropdown-item">Depression</Link>
+                    <Link to="/prevention" className="dropdown-item">Prevention</Link>
+                  </div>
                 </div>
               </div>
-             </div>
 
-            <div className="navbar-item dropdown is-hoverable">
-              <div className="dropdown-trigger">
-                <button className="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                  <span>Identities</span>
-                  <span className="icon is-small">
-                    <i className="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div className="dropdown-menu" id="dropdown-menu3" role="menu">
-                <div className="dropdown-content">
-                  <Link to="/young" className="dropdown-item">Young</Link>
-                  <Link to="/women" className="dropdown-item">Women</Link>
-                  <Link to="/men" className="dropdown-item">Men</Link>
-                  <Link to="/old" className="dropdown-item">Old</Link>
-                  <Link to="/LGBT" className="dropdown-item">LGBT</Link>
-                  <Link to="Māori/" className="dropdown-item">Māori</Link>
+              <div className="navbar-item dropdown is-hoverable">
+                <div className="dropdown-trigger">
+                  <button className="button has-background-link has-text-light" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Identities</span>
+                    <span className="icon is-small">
+                      <i className="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+
+                <div className="dropdown-menu  has-background-info" id="dropdown-menu3" role="menu">
+                  <div className="dropdown-content">
+                    <Link to="/young" className="dropdown-item">Young</Link>
+                    <Link to="/women" className="dropdown-item">Women</Link>
+                    <Link to="/men" className="dropdown-item">Men</Link>
+                    <Link to="/old" className="dropdown-item">Old</Link>
+                    <Link to="/LGBT" className="dropdown-item">LGBT</Link>
+                    <Link to="Māori/" className="dropdown-item">Māori</Link>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
+            <div className='navbar-item navbar-end'>
 
-          <div className='navbar-item navbar-end'>
+              <div className="searchbar field has-addons navbar-item">
+                <div className="control">
+                  <input className="input" type="text" placeholder="Find a story" />
+                </div>
+                <div className="control">
+                  <a className="button is-info tabindex=8">
+                    Search
+                </a>
+                </div>
+              </div>
 
-            <div className="searchbar field has-addons navbar-item">
-              <div className="control">
-                <input className="input" type="text" placeholder="Find a story" />
-              </div>
-              <div className="control">
-                <a className="button is-info tabindex=8">
-                  Search
-              </a>
-              </div>
+              {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
+              {!auth.isAuthenticated
+                ? [
+                  <Link key={1} className="navbar-item" to="/register">Register</Link>,
+                  <Link key={2} className="navbar-item" to="/login">Login</Link>
+
+              ]
+              :
+              <Link className="navbar-itemn has-text-light" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
+
+              }
+
             </div>
 
-            {/* //auth.... is checking whether someone is logged in or not. If they've registered it will execute the code after the : otherwise will execute code after ?  */}
-            {!auth.isAuthenticated
-              ? [
-                <Link key={1} className="navbar-item" to="/register">Register</Link>,
-                <Link key={2} className="navbar-item" to="/login">Login</Link>
+          </nav>
 
-            ]
-            :
-            <Link className="navbar-item" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
-
-            }
-
+          <div className="is-pulled-right is-size-5 has-text-weight-bold">
+            {auth.isAuthenticated && <span className="">Welcome {auth.user.user_name}</span>} 
           </div>
-
-        </nav>
-
 
       </header>
 
