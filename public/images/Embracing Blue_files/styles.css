@@ -201,16 +201,18 @@ h2 {
   margin-bottom: 8%;
 }
 .has-background-info {
-  line-height: 1.5;
+  line-height: 2.0;
   color: white;
-  
+  background-color: #679dc1 !important;
+  border:2px solid  #679dc1;
+}
+.columns{
+  padding:1.60rem;
   
 }
- 
-.card-image img {
-  height: 240px;
-  
-  
+.card-image {
+  height: 255px;
+  border: 2px solid  #679dc1;
   
 }
 a {
@@ -219,10 +221,7 @@ a {
   font-size: 2rem;
   
 }
-
-.card {
-  border: 2px solid  #679dc1;
-}
-/* .card-image card-shadow women {
+.card-image card-shadow women {
   height: 392px;
-} */
+}
+

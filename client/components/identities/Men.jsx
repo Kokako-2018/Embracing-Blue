@@ -6,7 +6,7 @@ export default class Men extends React.Component {
         return (
             <div className='section'>
                 <figure className="image">
-                    <img src ="identity/men1.jpeg"/>
+                    <img src ="identity/groupofmen.jpg"/>
                  </figure>
                 <div className="section">
                     <p id='paras' className="is-size-3"><b>Men</b></p>
