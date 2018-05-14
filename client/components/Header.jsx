@@ -40,16 +40,6 @@ class Header extends React.Component {
             {auth.isAuthenticated && <p className="is-pulled-left">Welcome {auth.user.user_name}</p>}
           </div>
         </section>
-
-        <section className="hero is-light is-bold">
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <h1 className="title is-1">{this.props.title}</h1>
-              <p className="subtitle is-3">A mental health resource for all Kiwis</p>
-            </div>
-          </div>
-        </section>
-        
         
        <section className="hero is-light is-light">
          <div className="hero-body">
@@ -103,7 +93,7 @@ class Header extends React.Component {
                   <Link to="/men" className="dropdown-item">Men</Link>
                   <Link to="/old" className="dropdown-item">Old</Link>
                   <Link to="/LGBT" className="dropdown-item">LGBT</Link>
-                  <Link to="Multicultural/" className="dropdown-item">Multicultural</Link>
+                  <Link to="Māori/" className="dropdown-item">Māori</Link>
                 </div>
               </div>
             </div>

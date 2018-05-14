@@ -58,7 +58,7 @@ As a user:
 * Women.jsx
 * Men.jsx
 * Lbgt.jsx
-* Multicultural.jsx
+* Māori.jsx
 * Old.jsx
 
 
@@ -112,7 +112,7 @@ Store will be in the index.js in clients side
 * router.get('/women')
 * router.get('/men')
 * router.get('/lgbt')
-* router.get('/multicultural')
+* router.get('/Māori')
 * router.get('/old')
 
 ## posts.js
