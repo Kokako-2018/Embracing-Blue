@@ -95,16 +95,15 @@ class Register extends React.Component {
   }
 
   // validatePassword(pass) {
-  //   var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  //   var isPasswordValid = re.test(String(pass));
-  //   return isPasswordValid
+  // var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  // var isPasswordValid = re.test(String(pass));
+  // return isPasswordValid
   // }
 
   renderProgressBar() {
-    const {password_strength} = this.state
-    
+    const { password_strength } = this.state
     let progressClass = 'danger'
-    switch(password_strength) {
+    switch (password_strength) {
       case 2: progressClass = 'warning'; break;
       case 3: progressClass = 'info'; break;
       case 4: progressClass = 'success'; break;
@@ -119,37 +118,37 @@ class Register extends React.Component {
   render() {
     const { auth } = this.props
     return (
-      <form className="section column is-6 is-offset-3" onSubmit={this.submit}>
+      <form className="section column is-8 is-offset-1" onSubmit={this.submit}>
         <h1>Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
 
         <label className="label">Username
-          <input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
+<input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
         </label >
 
         <label className="label">Contact Number
-          <input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
+<input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
 
         </label>
 
         <label className="label">Email Address
-          <input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
+<input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
         </label>
 
         <div className="columns">
           <label className="column is-6 label">Password
-            <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
-          </label>
-          <label className="column is-6 label">
-            Confirm Password
-            <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium `} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
+<input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
+          {/* </label>
+          <label className="column is-6 is-offset-1 label"> */}
+          Confirm Password
+<input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
           </label>
         </div>
 
-      {this.renderProgressBar()}
-         {/* </div> */}
-      <input className="button is-primary" value="Register" type="submit" />
+        {this.renderProgressBar()}
+        {/* </div> */}
+        <input className="button is-primary" value="Register" type="submit" />
 
       </form >
     )
@@ -160,10 +159,11 @@ const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by pr
 
 //Structurin Mehn!
 // function mapStateToProps (state) {
-//   var auth = state.auth
-//   return {
-//     auth: auth
-//   }
+// var auth = state.auth
+// return {
+// auth: auth
+// }
 // }
 
 export default connect(mapStateToProps)(Register)
+
