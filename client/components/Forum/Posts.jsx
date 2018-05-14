@@ -47,7 +47,7 @@ class Posts extends React.Component {
             const showEdit = this.state.editPostTarget == post
             const showComments = this.state.showCommentsForPostId
 
-            return <div id='post'>
+            return <div id='post box'>
 
               {showEdit
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
