@@ -29,18 +29,12 @@ export const deleteCommentAction = (id) => {
   }
 }
 
-export function apiGetAllComments (id) {
-  return (dispatch) => {
+export function apiGetAllComments (id, cb) {
+  // return (dispatch) => {
     request
       .get(`/api/posts/${id}/comments`) //this is where we are sending the request to
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
-        dispatch(receiveComments(res.body)) // dispatches an action object - which will receive
-      })                                    // the res.body of all the comments
-  }
+      .end(cb)                            // the res.body of all the comments
+  // }
 }
 
 

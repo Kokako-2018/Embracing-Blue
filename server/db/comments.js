@@ -6,7 +6,8 @@ var db = Knex(config)
 function getComments(post_id, testDb) {
   const conn = testDb || db
   return conn('comments')
-    //.where({post_id, is_approved: true})
+    .where({post_id})
+    // .where({post_id, is_approved: true})
     .select()
 }
 
