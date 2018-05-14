@@ -69,7 +69,9 @@ button {
 
 }
 
-
+.searchbar {
+  margin-top: 1.5%;
+}
 /* .navLink {
 
   display: inline-block;
@@ -94,7 +96,7 @@ button {
 /*
 .justify-center {
   justify-content: center;
-}
+} */
 
 .card-shadow {
   width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)
@@ -202,6 +204,7 @@ h2 {
 }
 
 
+
 /* Style all font awesome icons */
 .fa {
   padding: 20px;
@@ -234,4 +237,8 @@ h2 {
 .fa-twitter {
   background: #55ACEE;
   color: white;
+
+.is-pulled-left {
+  font-size: 2em;
 }
+
