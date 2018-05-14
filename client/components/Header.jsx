@@ -4,7 +4,7 @@ import { Router, Route, Link } from 'react-router-dom'
 import Login from './auth/Login'
 import { logoutUser } from '../actions/logout'
 
-import ConfirmLogout from './ConfirmLogout'
+import ConfirmLogout from './auth/ConfirmLogout'
 
 class Header extends React.Component {
 

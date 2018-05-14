@@ -2,7 +2,7 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
-import {logoutUser} from '../actions/logout'
+import {logoutUser} from '../../actions/logout'
 
 class ConfirmLogout extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class ConfirmLogout extends React.Component {
             {loggedOut
               ? <div className="has-text-centered">
                 <p className="subtitle is-2">You are Logged Out</p>
-                <button onClick={close} className="button is-success is-fullwidth is-large">Close</button>
+                <button onClick={close} className="button is-primary is-fullwidth is-large">Close</button>
               </div>
               : <div className="columns">
                 <button onClick={close} className="button is-large column is-6">Cancel</button>
