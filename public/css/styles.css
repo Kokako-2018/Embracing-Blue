@@ -43,6 +43,7 @@ button {
   background-color: darkorchid;
 } */
 
+
 .header-title {
   text-align: center;
   font-size: 50px;
@@ -127,6 +128,7 @@ h2 {
 }
 
 .title {
+  font-size: 300px;
   margin-top: 5%;
 }
 
@@ -264,7 +266,11 @@ a {
   background: #55ACEE;
   color: white;
 }
+
 .is-pulled-left {
   font-size: 2em;
 }
 
+.footer {
+  margin-top: 10%;
+}
