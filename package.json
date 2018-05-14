@@ -31,8 +31,6 @@
   "devDependencies": {
     "enzyme": "^2.8.2",
     "jest": "^22.4.3",
-    "nodemon": "^1.11.0",
-    "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
   },
   "dependencies": {
@@ -56,16 +54,19 @@
     "jwt-decode": "^2.2.0",
     "knex": "^0.13.0",
     "nock": "^9.2.5",
+    "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "pg": "^6.2.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
+    "react-strongpassword": "^1.0.1",
     "react-test-renderer": "^15.5.4",
     "redux": "^3.6.0",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
+    "sqlite3": "^3.1.8",
     "superagent": "^2.2.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"

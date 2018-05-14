@@ -3,7 +3,7 @@ describe('my first test', function(){
         expect(true).to.equal(true)
     })
 })
-describe('testing the PostForm                                                                           ', function(){
+ describe('testing the PostForm                                                                           ', function(){
     it('visits the localhost3000', function(){
         cy.visit('http://localhost:3000/#/')
         cy.get('h1').should('contain', 'Embracing Blue')
@@ -23,8 +23,8 @@ describe('testing the PostForm                                                  
 })
 
  
-// describe('it gets the header', function(){
-//     it('will look for Embracing blue', function(){
-//         cy.get('h1').should('contain', 'Embracing Blue')
-//     })
-// })
+describe('it gets the header', function(){
+    it('will look for Embracing blue', function(){
+        cy.get('h1').should('contain', 'Embracing Blue')
+    })
+})

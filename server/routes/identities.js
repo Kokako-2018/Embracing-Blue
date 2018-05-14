@@ -4,7 +4,7 @@ const server = require('../server')
 const young = require('../db/young')
 const women = require('../db/women')
 const lgbt = require('../db/lgbt')
-const multicultural = require('../db/multicultural')
+const Māori = require('../db/Māori')
 const old = require('../db/old')
 
 
@@ -45,10 +45,10 @@ router.get('/lgbt', function (req, res) {
         })
 })
 
-router.get('/multicultural', function (req, res) {
-    young.getMulticultural()
-        .then(multicultural => {
-            res.json(multicultural)
+router.get('/maori', function (req, res) {
+    young.getMaori()
+        .then(maori => {
+            res.json(maori)
         })
         .catch(err => {
             console.log({err})

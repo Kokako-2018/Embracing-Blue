@@ -5537,6 +5537,10 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-strongpassword@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-strongpassword/-/react-strongpassword-1.0.1.tgz#685e04198182bc650d75d9ef026c0ff4aeec8849"
+
 react-test-renderer@^15.5.4:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.2.tgz#d0333434fc2c438092696ca770da5ed48037efa8"
