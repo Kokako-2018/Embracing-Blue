@@ -43,7 +43,6 @@ button {
   background-color: darkorchid;
 } */
 
-
 .header-title {
   text-align: center;
   font-size: 50px;
@@ -70,9 +69,7 @@ button {
 
 }
 
-.searchbar {
-  margin-top: 1.5%;
-}
+
 /* .navLink {
 
   display: inline-block;
@@ -97,7 +94,7 @@ button {
 /*
 .justify-center {
   justify-content: center;
-} */
+}
 
 .card-shadow {
   width:2px 3px rgba(black, 0.5), 0 0 0 1px rgba(black, 0.5)
@@ -128,7 +125,6 @@ h2 {
 }
 
 .title {
-  font-size: 300px;
   margin-top: 5%;
 }
 
@@ -205,16 +201,18 @@ h2 {
   margin-bottom: 8%;
 }
 .has-background-info {
-  line-height: 1.5;
+  line-height: 2.0;
   color: white;
-  
+  background-color: #679dc1 !important;
+  border:2px solid  #679dc1;
+}
+.columns{
+  padding:1.60rem;
   
 }
- 
-.card-image img {
-  height: 240px;
-  
-  
+.card-image {
+  height: 255px;
+  border: 2px solid  #679dc1;
   
 }
 a {
@@ -223,54 +221,7 @@ a {
   font-size: 2rem;
   
 }
-
-.card {
-  border: 2px solid  #679dc1;
-}
-/* .card-image card-shadow women {
+.card-image card-shadow women {
   height: 392px;
-} */
-
-
-
-/* Style all font awesome icons */
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa::before {
-  display: inline-block;
-}
-
-/* Twitter */
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.is-pulled-left {
-  font-size: 2em;
-}
-
-.footer {
-  margin-top: 10%;
-}
