@@ -16,13 +16,13 @@
 
 .justify-center {
   justify-content: center;
-} 
+}
 
 
 .title {
   font-size: 300px;
   margin-top: 5%;
-} 
+}
 
 .subtitle {
   padding-top: 2%;
@@ -37,7 +37,7 @@
 #reg-input {
   margin-left: 5%;
   margin-right: 15%;
-} 
+}
 
 #submit-auth {
   margin: 0 auto;
@@ -62,7 +62,7 @@
 #page-title {
   padding-top: 2%;
   padding-bottom: 2%;
-} 
+}
 
 
 #paras {
@@ -87,7 +87,7 @@
 
 #post{
   margin-left: 5%
-} 
+}
 
 .comment {
   margin-top: 1%;
@@ -107,12 +107,12 @@
 
 /* .has-background-info {
   line-height: 1.5;
-  color: white;  
+  color: white;
 } */
- 
+
 .card-image img {
   height: 240px;
-} 
+}
 
 .card {
   border: 2px solid #679dc1;
@@ -127,12 +127,12 @@
   text-decoration: none;
   border-radius: 50%;
 
-} 
+}
 
 /* Add a hover effect if you want*/
 .fa:hover {
   opacity: 0.7;
-} 
+}
 
 /* Set a specific color for each brand */
 
@@ -150,14 +150,14 @@
 .fa-twitter {
   background: #55ACEE;
   color: white;
-} 
+}
 
-/* 
+/*
 .is-pulled-left {
   font-size: 2em;
 } */
 
-.bannerWidth { 
+.bannerWidth {
   width:710px;
   margin-right: 20%;
   margin-left: 20%;
@@ -171,8 +171,12 @@
   margin-top: 60px;
 }
 
+.footer {
+  margin-top: 10%;
+}
+
 .hero-body {
   padding:1rem;
   margin-top: -3rem;
   height:265px;
-} 
+}

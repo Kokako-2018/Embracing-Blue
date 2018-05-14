@@ -34,9 +34,9 @@ class Register extends React.Component {
     let { user_name, password, confirm_password, email_address, contact_number } = this.state
     function confirmation() {
       if (confirm_password != password)
-        return false
+      return false
       else
-        return true
+      return true
     }
     console.log('Does password match?', confirmation())
 
@@ -124,46 +124,45 @@ class Register extends React.Component {
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
 
         <label className="label">Username
-<input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
-        </label >
+          <input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
+        </label>
 
         <label className="label">Contact Number
-<input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
+          <input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
 
         </label>
 
         <label className="label">Email Address
-<input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
+          <input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
         </label>
 
         <div className="columns">
           <label className="column is-6 label">Password
-<input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
-          {/* </label>
-          <label className="column is-6 is-offset-1 label"> */}
-          Confirm Password
-<input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
-          </label>
-        </div>
+            <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
+            {/* </label>
+              <label className="column is-6 is-offset-1 label"> */}
+              Confirm Password
+              <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
+            </label>
+          </div>
 
-        {this.renderProgressBar()}
-        {/* </div> */}
-        <input className="button is-primary" value="Register" type="submit" />
+          {this.renderProgressBar()}
+          {/* </div> */}
+          <input className="button is-primary" value="Register" type="submit" />
 
-      </form >
-    )
+        </form>
+      )
+    }
   }
-}
 
-const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
+  const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
 
-//Structurin Mehn!
-// function mapStateToProps (state) {
-// var auth = state.auth
-// return {
-// auth: auth
-// }
-// }
+  //Structurin Mehn!
+  // function mapStateToProps (state) {
+  // var auth = state.auth
+  // return {
+  // auth: auth
+  // }
+  // }
 
-export default connect(mapStateToProps)(Register)
-
+  export default connect(mapStateToProps)(Register)
