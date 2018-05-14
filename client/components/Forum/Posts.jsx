@@ -20,7 +20,6 @@ class Posts extends React.Component {
   }
 
   componentWillReceiveProps({ posts }) {
-    console.log(posts)
     this.setState({ posts })
   }
 
@@ -51,7 +50,6 @@ class Posts extends React.Component {
                 ? <EditPost post={post} submit={() => this.toggleEdit(null)} />
                 : <div>
                   <h2 id='post-title' className='is-size-3'>{post.title}</h2>
-                  <img className='post-image' src={post.image_url} />
                   <p id='post-para' className='is-size-5'>{post.thread_content}</p>
                 </div>
               }
