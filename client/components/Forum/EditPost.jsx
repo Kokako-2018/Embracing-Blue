@@ -29,28 +29,27 @@ class EditPost extends React.Component {
     let {newPost} = this.state
 
     return (
-      <form onSubmit={this.submitEdit.bind(this)}>
-      <h2>Add your story</h2>
-      <div className='form-container'>
-        <div>
-          <label>Title of Post</label>
-          <input name='title' type="text" value={newPost.title} onChange={this.editPostDetails}/>
-        </div>
+        <div className='field'>
+          <form onSubmit={this.submitEdit.bind(this)}>
+            <h2 className='column is-size-4'>Add your story</h2>
 
-        <div>
-          <label>Content</label>
-          <input name='thread_content' type="text" value={newPost.thread_content} onChange={this.editPostDetails}/>
-        </div>
+            <div className='form-container'>
 
-        <div>
-          <label>Photo:</label>
-          <input name='image_url' type="text" value={newPost.image_url} onChange={this.editPostDetails}/>
-        </div>
-        
-      </div>
+          <div className='field'>
+              <label className="label is-pulled-left">Title of Post</label>
+              <input className="input is-normal is-pulled-left" name='title' type="text" required="true" value={newPost.title} onChange={this.editPostDetails}/>
+          </div>
 
-      <input type="submit" value='Submit'/>
-    </form>
+          <div className='field'>
+              <label className="label is-pulled-left">Content</label>
+              <input className="input is-normal is-pulled-left" name='thread_content' type="text" required="true" value={newPost.thread_content} onChange={this.editPostDetails}/>
+          </div>
+
+
+          <input className="button is-primary" type="submit" value='Submit'/>
+        </div>
+          </form>
+        </div>
     )
   }
 }

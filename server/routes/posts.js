@@ -56,7 +56,7 @@ router.delete('/posts/:id', function (req, res) {
 })
 
 router.get('/posts/:id/comments', function (req, res) {
-  comments.getComments()
+  comments.getComments(req.params.id)
     .then(post => {
       res.json(post)
     })

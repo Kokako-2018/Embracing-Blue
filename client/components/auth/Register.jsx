@@ -11,11 +11,15 @@ class Register extends React.Component {
       contact_number: '',
       email_address: '',
       password: '',
-      confirm_password: ''
+      confirm_password: '',
+      password_strength: 0
     }
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
     this.validateEmail = this.validateEmail.bind(this)
+    //this.validatePassword = this.validatePassword.bind(this)
+    this.checkPassword = this.checkPassword.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this)
   }
   componentDidMount() {
     this.props.dispatch(loginError(''))
@@ -30,19 +34,26 @@ class Register extends React.Component {
     let { user_name, password, confirm_password, email_address, contact_number } = this.state
     function confirmation() {
       if (confirm_password != password)
-        return false
+      return false
       else
-        return true
+      return true
     }
     console.log('Does password match?', confirmation())
+
     const isEmail = this.validateEmail(email_address)
     const passwordsNotSame = (confirm_password != password)
+    console.log('heydff' + password)
+
+    const isPass = this.checkPassword(password) >= 1
 
     console.log('isEmail valid :' + isEmail)
     console.log('passwords not same:' + passwordsNotSame)
+    console.log('Is the password valid?' + isPass)
+    //console.log('hey',this.checkPassword())
 
-    if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError('Email/Password error'))
+    if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError("Incorrect email/Passwords don't match"))
     //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
+    else if (!isPass) return this.props.dispatch(loginError('Password strength must be 8 or above and must include atleast one number '))
     else return this.props.dispatch(registerUserRequest(this.state))
   }
 
@@ -54,66 +65,104 @@ class Register extends React.Component {
     return isValid
   }
 
+  checkPassword(password) {
+    console.log('hey' + password)
+    let strength = 0;
+    // var strength = this.state.password_strength;
+
+    if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) { //has lower or capital alphanumerals
+      strength += 1
+    }
+    if (password.match(/[~<>]+/)) { //has special characters
+      strength += 1
+    }
+    if (password.match(/[!@£$%^&()]+/)) { //has these special characters
+      strength += 1
+    }
+    if (password.length > 0) { //is longer than 0 chars
+      strength += 1
+    }
+    if (password.length > 10) {
+      strength += 1
+    }
+    return strength
+  }
+
+  handlePasswordChange(e) {
+    const password = e.target.value;
+    var strength = this.checkPassword(password)
+    this.setState({ password_strength: strength });
+  }
+
+  // validatePassword(pass) {
+  // var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  // var isPasswordValid = re.test(String(pass));
+  // return isPasswordValid
+  // }
+
+  renderProgressBar() {
+    const { password_strength } = this.state
+    let progressClass = 'danger'
+    switch (password_strength) {
+      case 2: progressClass = 'warning'; break;
+      case 3: progressClass = 'info'; break;
+      case 4: progressClass = 'success'; break;
+      case 5: progressClass = 'primary'; break;
+      default: progressClass = 'danger'
+
+    }
+    return <progress className={`progress is-${progressClass}`} max="100" value={(this.state.password_strength * 20)} id="strength"></progress>
+
+  }
+
   render() {
     const { auth } = this.props
     return (
-      <form onSubmit={this.submit}>
-        <h1 id='form-title' className='title is-2 has-text-centered'>Register</h1>
+      <form className="section column is-8 is-offset-1" onSubmit={this.submit}>
+        <h1>Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
 
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label id='label'>Username</label >
+        <label className="label">Username
+          <input className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
+        </label>
+
+        <label className="label">Contact Number
+          <input className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
+
+        </label>
+
+        <label className="label">Email Address
+          <input className="input is-medium" required placeholder="Email Address" type="text" name="email_address" onChange={this.updateDetails} />
+        </label>
+
+        <div className="columns">
+          <label className="column is-6 label">Password
+            <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
+            {/* </label>
+              <label className="column is-6 is-offset-1 label"> */}
+              Confirm Password
+              <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
+            </label>
           </div>
-          <input id='reg-input' className="input is-medium" required placeholder="User Name" type="text" name="user_name" onChange={this.updateDetails} />
-        </div>
 
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label id='label'>Contact Number</label>
-          </div>
-          <input id='reg-input' className="input is-medium" required placeholder="Contact Number" type="text" name="contact_number" onChange={this.updateDetails} />
-        </div>
+          {this.renderProgressBar()}
+          {/* </div> */}
+          <input className="button is-primary" value="Register" type="submit" />
 
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label id='label'>Email Address</label>
-          </div>
-          <input id='reg-input' className="input is-medium" required placeholder="Email Address" type="email" name="email_address" onChange={this.updateDetails} />
-        </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label id='label'>Password</label>
-          </div>
-          <input id='reg-input' className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} />
-        </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label id='label'>Confirm Password</label>
-          </div>
-          <input id='reg-input' className="input is-medium" required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
-        </div>
-
-        <div className='buttons'>
-          <input id='submit-auth' className="button is-primary" value="Register" type="submit" />
-        </div>
-
-      </form>
-    )
+        </form>
+      )
+    }
   }
-}
 
-const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
+  const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
 
-//Structurin Mehn!
-// function mapStateToProps (state) {
-//   var auth = state.auth
-//   return {
-//     auth: auth
-//   }
-// }
+  //Structurin Mehn!
+  // function mapStateToProps (state) {
+  // var auth = state.auth
+  // return {
+  // auth: auth
+  // }
+  // }
 
-export default connect(mapStateToProps)(Register)
+  export default connect(mapStateToProps)(Register)
