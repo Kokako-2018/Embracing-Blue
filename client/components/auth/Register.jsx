@@ -118,7 +118,7 @@ class Register extends React.Component {
   render() {
     const { auth } = this.props
     return (
-      <form className="section column is-8 is-offset-1" onSubmit={this.submit}>
+      <form className="section column is-6 is-offset-3 is-0" onSubmit={this.submit}>
         <h1>Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
@@ -137,12 +137,13 @@ class Register extends React.Component {
         </label>
 
         <div className="columns">
-          <label className="column is-6 label">Password
-            <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
-            {/* </label>
-              <label className="column is-6 is-offset-1 label"> */}
-              Confirm Password
-              <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
+          <label className="column is-6 label">
+             Password
+              <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
+            </label>
+              <label className="column is-6 label">
+                Confirm Password
+                <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
             </label>
           </div>
 
