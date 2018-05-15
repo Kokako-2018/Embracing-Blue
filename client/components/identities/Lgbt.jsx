@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { apiGetIdentitiesPage, apiEditIdentitiesPage } from '../../actions/pages'
+
+
+
 export default class Lgbt extends React.Component {
 
   render () {

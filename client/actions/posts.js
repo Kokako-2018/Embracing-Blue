@@ -1,6 +1,6 @@
 import request from 'superagent'
-
 import authRequest from '../utils/api'
+
 
 
 export const receiveAllPosts = (posts) => {
@@ -9,6 +9,7 @@ export const receiveAllPosts = (posts) => {
     posts
   }
 }
+
 
 export const addPostAction = (post) => {
   return {
@@ -26,13 +27,13 @@ export const editPostAction = (id, post) => {
   }
 }
 
+
 export const deletePostAction = (id) => {
   return {
     type: 'DELETE_POST',
     id
   }
 }
-
 
 
 export function apiGetAllPosts () {
@@ -50,7 +51,6 @@ export function apiGetAllPosts () {
 }
 
 
-
 export function apiAddPost (post, cb) { //cb = callback
   return (dispatch) => {
     authRequest('post', 'posts', post) //1st param = method, 2nd=end route, 3rd = data
@@ -64,6 +64,7 @@ export function apiAddPost (post, cb) { //cb = callback
   }
 }
 
+
 export function apiEditPost (id, post) {
   return (dispatch) => {
     authRequest('put', `posts/${id}`, post) //1st param = method, 2nd=end route, 3rd = data
@@ -75,6 +76,7 @@ export function apiEditPost (id, post) {
       })
   }
 }
+
 
 export function apiDeletePost (id) {
   return (dispatch) => {

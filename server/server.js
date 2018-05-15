@@ -16,7 +16,7 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 server.use('/api/auth', auth)
 server.use('/api/', posts)
-server.use('/api', pages)
+server.use('/api/', pages)
 
 
 
