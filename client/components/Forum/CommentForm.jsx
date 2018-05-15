@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {apiAddComment} from '../../actions/comments'
+import { apiAddComment } from '../../actions/comments'
 
 
 
@@ -11,7 +11,6 @@ class CommentForm extends React.Component {
     this.state = {
       errorMessage: null,
       comment: {
-        id: null,
         comment: ''
       },
       is_approved: false
@@ -21,28 +20,32 @@ class CommentForm extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({[e.target.name]: e.target.value})
+    const { comment } = this.state
+    comment[e.target.name] = e.target.value
+    this.setState({ comment })
   }
 
-  handleSubmit (e) {
-    e.preventDefault() 
-    const {comment} = this.state
-    this.setState({errorMessage: null})
-    this.props.dispatch(apiAddComment(comment))
-
+  handleSubmit(e) {
+    e.preventDefault()
+    const { comment } = this.state
+    this.setState({ errorMessage: null, comment: { comment: '' } })
+    this.props.dispatch(apiAddComment(this.props.post_id, comment, this.props.refreshComments))
+    this.props.close()
   }
 
 
-  render () {
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
+          className='input is-normal'
+          required
           type='text'
           name='comment'
-          value={this.state.comment}
-          onChange={this.handleChange()}
+          value={this.state.comment.comment}
+          onChange={this.handleChange}
         />
-        <input type='submit' />
+        <input className='button is-primary' type='submit' value='Add Comment' />
         {this.state.errorMessage && this.state.errorMessage}
       </form>
     )
