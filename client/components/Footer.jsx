@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
 	render() {
 		return (
 			<footer className="box has-background-white-ter">
-				<div className="container">
+				<div className="container .u-margin-top">
 					<div className="content has-text-centered">
 						<p>
 							<strong>Embracing Blue</strong> was built by Priya, Annette, Mark, Theta, Hameet, and Sam.
