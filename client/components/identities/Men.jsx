@@ -6,7 +6,7 @@ export default class Men extends React.Component {
         return (
             <div className='section'>
                 <figure className="image">
-                    <img src ="images/groupofmen3.jpg"/>
+                    <img src ="images/RealMen1.jpg"/>
                  </figure>
 
                 <div className="has-text-centered">
