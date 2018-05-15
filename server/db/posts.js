@@ -16,9 +16,9 @@ function addPost (post, testDb) {
   console.log({post})
   const conn = testDb || db
   return conn('posts')            //adding post to 'posts' table
-    .insert(post, 'id')
+    .insert(post, 'id')           //matches id comlumn with id
     .then(id => {
-      return conn('posts')     //matches id comlumn with id
+      return conn('posts')
         .where({id: id[0]})
         .first()
     })
