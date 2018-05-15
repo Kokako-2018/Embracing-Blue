@@ -20,6 +20,7 @@ import Women from './identities/Women'
 import Māori from './identities/Māori'
 import Lgbt from './identities/Lgbt'
 
+import Invite from './Forum/Invite'
 import PostForm from './Forum/PostForm'
 import Posts from './Forum/Posts'
 // import FooterComponent from './FooterComponent'
@@ -79,9 +80,9 @@ class App extends React.Component {
                       </div>
 
                       <div className="columns card-content" >
+                        <Link className="column  " to="Māori"><Tile src="images/maori4.jpg" linkText="Māori" /></Link>
                         <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Elders" /></Link>
                         <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBTQIA+" /></Link>
-                        <Link className="column  " to="Māori"><Tile src="images/maori.jpg" linkText="Māori" /></Link>
                       </div>
                     </div>
                   </div>  
@@ -99,7 +100,11 @@ class App extends React.Component {
               <Route exact path="/Māori"  component={Māori} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+
+              <Route exact path="/" component={Invite} />
+
               <Route exact path="/sitemap" component={SiteMap} />
+
 
             </div>
             <Footer />

@@ -54,7 +54,7 @@ class PostForm extends React.Component {
 
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label>Title of Post</label>
+                <label className="is-size-4">Title of Post</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -75,7 +75,7 @@ class PostForm extends React.Component {
 
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label>Content</label>
+                <label className="is-size-4">Content</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -96,7 +96,7 @@ class PostForm extends React.Component {
               {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
               <div className="control">
               {auth.isAuthenticated
-                ? <input className={`button is-primary ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
+                ? <input className={`button has-background-info ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit'/>
                 : <Link to="/login" className="button is-light has-text-info">Please Login</Link>
               }
                 </div>

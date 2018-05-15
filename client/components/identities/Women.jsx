@@ -6,7 +6,7 @@ export default class Women extends React.Component {
         return (
             <div className='section'>
             <figure className="image">
-            <img src ='https://images.law.com/contrib/content/uploads/sites/401/2017/12/Depressed-business-woman-Article-201712281924.jpg'/>
+            <img src ="images/women1.jpg"/>
             </figure>
 
 

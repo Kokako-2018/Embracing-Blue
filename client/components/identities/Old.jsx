@@ -6,7 +6,7 @@ export default class Old extends React.Component {
         return (
              <div className='section'>
                 <figure className="image">
-                <img src ='https://i.ytimg.com/vi/NGRfsO3fO_M/maxresdefault.jpg'/>
+                <img src ="images/oldperson.jpg"/>
                 </figure>
 
            <div className="has-text-centered">
