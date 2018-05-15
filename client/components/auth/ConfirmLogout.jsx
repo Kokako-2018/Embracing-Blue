@@ -29,8 +29,8 @@ class ConfirmLogout extends React.Component {
           <div className="modal-card-body">
             {loggedOut
               ? <div className="has-text-centered">
-                <p className="subtitle is-2">You are Logged Out</p>
-                <button onClick={close} className="button is-primary is-fullwidth is-large">Close</button>
+                <p className="subtitle is-2 is-Link">You are Logged Out</p>
+                <button onClick={close} className="button is-Link is-fullwidth is-large">Close</button>
               </div>
               : <div className="columns">
                 <button onClick={close} className="button is-large column is-6">Cancel</button>
