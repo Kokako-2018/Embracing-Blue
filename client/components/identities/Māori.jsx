@@ -7,7 +7,7 @@ export default class Māori extends React.Component {
 
             <div className='section'>
                 <figure className="image">
-                    <img src ='https://www.bridgeportedu.net/cms/lib/CT02210097/Centricity/Domain/367/multicultural-day_header-2.jpg'/>
+                    <img src ="images/maorisad.jpg"/>
                 </figure>
 
               <div className="has-text-centered">

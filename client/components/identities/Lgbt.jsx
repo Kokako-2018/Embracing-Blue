@@ -10,7 +10,7 @@ export default class Lgbt extends React.Component {
       <div className="section">
 
         <figure className="image">
-          <img src ='https://cimg.visitscotland.com/cms-images/about/lgbt-flag?size=md'/>
+          <img src ="images/lbgt.jpg"/>
         </figure>
 
         <div className="has-text-centered">
