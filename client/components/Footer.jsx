@@ -27,6 +27,9 @@ export default class Footer extends React.Component {
 						</span>
 						
 						{/* </a>   */}
+						<p>
+							<a href="/#/sitemap">Site Map </a>
+						</p>
 					</div>
 				</div>
 			</footer>
