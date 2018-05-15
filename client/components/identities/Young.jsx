@@ -30,8 +30,9 @@ export default class Young extends React.Component {
                         <span className="has-text-info">more than doubled.</span> 
                     </h1>
                 </div>
+        
+                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
 
-                <Link to='/'><button className='button is-primary is-centered'>Back</button></Link>
 
             </div>
         )
