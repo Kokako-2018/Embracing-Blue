@@ -75,13 +75,13 @@ class App extends React.Component {
                       <div className="columns card-content">
                         <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Young"  /></Link>
                         <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
-                        <Link className="column" to="/Men"><Tile src="images/men2.jpg" linkText="Men" /></Link>
+                        <Link className="column" to="/Men"><Tile src="images/man3.jpg" linkText="Men" /></Link>
                       </div>
 
                       <div className="columns card-content" >
                         <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
                         <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
-                        <Link className="column" to="Māori"><Tile src="images/multi.jpg" linkText="Māori" /></Link>
+                        <Link className="column  " to="Māori"><Tile src="images/maori.jpg" linkText="Māori" /></Link>
                       </div>
                     </div>
                   </div>  

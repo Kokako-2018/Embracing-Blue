@@ -62,11 +62,15 @@ class Posts extends React.Component {
                 ? <Comments post_id={post.id} submit={() => this.showComments(null)} />
                 : ''}
 
+<<<<<<< HEAD
               {canEdit == true && <button className='post-button button is-primary is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>}
+=======
+              <button className='post-button button has-background-info is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+>>>>>>> 2d5e284c6b7429eac6d1cbdca92c3ca040296e3e
 
               {canEdit == true &&<button className='post-button button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>}
 
-              <button id='comment-button' className='post-button button is-primary is-centered' onClick={() => this.showComments(post.id)}>{showComments ? 'Hide Comments' : 'View Comments'}</button>
+              <button id='comment-button' className='post-button button has-background-info is-centered' onClick={() => this.showComments(post.id)}>{showComments ? 'Hide Comments' : 'View Comments'}</button>
 
             </div>
 
