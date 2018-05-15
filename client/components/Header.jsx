@@ -70,7 +70,7 @@ class Header extends React.Component {
                   <button className="button has-background-link has-text-light" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>Resources</span>
                     <span className="icon is-small">
-                      <i className="fas fa-angle-down" aria-hidden="true"></i>
+                      <i className="jam jam-chevron-down" aria-hidden="true"></i>
                     </span>
                   </button>
                 </div>
@@ -89,7 +89,9 @@ class Header extends React.Component {
                   <button className="button has-background-link has-text-light" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>Identities</span>
                     <span className="icon is-medium">
-                      <i className="fas fa-angle-down" aria-hidden="true"></i>
+                      {/* <i className="fas fa-angle-down" aria-hidden="true"></i> */}
+                      <i className="jam jam-chevron-down" aria-hidden="true"></i>
+
                     </span>
                   </button>
                 </div>
@@ -129,7 +131,7 @@ class Header extends React.Component {
 
               ]
               :
-              <Link className="navbar-itemn has-text-light" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
+              <Link className="navbar-item has-text-light" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
 
               }
 

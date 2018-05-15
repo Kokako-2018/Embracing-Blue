@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+import authRequest from '../utils/api'
 
 
 export const receiveAllPosts = (posts) => {
@@ -50,47 +51,39 @@ export function apiGetAllPosts () {
 
 
 
-export function apiAddPost (post, cb) {
+export function apiAddPost (post, cb) { //cb = callback
   return (dispatch) => {
-    request
-      .post(`/api/posts`)
-      .send(post)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
+    authRequest('post', 'posts', post) //1st param = method, 2nd=end route, 3rd = data
+      .then(res => {
         dispatch(addPostAction(res.body))
-        cb(!err)
+        cb(!err)                        //callback if no error
+      })
+      .catch(err => {
+        console.error(err.message)
       })
   }
 }
 
 export function apiEditPost (id, post) {
   return (dispatch) => {
-    request
-      .put(`/api/posts/${id}`)
-      .send(post)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
+    authRequest('put', `posts/${id}`, post) //1st param = method, 2nd=end route, 3rd = data
+      .then(res => {
         dispatch(editPostAction(id, post))
+      })
+      .catch(err => {
+        console.error(err.message)
       })
   }
 }
 
 export function apiDeletePost (id) {
   return (dispatch) => {
-    request
-      .delete(`/api/posts/${id}`)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
+    authRequest('delete', `posts/${id}`) //1st param = method, 2nd=end route)
+      .then(res => {
         dispatch(deletePostAction(id))
+      })
+      .catch(err => {
+        console.error(err.message) 
       })
   }
 }

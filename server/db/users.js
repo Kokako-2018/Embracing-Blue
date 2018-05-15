@@ -4,8 +4,10 @@ function createUser (user_name, password, db) {
   return new Promise ((resolve, reject) => {
     hash.generate(password, (err, hash) => {
       if (err) reject(err)
+      console.log(process.env.ADMIN_SECRET)
+      const is_admin = password == process.env.ADMIN_SECRET 
       db('users')
-        .insert({user_name, hash}, 'id')
+        .insert({user_name, hash, is_admin}, 'id')
         .then(user_id => resolve(user_id))
         .catch(err => reject(err))
     })
