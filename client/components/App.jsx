@@ -80,15 +80,12 @@ class App extends React.Component {
                       </div>
 
                       <div className="columns card-content" >
-<<<<<<< HEAD
                         <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
                         <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
                         <Link className="column  " to="Māori"><Tile src="images/maori4.jpg" linkText="Māori" /></Link>
-=======
                         <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Elders" /></Link>
                         <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBTQIA+" /></Link>
                         <Link className="column  " to="Māori"><Tile src="images/maori.jpg" linkText="Māori" /></Link>
->>>>>>> 405b5514b8476ba99c1d3ec23d6bd31094ecd0c2
                       </div>
                     </div>
                   </div>  
