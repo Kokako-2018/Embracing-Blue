@@ -7,6 +7,7 @@ const comments = require('../db/comments')
 
 const request = require('superagent')
 
+const {decode} = require('../auth/token')
 
 
 router.get('/posts', function (req, res) {
@@ -19,9 +20,9 @@ router.get('/posts', function (req, res) {
   })
 })
 
-router.post('/posts', function (req, res) {
-  const data = req.body
-  data.user_id = 1
+router.post('/posts', decode, function (req, res) { //decode verifies token sent
+  const data = req.body                             //to make sure it's valid
+  data.user_id = req.user.id
   posts.addPost(data)
     .then(post => {
       res.status(201).json(post)
@@ -33,7 +34,7 @@ router.post('/posts', function (req, res) {
 
 })
 
-router.put('/posts/:id', function (req, res) {
+router.put('/posts/:id', decode, function (req, res) {
   posts.editPost(req.params.id, req.body)
     .then(post => {
       res.json(post)
@@ -44,7 +45,7 @@ router.put('/posts/:id', function (req, res) {
 
 })
 
-router.delete('/posts/:id', function (req, res) {
+router.delete('/posts/:id', decode, function (req, res) {
   posts.deletePost(req.params.id)
     .then(post => {
       res.json(post)
@@ -66,8 +67,17 @@ router.get('/posts/:id/comments', function (req, res) {
 
 })
 
-router.post('/posts/:id', function (req, res) {
-  comments.addComment(req.body)
+router.post('/posts/:id', decode, function (req, res) {
+  const data = req.params.id
+  const newComment = {
+    user_id: req.user.id,
+    post_id: 3, //hardcoded
+    comment: req.params.id
+  }
+  
+  console.log(newComment)
+                                // user.id from user table will be equal
+  comments.addComment(newComment) //to user_id column in comments table
     .then(post => {
       res.json(post)
     })
@@ -77,7 +87,7 @@ router.post('/posts/:id', function (req, res) {
 
 })
 
-router.put('/posts/:id/comments/:comment_id', function (req, res) {
+router.put('/posts/:id/comments/:comment_id', decode, function (req, res) {
   comments.editComment(req.params.comment_id)
     .then(post => {
       res.json(post)
@@ -88,7 +98,7 @@ router.put('/posts/:id/comments/:comment_id', function (req, res) {
 
 })
 
-router.delete('/posts/:id/comments/:comment_id', function (req, res) {
+router.delete('/posts/:id/comments/:comment_id', decode, function (req, res) {
   console.log(req.params)
   comments.deleteComment(req.params.comment_id,)
     .then(post => {

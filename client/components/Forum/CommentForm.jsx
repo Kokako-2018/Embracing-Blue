@@ -39,10 +39,9 @@ class CommentForm extends React.Component {
         <input
           type='text'
           name='comment'
-          value={this.state.comment}
-          onChange={this.handleChange()}
+          onChange={this.handleChange}
         />
-        <input type='submit' />
+        <input type='submit' value='Add Comment'/>
         {this.state.errorMessage && this.state.errorMessage}
       </form>
     )

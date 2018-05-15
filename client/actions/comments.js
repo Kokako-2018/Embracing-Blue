@@ -1,5 +1,8 @@
 import request from 'superagent'
 
+import authRequest from '../utils/api'
+
+
 export const recieveAllComments = (comments) => {
   return {
     type: 'RECEIVE_ALL_COMMENTS',
@@ -10,7 +13,7 @@ export const recieveAllComments = (comments) => {
 export const addCommentAction = (comment) => {
   return {
     type: 'ADD_COMMENT',
-    comments
+    comment
   }
 }
 
@@ -32,55 +35,47 @@ export const deleteCommentAction = (id) => {
 
 
 export function apiGetAllComments (id, cb) {
+  console.log(id)
   // return (dispatch) => {
     request
-      .get(`/api/posts/${id}/comments`) //this is where we are sending the request to
+      .get(`/api/posts/${id}/`) //this is where we are sending the request to
       .end(cb)                            // the res.body of all the comments
   // }
 }
 
-export function apiAddComment (id, comment) {
+export function apiAddComment (id, comment, cb) {
   return (dispatch) => {
-    request
-      .post(`/api/posts/${id}/comments`) //passing in req.params.id--$(id)
-      .send(comment)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
+    authRequest('post', `posts/${id}`, comment)
+      .then(res => {
         dispatch(addCommentAction(res.body))
+        cb(!err)
       })
+      .catch(err => {
+        console.log(err.message)
+     })
   }
 }
 
 export function apiEditComment (id, comment) {
   return (dispatch) => {
-    request
-      .put(`/api/posts/${id}/comments/${comment.id}`)
-      .send(comment)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
+    authRequest('put', `posts/${id}/comments/${comment.id}`, comment)
+      .then(res => {
         dispatch(editCommentAction(res.body))
+      })
+      .catch(err => {
+        console.log(err.message)
       })
   }
 }
 
 export function apiDeleteComment (postId, commentId, cb) {
   return (dispatch) => {
-    console.log({commentId})
-    request
-      .delete(`/api/posts/${postId}/comments/${commentId}`)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
-        cb(err)
-        // dispatch(deleteCommentAction(commentId))
+    authRequest('delete', `posts/${postId}/comments/${commentId}`)
+      .then(res => {
+        cb(!err)
+      })
+      .catch(err => {
+        console.log(err.message)
       })
   }
 }
