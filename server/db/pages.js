@@ -48,3 +48,11 @@ function editIndentitiesPage(id, pageData, testDb) {
 			'text_extra': pageData.text_extra
 		})
 }
+
+
+module.exports = {
+	getResourcesPage,
+	getIdentitiesPage,
+	editIndentitiesPage,
+	editResourcesPage
+}

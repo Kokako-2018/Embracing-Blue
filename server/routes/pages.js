@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const server = require('../server')
 
-const identities = require('../db/identities')
-const resources = require('../db/resources')
+const identities = require('../db/pages')
+const resources = require('../db/pages')
 
 const request = require('superagent')
 
@@ -50,3 +50,5 @@ router.put('/identities/edit/:id', decode, function (req, res) {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
 		})		
 	})
+
+	module.exports = router

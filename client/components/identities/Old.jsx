@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { apiGetIdentitiesPage, apiEditIdentitiesPage } from '../../actions/pages'
+
+
 export default class Old extends React.Component {
     render () {
         return (

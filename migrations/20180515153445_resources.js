@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('resources', table => {
         table.increments('id')
-        table.string('photo_url')
+        table.string('image1')
         table.string('title')
         table.text('header')
         table.text('blurb')
