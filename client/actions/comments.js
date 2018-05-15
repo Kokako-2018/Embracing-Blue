@@ -35,7 +35,6 @@ export const deleteCommentAction = (id) => {
 
 
 export function apiGetAllComments(id, cb) {
-  console.log(id)
   request
     .get(`/api/posts/${id}/comments`) //this is where we are sending the request to
     .end(cb)                            // the res.body of all the comments

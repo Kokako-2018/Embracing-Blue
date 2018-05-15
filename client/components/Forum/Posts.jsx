@@ -46,7 +46,6 @@ class Posts extends React.Component {
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             const showComments = this.state.showCommentsForPostId == post.id
-            console.log({ post })
             const canEdit = auth.user && (auth.user.id == post.user_id || auth.user.is_admin == true)
             return <div id='post box'>
 
