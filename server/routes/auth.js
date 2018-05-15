@@ -10,7 +10,7 @@ function register (req, res, next) {
   const {user_name, password} = req.body
   userExists(user_name, req.app.get('db'))
     .then(exists => {
-      if (exists) return res.status(400).send({message: "User Name Taken"})
+      if (exists) return res.status(400).send({message:"User Name Taken"})
       createUser(user_name, password, req.app.get('db'))
         .then(() => next())
         
