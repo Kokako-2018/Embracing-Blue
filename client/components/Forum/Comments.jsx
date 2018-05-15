@@ -18,19 +18,18 @@ class Comments extends React.Component {
   }
 
   componentDidMount() {
-    console.log('hi')
     this.refreshComments()
   }
 
   refreshComments() {
-    apiGetAllComments(this.props.post_id, (res, err) => {
-      console.log('response', res)
+    apiGetAllComments(this.props.post_id, (err, res) => {
+      if (err) console.log({ err })
       this.setState({ comments: res.body })
     })
   }
 
   toggleAddComment(e) {
-    this.setState({showCommentForm: !this.state.showCommentForm})
+    this.setState({ showCommentForm: !this.state.showCommentForm })
   }
 
   deleteComment(comment) {
@@ -42,7 +41,6 @@ class Comments extends React.Component {
 
   render() {
     let { comments } = this.state
-    console.log('hi', comments)
     const { user } = this.props.auth
     const { showCommentForm } = this.state
 
@@ -50,19 +48,23 @@ class Comments extends React.Component {
       <div>
         <div className="comments">
 
-          {(showCommentForm) && <CommentForm close={this.toggleAddComment} />}
-        
+
           {comments.map(comment => {
             return <div className='comment'>
               <div>
                 <p className='comment is-size-6'>{comment.comment}</p>
-                {(user && user.is_admin == true) && <button className='comment-button button is-danger' onClick={() => this.deleteComment(comment)}>Delete</button>}
+                {(user && (user.is_admin == true || user.id == comment.user_id)) && <button className='comment-button is-small button is-danger' onClick={() => this.deleteComment(comment)}>Delete</button>}
               </div>
 
             </div>
 
           })}
-         <button className="add-comment" onClick={this.toggleAddComment}>Add Comment</button>
+          <CommentForm
+            refreshComments={this.refreshComments.bind(this)}
+            close={this.toggleAddComment}
+            post_id={this.props.post_id}
+          />
+
 
         </div>
       </div>
@@ -72,7 +74,6 @@ class Comments extends React.Component {
 }
 
 const mapStateToProps = ({ auth }) => {
-  console.log({ auth })
   return {
     auth
   }

@@ -46,7 +46,7 @@ class Posts extends React.Component {
           {posts.map(post => {
             const showEdit = this.state.editPostTarget == post
             const showComments = this.state.showCommentsForPostId == post.id
-            console.log({post})
+            console.log({ post })
             const canEdit = auth.user && (auth.user.id == post.user_id || auth.user.is_admin == true)
             return <div id='post box'>
 
@@ -58,13 +58,13 @@ class Posts extends React.Component {
                 </div>
               }
 
-              {showComments
-                ? <Comments post_id={post.id} submit={() => this.showComments(null)} />
-                : ''}
+              {showComments == true
+                && <Comments post_id={post.id} submit={() => this.showComments(null)} />
+              }
 
-              <button className='post-button button has-background-info is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>
+              {canEdit == true && <button className='post-button button has-background-info is-centered' onClick={() => this.toggleEdit(post)}>{showEdit ? 'Cancel Edit' : 'Edit'}</button>}
 
-              {canEdit == true &&<button className='post-button button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>}
+              {canEdit == true && <button className='post-button button is-danger is-centered' onClick={() => this.props.dispatch(apiDeletePost(post.id))}>Delete</button>}
 
               <button id='comment-button' className='post-button button has-background-info is-centered' onClick={() => this.showComments(post.id)}>{showComments ? 'Hide Comments' : 'View Comments'}</button>
 

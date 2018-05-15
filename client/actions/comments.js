@@ -34,29 +34,28 @@ export const deleteCommentAction = (id) => {
 
 
 
-export function apiGetAllComments (id, cb) {
+export function apiGetAllComments(id, cb) {
   console.log(id)
-  // return (dispatch) => {
-    request
-      .get(`/api/posts/${id}/`) //this is where we are sending the request to
-      .end(cb)                            // the res.body of all the comments
+  request
+    .get(`/api/posts/${id}/comments`) //this is where we are sending the request to
+    .end(cb)                            // the res.body of all the comments
   // }
 }
 
-export function apiAddComment (id, comment, cb) {
+export function apiAddComment(id, comment, cb) {
   return (dispatch) => {
     authRequest('post', `posts/${id}`, comment)
       .then(res => {
         dispatch(addCommentAction(res.body))
-        cb(!err)
+        cb()
       })
       .catch(err => {
         console.log(err.message)
-     })
+      })
   }
 }
 
-export function apiEditComment (id, comment) {
+export function apiEditComment(id, comment) {
   return (dispatch) => {
     authRequest('put', `posts/${id}/comments/${comment.id}`, comment)
       .then(res => {
@@ -68,11 +67,11 @@ export function apiEditComment (id, comment) {
   }
 }
 
-export function apiDeleteComment (postId, commentId, cb) {
+export function apiDeleteComment(postId, commentId, cb) {
   return (dispatch) => {
     authRequest('delete', `posts/${postId}/comments/${commentId}`)
       .then(res => {
-        cb(!err)
+        cb()
       })
       .catch(err => {
         console.log(err.message)
