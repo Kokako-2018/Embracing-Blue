@@ -12,9 +12,9 @@ const Depression = () => {
 
             <div className="has-text-centered">
                     <h1 className="title is-size-1">
-                        <span className="has-text-info">One in seven New Zealanders</span> 
+                        <span className="has-text-info">One in seven </span> 
                     </h1>
-                    <h3 className="subtitle is-size-3"> will experience depression before the age of 24.</h3>
+                    <h3 className="subtitle is-size-3"> Kiwis will experience depression before the age of 24.</h3>
                 </div>
 
                 {/* TODO: still to work on alignment of the section below, probably add padding */}

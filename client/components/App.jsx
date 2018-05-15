@@ -25,7 +25,7 @@ import PostForm from './Forum/PostForm'
 import Posts from './Forum/Posts'
 // import FooterComponent from './FooterComponent'
 import Footer from './Footer'
-
+import SiteMap from './SiteMap'
 import { apiGetAllPosts } from '../actions/posts'
 
 class App extends React.Component {
@@ -74,14 +74,14 @@ class App extends React.Component {
                     <div className="section is-paddingless">
                       
                       <div className="columns card-content">
-                        <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Young"  /></Link>
+                        <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Youth"  /></Link>
                         <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
                         <Link className="column" to="/Men"><Tile src="images/man3.jpg" linkText="Men" /></Link>
                       </div>
 
                       <div className="columns card-content" >
-                        <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Old" /></Link>
-                        <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBT" /></Link>
+                        <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Elders" /></Link>
+                        <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBTQIA+" /></Link>
                         <Link className="column  " to="Māori"><Tile src="images/maori.jpg" linkText="Māori" /></Link>
                       </div>
                     </div>
@@ -100,9 +100,16 @@ class App extends React.Component {
               <Route exact path="/Māori"  component={Māori} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+
               <Route exact path="/" component={Invite} />
+
+              <Route exact path="/sitemap" component={SiteMap} />
+
+
             </div>
             <Footer />
+              <div>
+              </div>
 
           </div>
         </div>
