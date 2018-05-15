@@ -129,7 +129,7 @@ class Header extends React.Component {
 
               ]
               :
-              <Link className="navbar-itemn has-text-light" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
+              <Link className="navbar-item has-text-light" to="/" onClick={this.toggleConfirmLogout}>Logout</Link>
 
               }
 

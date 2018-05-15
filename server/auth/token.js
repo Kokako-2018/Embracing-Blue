@@ -25,7 +25,8 @@ function issue (req, res) {
 function createToken (user, secret) {
   return jwt.sign({
     id:user.id,
-    user_name: user.user_name
+    user_name: user.user_name,
+    is_admin:user.is_admin 
   }, secret, {
     expiresIn: '24h'
   })

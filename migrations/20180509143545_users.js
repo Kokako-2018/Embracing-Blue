@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('user_name')
     table.string('preferred_name')
     table.string('email_address')
-    table.boolean('is_admin')
+    table.boolean('is_admin').defaultTo(false)
     table.string('hash')
   })
 };
