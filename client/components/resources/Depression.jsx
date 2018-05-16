@@ -62,10 +62,10 @@ class Depression extends React.Component {
                         </div>
                     }
 
-                    {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    {canEdit == true && <button className='button has-background-info is-centered' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
 
                 </div>
-                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
+                <Link to='/'><button className='back button has-background-info is-centered'>Back</button></Link>
             </div>
 
         )

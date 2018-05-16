@@ -55,9 +55,6 @@
   margin-top: 3%;
 }
 
-.label {
-  /* margin-left: 50%; */
-}
 
 #page-title {
   padding-top: 2%;
@@ -97,6 +94,10 @@
 .story {
   text-align: center;
   padding-top: 2%;
+}
+
+.textarea {
+  padding: 2%;
 }
 
 .resources {
