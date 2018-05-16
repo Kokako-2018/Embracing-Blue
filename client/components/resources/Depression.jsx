@@ -2,35 +2,71 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import EditResourcesPages from './EditResourcesPages'
 import { apiGetResourcesPage, apiEditResourcesPage } from '../../actions/pages'
 
 
-const Depression = () => {
+class Depression extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            editPageTarget: null,
+        }
+    }
 
+    componentDidMount() {
+        this.props.dispatch(apiGetResourcesPage({ id: 2 }))
+      }
+
+    toggleEdit(resourcePage) {
+        if (this.state.editPageTarget == resourcePage) resourcePage = null
+        this.setState({ editPageTarget: resourcePage })
+    }
+
+    
+
+    render () {
+        let { auth } = this.props
+        let resourcePage = this.props.resourcePage[0]
+
+       const showEdit = this.state.editPageTarget == resourcePage
+        const canEdit = auth.user.is_admin == true
+        
         return  (
+
             <div className="section">
-                <figure className="image">
-                    <img src="/resourcesImgs/depression.jpg"/>
-                </figure>
+               
 
-            <div className="has-text-centered">
-                    <h1 className="title is-size-1">
-                        <span className="has-text-info">One in seven </span> 
-                    </h1>
-                    <h3 className="subtitle is-size-3"> Kiwis will experience depression before the age of 24.</h3>
-                </div>
-
-                {/* TODO: still to work on alignment of the section below, probably add padding */}
                 <div className="section">
-                    <p className="is-size-3">What is depression? </p>
-                    <p id='paras' className='is-size-4'>
-                        While we all feel sad, moody or low from time to time, some people experience these feelings intensely, for long periods of time (weeks, months or even years) and sometimes without any apparent reason. Depression is more than just a low mood – it's a serious condition that affects your physical and mental health.
-                    </p>
+                {showEdit
+                ? <EditResourcesPages resourcePage={resourcePage} submit={() => this.toggleEdit(null)} />
+                : <div>
+                     <figure className="image">
+                    <img src={resourcePage && resourcePage.image1}/>
+                </figure>
+                <div className='has-text-centered'>
+                <h1 className="title is-size-3">
+                 <span className='has-text-info'>{resourcePage && resourcePage.header}</span>
+                </h1>
+                 <h3 className='subtitle is-size-4'>{resourcePage && resourcePage.subheader}</h3>
+                 </div>
+                 <p className='is-size-3'>{resourcePage && resourcePage.title}</p>
+                 <p id='paras' className='is-size-4'>
+                    {resourcePage && resourcePage.blurb}</p>
+                    </div>
+                }
+
+                 {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+
                 </div>
                 <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
             </div>
-        )
+      
+    )
+}
 }
 
+const mapStateToProps = ({auth, resourcePage}) => ({auth, resourcePage})
 
-export default Depression
+
+export default connect(mapStateToProps)(Depression)

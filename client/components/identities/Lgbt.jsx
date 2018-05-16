@@ -1,38 +1,73 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import EditIdentitiesPages from './EditIdentitiesPages'
 import { apiGetIdentitiesPage, apiEditIdentitiesPage } from '../../actions/pages'
 
 
 
-export default class Lgbt extends React.Component {
+class Lgbt extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      editPageTarget: null,
+    }
+  }
 
-  render () {
+  componentDidMount() {
+    this.props.dispatch(apiGetIdentitiesPage({ id: 1 }))
+  }
+
+  toggleEdit(identityPage) {
+    if (this.state.editPageTarget == identityPage) identityPage = null
+    this.setState({ editPageTarget: identityPage })
+  }
+
+
+
+  render() {
+    let { auth } = this.props
+    let identityPage = this.props.identitiesPage[0]
+
+    const showEdit = this.state.editPageTarget == identityPage
+    const canEdit = auth.user.is_admin == true
 
     return (
 
       <div className="section">
-
-        <figure className="image">
-          <img src ="images/lbgt.jpg"/>
-        </figure>
-
-        <div className="has-text-centered">
-                    <h3 className="subtitle is-size-3"> The Ministry of Health found that the</h3>
-                    <h1 className="title is-size-1">
-                        <span className="has-text-info">community members have a higher lifetime risk</span> 
-                    </h1>
-                    <h3 className="subtitle is-size-3"> for mental health problems including depression, anxiety, suicide and self-harm, substance misuse and eating disorders.</h3>
-        </div>
         <div className="section">
-          <p className="is-size-3"><b>LGBTQIA+</b></p>
-          <p id='paras' className="is-size-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          {showEdit
+            ? <EditIdentitiesPages identityPage={identityPage} submit={() => this.toggleEdit(null)} />
+            : <div>
+              <figure className="image">
+                <img src={identityPage && identityPage.image1} />
+              </figure>
 
+              <div className="has-text-centered">
+                <h3 className="subtitle is-size-3"> {identityPage && identityPage.header}</h3>
+                <h1 className="title is-size-1">
+                  <span className="has-text-info">{identityPage && identityPage.subheader}</span>
+                </h1>
+                <h3 className="subtitle is-size-3">{identityPage && identityPage.preblurb}</h3>
+              </div>
+              <div className="section">
+                <p className="is-size-3"><b>{identityPage && identityPage.title}</b></p>
+                <p id='paras' className="is-size-4">{identityPage && identityPage.blurb}</p>
+              </div>
+            </div>}
+            {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
         </div>
-
         <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
 
       </div>
     )
   }
 }
+
+
+
+const mapStateToProps = ({auth, identitiesPage}) => ({auth, identitiesPage})
+
+
+export default connect(mapStateToProps)(Lgbt)

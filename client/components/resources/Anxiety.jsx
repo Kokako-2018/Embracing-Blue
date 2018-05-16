@@ -2,33 +2,68 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import EditResourcesPages from './EditResourcesPages'
 import { apiGetResourcesPage, apiEditResourcesPage } from '../../actions/pages'
 
-class Anxiety extends React.Component {
 
-    render() {
-        return (
+
+class Prevention extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            editPageTarget: null,
+        }
+    }
+
+    componentDidMount() {
+        this.props.dispatch(apiGetResourcesPage({ id: 1 }))
+      }
+
+    toggleEdit(resourcePage) {
+        if (this.state.editPageTarget == resourcePage) resourcePage = null
+        this.setState({ editPageTarget: resourcePage })
+    }
+
+    
+
+    render () {
+        let { auth } = this.props
+        let resourcePage = this.props.resourcePage[0]
+
+       const showEdit = this.state.editPageTarget == resourcePage
+        const canEdit = auth.user.is_admin == true
+        
+        return  (
 
             <div className="section">
-                <figure className="image">
-                    <img src="/resourcesImgs/anxiety.jpg"/>
+               
+
+                <div className="section">
+                {showEdit
+                ? <EditResourcesPages resourcePage={resourcePage} submit={() => this.toggleEdit(null)} />
+                : <div>
+                     <figure className="image">
+                    <img src={resourcePage && resourcePage.image1}/>
                 </figure>
 
-                {/* TODO: still to work on alignment of the section below, probably add padding */}
-                <div className="section">
-                    <h1 id='titles' className="is-size-3">What is Anxiety?</h1>
-                    <p id='paras' className='is-size-4'>
-                        Anxiety is more than just feeling stressed or worried. While stress and anxious feelings are a common response to a situation where we feel under pressure, they usually pass once the stressful situation has passed, or ‘stressor’ is removed.
-                        Anxiety is when these anxious feelings don't go away – when they're ongoing and happen without any particular reason or cause. It’s a serious condition that makes it hard to cope with daily life. Everyone feels anxious from time to time, but for someone experiencing anxiety, these feelings aren't easily control. Anxiety is the most common mental health condition in Australia. On average, one in four people – one in three women and one in ﬁve men – will experience anxiety at some stage in their life.1 In a 12-month period, over two million Australians experience anxiety.2
-                        Anxiety is common, but the sooner people with anxiety get support, the more likely they are to recover.
-                    </p>
+                 <h1 className="is-size-3">{resourcePage && resourcePage.header}</h1>
+                 <p id='paras' className='is-size-4'>
+                    {resourcePage && resourcePage.blurb}</p>
+                    </div>
+                }
+
+                 {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+
                 </div>
-                <Link to='/'><button className='button has-background-info'>Back</button></Link>
+                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
             </div>
-
-
-        )
-    }
+      
+    )
+}
 }
 
-export default Anxiety
+const mapStateToProps = ({auth, resourcePage}) => ({auth, resourcePage})
+
+
+export default connect(mapStateToProps)(Prevention)
+

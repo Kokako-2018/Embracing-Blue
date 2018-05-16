@@ -101,7 +101,7 @@ class Header extends React.Component {
                     <Link to="/young" className="dropdown-item">Young</Link>
                     <Link to="/women" className="dropdown-item">Women</Link>
                     <Link to="/men" className="dropdown-item">Men</Link>
-                    <Link to="/old" className="dropdown-item">Old</Link>
+                    <Link to="/old" className="dropdown-item">Elders</Link>
                     <Link to="/LGBT" className="dropdown-item">LGBT</Link>
                     <Link to="Māori/" className="dropdown-item">Māori</Link>
                   </div>

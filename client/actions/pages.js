@@ -19,24 +19,22 @@ export const editPageAction = (page) => {
 }
 
 
+
 export function apiGetResourcesPage(page) {
     return (dispatch) => {
-        request
-            .get(`/api/${page.title}`)
-            .end((err, res) => {
-                if (err) {
-                    console.error(err.message)
-                    return
-                }
+        authRequest('get', `resources/${page.id}`)
+            .then(res => {    
                 dispatch(receivePageAction(res.body))
+            }).catch(err => {
+                console.error(err.message)
             })
     }
 }
 
 
 export function apiEditResourcesPage(page) {
-    return(dispatch) => {
-        authRequest('put', `${page.title}`, page)
+    return (dispatch) => {
+        authRequest('put', `${page.id}`, page)
             .then(res => {
                 dispatch(editPageAction(page))
             })
@@ -49,22 +47,19 @@ export function apiEditResourcesPage(page) {
 
 export function apiGetIdentitiesPage(page) {
     return (dispatch) => {
-        request
-            .get(`/api/${page.title}`)
-            .end((err, res) => {
-                if (err) {
-                    console.error(err.message)
-                    return
-                }
+        authRequest('get', `identities/${page.id}`)
+            .then(res => {    
                 dispatch(receivePageAction(res.body))
+            }).catch(err => {
+                console.error(err.message)
             })
     }
 }
 
 
 export function apiEditIdentitiesPage(page) {
-    return(dispatch) => {
-        authRequest('put', `${page.title}`, page)
+    return (dispatch) => {
+        authRequest('put', `${page.id}`, page)
             .then(res => {
                 dispatch(editPageAction(page))
             })
