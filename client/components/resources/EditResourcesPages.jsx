@@ -34,23 +34,56 @@ class EditResourcesPages extends React.Component {
         return (
             <div classname='field'>
                 <form onSubmit={this.submitEdit}>
-                    <div className='field'>
-                        <input name='image1' type='text' value={newPage.image1} onChange={this.editPageDetails} />
-                        <input name='header' type='text' value={newPage.header} onChange={this.editPageDetails} />
-                        <input name='subheader' type='text' value={newPage.subheader} onChange={this.editPageDetails} />
-                        <input name='preblurb' type='text' value={newPage.preblurb} onChange={this.editPageDetails} />
-                        <input name='title' type='text' value={newPage.title} onChange={this.editPageDetails} />
-                        <input name='blurb' type='text' value={newPage.blurb} onChange={this.editPageDetails} />
-                        <input name='text_extra' type='text' value={newPage.text_extra} onChange={this.editPageDetails} />
-                        <input name='text_extra2' type='text' value={newPage.text_extra2} onChange={this.editPageDetails} />
+                    <div className='form-container'>
 
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Image</label>
+                            <textarea className='textarea' rows='4' cols='130' name='image1' type='text' value={newPage && newPage.image1} onChange={this.editPageDetails} />
+                        </div>
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">First Line</label>
+                            <textarea className='textarea' rows='4' cols='130' name='header' type='textarea' value={newPage.header} onChange={this.editPageDetails} />
+                        </div>
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Second Line</label>
+                            <textarea className='textarea' rows='4' cols='130' name='subheader' type='textarea' value={newPage.subheader} onChange={this.editPageDetails} />
+                        </div>
+
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Title</label>
+                            <textarea className='textarea' rows='4' cols='130' name='title' type='text' value={newPage.title} onChange={this.editPageDetails} />
+                        </div>
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4"> Line</label>
+                            <textarea className='textarea' rows='4' cols='130' name='preblurb' type='textarea' value={newPage.preblurb} onChange={this.editPageDetails} />
+                        </div>
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Blurb</label>
+                            <textarea className='textarea' rows='4' cols='130' name='blurb' type='textarea' value={newPage.blurb} onChange={this.editPageDetails} />
+                        </div>
+
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Second Line</label>
+                            <textarea className='textarea' rows='4' cols='130' name='text_extra' type='textarea' value={newPage.text_extra} onChange={this.editPageDetails} />
+                        </div>
+
+
+                        <div className='field-label is-normal'>
+                            <label className="is-size-4">Extra Info</label>
+                            <textarea className='textarea' rows='4' cols='130' name='text_extra2' type='textarea' value={newPage.text_extra2} onChange={this.editPageDetails} />
+                        </div>
                     </div>
 
-                    <input className='button is-primary' type='submit' value='Submit' />
+                    <input className='button has-background-info is-centered' type='submit' value='Submit' />
 
                 </form>
             </div>
-
         )
     }
 }
