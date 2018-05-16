@@ -44,7 +44,7 @@ class Register extends React.Component {
     const passwordsNotSame = (confirm_password != password)
     console.log('heydff' + password)
 
-    const isPass = this.checkPassword(password) >= 1
+    const isPass = this.checkPassword(password) >= 3 //This is strength of the password not the length
 
     console.log('isEmail valid :' + isEmail)
     console.log('passwords not same:' + passwordsNotSame)
@@ -53,7 +53,7 @@ class Register extends React.Component {
 
     if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError("Incorrect email/Passwords don't match"))
     //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
-    else if (!isPass) return this.props.dispatch(loginError('Password strength must be 8 or above and must include atleast one number '))
+    else if (!isPass) return this.props.dispatch(loginError("Password length must be above 10 and must include atleast one number, one uppercase letter and one out of these two sets of symbols '~<>@$%' ,'!@£$%^&()'"))
     else return this.props.dispatch(registerUserRequest(this.state))
   }
 
@@ -104,8 +104,7 @@ class Register extends React.Component {
     const { password_strength } = this.state
     let progressClass = 'danger'
     switch (password_strength) {
-      case 2: progressClass = 'warning'; break;
-      case 3: progressClass = 'info'; break;
+      case 3: progressClass = 'warning'; break;
       case 4: progressClass = 'success'; break;
       case 5: progressClass = 'primary'; break;
       default: progressClass = 'danger'
@@ -119,7 +118,7 @@ class Register extends React.Component {
     const { auth } = this.props
     return (
       <form className="section column is-6 is-offset-3 is-0" onSubmit={this.submit}>
-        <h1>Register</h1>
+        <h1 className="title is-2 has-text-centered">Register</h1>
         <hr />
         <b>{auth.errorMessage && <span>{auth.errorMessage}</span>}</b>
 
