@@ -139,7 +139,7 @@ class Header extends React.Component {
 
         </nav>
 
-        <div className="is-pulled-right is-size-5 has-text-weight-bold">
+        <div className="welcome is-pulled-right is-size-5 has-text-weight-bold">
           {auth.isAuthenticated && <span className="">Welcome {auth.user.user_name}</span>}
         </div>
 

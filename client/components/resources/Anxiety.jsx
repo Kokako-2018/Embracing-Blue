@@ -21,7 +21,6 @@ class Prevention extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log(newProps)
         this.setState({ resourcePage: newProps.resourcePage[0] })
     }
 
@@ -37,7 +36,7 @@ class Prevention extends React.Component {
         let resourcePage = this.state.resourcePage
 
         const showEdit = this.state.editPageTarget == resourcePage
-        const canEdit =   auth.user ? auth.user.is_admin == true : false
+        const canEdit = auth.user ? auth.user.is_admin == true : false
 
         return (
 
@@ -58,7 +57,7 @@ class Prevention extends React.Component {
                         </div>
                     }
 
-                    {canEdit == true && <button className='button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    {canEdit == true && <button className='component-button button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
 
                 </div>
                 <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>

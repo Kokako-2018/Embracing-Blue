@@ -13,7 +13,6 @@ function getAllPosts(testDb) {  //selecting all posts from 'posts' table
 
 
 function addPost(post, testDb) {
-  console.log({ post })
   const conn = testDb || db
   return conn('posts')            //adding post to 'posts' table
     .insert(post, 'id')           //matches id comlumn with id

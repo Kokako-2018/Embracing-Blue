@@ -38,14 +38,14 @@ class CommentForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
-          className='input is-normal'
+          className='thingput input is-normal'
           required
           type='text'
           name='comment'
           value={this.state.comment.comment}
           onChange={this.handleChange}
         />
-        <input className='button has-background-info is-centered has-text-light' type='submit' value='Add Comment' />
+        <input className='addcom button has-background-info is-centered has-text-light' type='submit' value='Add Comment' /> 
         {this.state.errorMessage && this.state.errorMessage}
       </form>
     )
