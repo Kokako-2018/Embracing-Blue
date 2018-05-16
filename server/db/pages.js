@@ -22,7 +22,8 @@ function editResourcesPage(id, pageData, testDb) {
 			'header': pageData.header,
 			'subheader': pageData.subheader,
 			'blurb': pageData.blurb,
-			'text_extra': pageData.text_extra
+			'text_extra': pageData.text_extra,
+			'text_extra2': pageData.text_extra2
 		})
 }
 
@@ -47,7 +48,9 @@ function editIndentitiesPage(id, pageData, testDb) {
 			'subheader': pageData.subheader,
 			'preblurb': pageData.preblurb,
 			'blurb': pageData.blurb,
-			'text_extra': pageData.text_extra
+			'text_extra': pageData.text_extra,
+			'text_extra2': pageData.text_extra2
+			
 		})
 }
 
