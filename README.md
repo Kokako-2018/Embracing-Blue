@@ -9,7 +9,7 @@ Our hopes are to help as many people as possible
 Built by Mark, Priya, Theta, Sam, Hameet, and Annette
 
 
-
+---
 
 ## User Stories
 
@@ -33,34 +33,56 @@ As a user:
 * I would like to be able approach/understand mental health through the eyes of the Maori culture
 * I want the ability to download information for when I need it and may not have access to internet
 
-.
-.
-.
+---
 
+## Views (Client Side)
+  | name | purpose |
+  | --- | --- |
+  | Login | View for user to enter their login credentials |
+  | Register | View for user to sign up for the App |
+  | ConfirmLogout | View to checkout if logout is intentional |
+  | CommentForm | For a user to add a comment to a post in the forum |
+  | Comments | View to map over all comments |
+  | EditPost | For a user to edit their own post in the the forum |
+  | Invite | Ask user to join forum |
+  | PostForm | For a user to submit a post to the forum |
+  | Posts | View to get all posts |
+  | EditIdentitiesPages | For admins to update itentities page content |
+  | Lgbt | Resources for LGBTQAI+ |
+  | Maori | Resources for Maori |
+  | Men | Resources for Men |
+  | Old | Resources for elderly |
+  | Women | Resources for women |
+  | Young | Resources for youth |
+  | Anxiety | Resources for anxiety |
+  | Depression | Resources for deperession |
+  | Prevention | Resources for prevention of suicide |
+  | Resources | Clickable icons for homepage |
+  | App | Render all components and set <Routes> |
+  | Footer | View for the footer |
+  | Header | View for the header |
+  | OurStories | Background to why we created the website |
+  | SiteMap | View for easy access |
+  | Tile | Template for images on homepage |
+  
+---
 
-## Views (client side)
-### App.jsx - stateful
-* Will dispatch props
-* Renders other components
-* <Route><Route/> and path =  are defined here
- 
- ### components
- * Header Component 
- * spacer image component
-### Resources - just functional
+## Reducers (Client Side)
 
-* Prevention.jsx
-* Anxiety.jsx
-* Depression.jsx
+  | name | purpose |
+  | --- | --- |
+  | auth | Store information regarding user logins, auth status and auth errors |
+  | comments | Store information regarding comments (from db) and how to edit, add and delete |
+  | identitiesPage | Store information on receiving and editing itendity pages |
+  | identity | Store information regarding viewing and dispaying identities |
+  | index | Combining the reducers |
+  | posts | Store information regarding posts, as well as adding, editing and deleting them |
+  | resourcePage | Store information on receiving and editing resource pages |
+  | resources | Store information regarding viewing and dispaying resources |
 
-### Identities - just functional
-* Young.jsx
-* Women.jsx
-* Men.jsx
-* Lbgt.jsx
-* Māori.jsx
-* Old.jsx
+---
 
+# Actions
 
 ## Post Actions (client side)
 | type | data | purpose |
@@ -78,7 +100,25 @@ As a user:
 | EDIT_COMMENT | id | For editing a comment |
 | DELETE_COMMENT | id | For deleting a comment from the db |
 
-## Login/Logout Actions (client side)
+## Pages Actions (client side)
+| type | data | purpose |
+| --- | --- | --- |
+| RECEIVE_PAGE | page | For retreving a page from the server response |
+| EDIT_PAGE | page | For editing a page |
+
+## Identity Actions (client side)
+| type | data | purpose |
+| --- | --- | --- |
+| VIEW_IDENTITY | identity | For retreving an identity from the server response |
+| DISPLAY_IDENTITIES | identity | For displaying all identities |
+
+## Resources Actions (client side)
+| type | data | purpose |
+| --- | --- | --- |
+| VIEW_RESOURCE | resource | For retreving a resource from the server response |
+| DISPLAY_RESOURCES | resource | For displaying all resources |
+
+## Login/Logout/Register Actions (client side)
 | type | data | purpose |
 | --- | --- | --- |
 | LOGIN_REQUEST | isFetching: true, isAuthenticated: false |  |
@@ -87,19 +127,49 @@ As a user:
 | LOGOUT_REQUEST | isFetching: true, isAuthenticated: true |  |
 | LOGOUT_SUCCESS | isFetching: false, isAuthenticated: false |  |
 
+---
 
-## Reducer folders
-* auth.js
-* comments.js
-* posts.js
-* index.js - this will contain the combineReducers function
+# API (Client - Server)
 
-Store will be in the index.js in clients side
+## API auth
 
+| Method | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- |
+| Post | /api/auth/login | Yes | Log In a User | The Users JWT Token |
+| Post | /api/auth/register | Yes | Register a User | The Users JWT Token |
+
+## API comments
+
+| Method | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- |
+| GET | /api/posts/${id}/comments | No | Get all comments attached to post |
+| POST | /api/posts/${id} | Yes | Add a comment if logged in |
+| PUT | /api/posts/${id}/comments/${comment.id} | Yes | Edit comment if it is your own/if admin |
+| DELETE | /api/posts/${id}/comments/${comment.id} | Yes | Delete comment if it is your own/if admin |
+
+## API posts
+
+| Method | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- |
+| GET | /api/posts | No | Get all posts |
+| POST | /api/posts | Yes | Add a post if logged in |
+| PUT | /api/posts/${id} | Yes | Edit post if it is your own/if admin |
+| DELETE | /api/posts/${id} | Yes | Delete post if it is your own/if admin |
+
+## API pages
+
+| Method | Endpoint | Protected | Usage | Response |
+| --- | --- | --- | --- | --- |
+| GET | /api/resources/${pages.id} | Yes | Get view for editing resource page if admin |
+| PUT | /api/resources/edit/${id} | Yes | Edit resource page if admin |
+| GET | /api/identities/${pages.id} | Yes | Get view for editing identities page if admin |
+| PUT | /api/identities/edit/${id} | Yes | Edit identities page if admin |
+
+---
 
 ## Routes (server-side)
 ### auth.js
-* router.post
+* router.post('/register')
 * register function - links to router.post
 
 ### resources.js
@@ -126,7 +196,7 @@ Store will be in the index.js in clients side
 * router.put('/posts/:id/comments/:id) - link to editComment() -- edit your own comment on a post
 * router.delete('/posts/:id/comments/:id) - link to deleteComment() -- delete your own comment on a post
 
-
+---
 
 ## Db functions
 
@@ -141,15 +211,31 @@ Store will be in the index.js in clients side
 * editPost
 * deletePost
 
-### comments.js - these will probably need a .join .where to connect them to users and posts tables
+### comments.js
 * getComments
 * addComment
 * editComment
 * deleteComment
 
+### pages.js
+* getResourcesPage
+* editResourcesPage
+* getIdentitiesPage
+* editIdentitiesPage
 
+---
 
 ## Database model
+
+### Users (join to forum)
+ | Column Name | Data Type |
+ | --- | --- |
+ | id | integer |
+ | user_name | string |
+ | preferred_name | string |
+ | email_address | string |
+ | is_admin | boolean |
+ | hash | text |
 
 ### Posts
  | Column Name | Data Type |
@@ -169,16 +255,34 @@ Store will be in the index.js in clients side
  | comment | text |
  | is_approved | boolean |
  
-
-### Users (join to forum)
- | Column Name | Data Type |
+  ### Identities
+  Column Name | Data Type |
  | --- | --- |
  | id | integer |
- | user_name | string |
- | preferred_name | string |
- | email_address | string |
- | is_admin | boolean |
- | hash | text |
+ | image1 | string |
+ | title | string |
+ | header | text |
+ | subheader | text |
+ | preblurb | text |
+ | blurb | text |
+ | text_extra | text |
+ | text_extra2 | text |
+ 
+ ### Resources
+ 
+  Column Name | Data Type |
+ | --- | --- |
+ | id | integer |
+ | image1 | string |
+ | title | string |
+ | header | text |
+ | subheader | text |
+ | preblurb | text |
+ | blurb | text |
+ | text_extra | text |
+ | text_extra2 | text |
+
+
  ---
 
 
