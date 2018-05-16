@@ -38,7 +38,7 @@ class Young extends React.Component {
 
         const showEdit = this.state.editPageTarget == identityPage
         const canEdit = auth.user ? auth.user.is_admin == true : false
-
+            identityPage && console.log(identityPage.image1)
         return (
 
             <div className="section">
