@@ -21,7 +21,6 @@ class Young extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log(newProps)
         this.setState({ identityPage: newProps.identitiesPage[0] })
     }
 
@@ -38,7 +37,7 @@ class Young extends React.Component {
 
         const showEdit = this.state.editPageTarget == identityPage
         const canEdit = auth.user ? auth.user.is_admin == true : false
-
+        
         return (
 
             <div className="section">
@@ -70,11 +69,11 @@ class Young extends React.Component {
                                 </h1>
                             </div>
                         </div>}
-                    {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    {canEdit == true && <button className='component-button button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
                 </div>
 
 
-                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
+                <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>
 
 
             </div>

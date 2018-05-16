@@ -44,10 +44,13 @@ class PostForm extends React.Component {
 
 
   render() {
+    
     const { auth } = this.props
+    
     return (
+
       <div className="box">
-        <form onSubmit={this.handleSubmit}>
+        <form className="addpost" onSubmit={this.handleSubmit}>
           <div className="content">
             <h1 className="is-size-3">Add your story</h1>
           </div>
@@ -67,7 +70,6 @@ class PostForm extends React.Component {
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder="Post title" />
-
                 </p>
               </div>
             </div>
@@ -96,12 +98,12 @@ class PostForm extends React.Component {
             {this.state.isSuccess && <p className="has-text-success">Your Post has been submitted!</p>}
             <div className="control">
               {auth.isAuthenticated
-                ? <input className={`button has-background-info ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit' />
+                ? <input className={`button is-light has-background-info ${this.state.isLoading ? 'is-loading' : ''}`} type="submit" value='Submit' />
                 : <Link to="/login" className="button is-light has-text-info">Please Login</Link>
               }
             </div>
             <p className="control">
-              <a className="button is-light">
+              <a className="button has-background-info is-centered has-text-light">
                 Cancel
                     </a>
             </p>

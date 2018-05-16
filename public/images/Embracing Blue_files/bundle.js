@@ -15189,12 +15189,8 @@ var Register = function (_React$Component) {
       function confirmation() {
         if (confirm_password != password) return false;else return true;
       }
-      console.log('Does password match?', confirmation());
       var isEmail = this.validateEmail(email_address);
       var passwordsNotSame = confirm_password != password;
-
-      console.log('isEmail valid :' + isEmail);
-      console.log('passwords not same:' + passwordsNotSame);
 
       if (!isEmail || passwordsNotSame) return this.props.dispatch((0, _login.loginError)('Email/Password error'));
       //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
@@ -15208,7 +15204,6 @@ var Register = function (_React$Component) {
     value: function validateEmail(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       var isValid = re.test(String(email).toLowerCase());
-      // console.log('No joke', isValid)
       return isValid;
     }
   }, {

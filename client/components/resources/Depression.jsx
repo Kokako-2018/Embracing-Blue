@@ -20,7 +20,6 @@ class Depression extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log(newProps)
         this.setState({ resourcePage: newProps.resourcePage[0] })
     }
 
@@ -62,10 +61,10 @@ class Depression extends React.Component {
                         </div>
                     }
 
-                    {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    {canEdit == true && <button className='component-button button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
 
                 </div>
-                <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
+                <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>
             </div>
 
         )

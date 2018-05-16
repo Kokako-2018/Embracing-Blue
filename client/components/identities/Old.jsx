@@ -20,7 +20,6 @@ class Old extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps)
     this.setState({ identityPage: newProps.identitiesPage[0] })
   }
 
@@ -59,10 +58,10 @@ class Old extends React.Component {
                 <p id='paras' className="is-size-4">{identityPage && identityPage.blurb}</p>
               </div>
             </div>}
-          {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+          {canEdit == true && <button className='component-button button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
         </div>
 
-        <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
+        <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>
 
       </div>
     )
