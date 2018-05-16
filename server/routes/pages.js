@@ -11,7 +11,7 @@ const { decode } = require('../auth/token')
 
 
 
-router.get('/resources/:id', decode, function (req, res) {
+router.get('/resources/:id', function (req, res) {
 	resources.getResourcesPage(req.params.id)
 		.then(pages => {
 			res.json(pages)
@@ -23,17 +23,17 @@ router.get('/resources/:id', decode, function (req, res) {
 
 
 router.put('/resources/edit/:id', decode, function (req, res) {
-	resources.editPages(req.params.id, req.body)
+	resources.editResourcesPage(req.params.id, req.body)
 		.then(pages => {
 			res.json(pages)
 		})
 		.catch(err => {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
-		})		
+		})
 })
 
 
-router.get('/identities/:id', decode, function (req, res) {
+router.get('/identities/:id', function (req, res) {
 	identities.getIdentitiesPage(req.params.id)
 		.then(pages => {
 			res.json(pages)
@@ -45,15 +45,15 @@ router.get('/identities/:id', decode, function (req, res) {
 
 
 router.put('/identities/edit/:id', decode, function (req, res) {
-	identities.editPages(req.params.id, req.body)
+	identities.editIndentitiesPage(req.params.id, req.body)
 		.then(pages => {
 			res.json(pages)
 		})
 		.catch(err => {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
-		})		
-	})
+		})
+})
 
 
 
-	module.exports = router
+module.exports = router

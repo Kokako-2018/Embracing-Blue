@@ -1,5 +1,5 @@
-function resourcesReducer (state = 'menu', action) {
-  
+function resourcesReducer(state = 'menu', action) {
+
     switch (action.type) {
 
         case 'VIEW_RESOURCE':
@@ -8,12 +8,12 @@ function resourcesReducer (state = 'menu', action) {
         case 'DISPLAY_RESOURCES':
             return 'menu'
 
-  
-      default:
-        return state
-  
+
+        default:
+            return state
+
     }
-  
-  }
-  
-  export default resourcesReducer
+
+}
+
+export default resourcesReducer

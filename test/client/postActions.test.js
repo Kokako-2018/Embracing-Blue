@@ -16,7 +16,7 @@ test('Receive All Posts action creator', () => {
   }
 
   const actual = receiveAllPosts(fakePosts) //actual is calling our real function but
-                                            //is passing it our fake posts as data
+  //is passing it our fake posts as data
   expect(actual).toEqual(expected)
 })
 
@@ -64,7 +64,7 @@ test('test addPost action creator', () => {
     'This post is very fake'
   ]
 
-const expected = {
+  const expected = {
     type: 'ADD_POST',
     post: fakePost
   }

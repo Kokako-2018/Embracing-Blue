@@ -1,8 +1,8 @@
 import request from 'superagent'
-import {saveUserToken} from '../utils/auth'
-import {receiveLogin, loginError} from './login'
+import { saveUserToken } from '../utils/auth'
+import { receiveLogin, loginError } from './login'
 
-export function registerUserRequest (creds) {
+export function registerUserRequest(creds) {
   return (dispatch) => {
     request
       .post('/api/auth/register')
@@ -13,5 +13,5 @@ export function registerUserRequest (creds) {
         document.location = "/#/"
       })
       .catch(err => dispatch(loginError(err.response.body.message)))
-      }
+  }
 }

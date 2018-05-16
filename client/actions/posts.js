@@ -36,7 +36,7 @@ export const deletePostAction = (id) => {
 }
 
 
-export function apiGetAllPosts () {
+export function apiGetAllPosts() {
   return (dispatch) => {
     request
       .get(`/api/posts`) //this is where we are sending the request to db
@@ -45,13 +45,13 @@ export function apiGetAllPosts () {
           console.error(err.message)
           return
         }
-         dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
+        dispatch(receiveAllPosts(res.body)) // dispatches an action object - which will receive
       })                                    // the res.body of all the posts
   }
 }
 
 
-export function apiAddPost (post, cb) { //cb = callback
+export function apiAddPost(post, cb) { //cb = callback
   return (dispatch) => {
     authRequest('post', 'posts', post) //1st param = method, 2nd=end route, 3rd = data
       .then(res => {
@@ -65,7 +65,7 @@ export function apiAddPost (post, cb) { //cb = callback
 }
 
 
-export function apiEditPost (id, post) {
+export function apiEditPost(id, post) {
   return (dispatch) => {
     authRequest('put', `posts/${id}`, post) //1st param = method, 2nd=end route, 3rd = data
       .then(res => {
@@ -78,14 +78,14 @@ export function apiEditPost (id, post) {
 }
 
 
-export function apiDeletePost (id) {
+export function apiDeletePost(id) {
   return (dispatch) => {
     authRequest('delete', `posts/${id}`) //1st param = method, 2nd=end route)
       .then(res => {
         dispatch(deletePostAction(id))
       })
       .catch(err => {
-        console.error(err.message) 
+        console.error(err.message)
       })
   }
 }

@@ -1,5 +1,5 @@
-function identityReducer (state = 'menu', action) {
-  
+function identityReducer(state = 'menu', action) {
+
     switch (action.type) {
 
         case 'VIEW_IDENTITY':
@@ -8,12 +8,12 @@ function identityReducer (state = 'menu', action) {
         case 'DISPLAY_IDENTITIES':
             return 'menu'
 
-  
-      default:
-        return state
-  
+
+        default:
+            return state
+
     }
-  
-  }
-  
-  export default identityReducer
+
+}
+
+export default identityReducer

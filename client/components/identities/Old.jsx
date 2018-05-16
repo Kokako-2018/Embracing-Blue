@@ -7,66 +7,71 @@ import { apiGetIdentitiesPage, apiEditIdentitiesPage } from '../../actions/pages
 
 
 class Old extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          editPageTarget: null,
-        }
-      }
-    
-      componentDidMount() {
-        this.props.dispatch(apiGetIdentitiesPage({ id: 5 }))
-      }
-    
-      toggleEdit(identityPage) {
-        if (this.state.editPageTarget == identityPage) identityPage = null
-        this.setState({ editPageTarget: identityPage })
-      }
+  constructor(props) {
+    super(props)
+    this.state = {
+      editPageTarget: null,
+      identityPage: props.identitiesPage[0]
+    }
+  }
+
+  componentDidMount() {
+    this.props.dispatch(apiGetIdentitiesPage({ id: 5 }))
+  }
+
+  componentWillReceiveProps(newProps) {
+    console.log(newProps)
+    this.setState({ identityPage: newProps.identitiesPage[0] })
+  }
+
+  toggleEdit(identityPage) {
+    if (this.state.editPageTarget == identityPage) identityPage = null
+    this.setState({ editPageTarget: identityPage })
+  }
 
 
+  render() {
+    let { auth } = this.props
+    let identityPage = this.state.identityPage
 
-      render() {
-        let { auth } = this.props
-        let identityPage = this.props.identitiesPage[0]
-    
-        const showEdit = this.state.editPageTarget == identityPage
-        const canEdit = auth.user.is_admin == true
-    
-        return (
-    
-          <div className="section">
-            <div className="section">
-              {showEdit
-                ? <EditIdentitiesPages identityPage={identityPage} submit={() => this.toggleEdit(null)} />
-                : <div>
-                  <figure className="image">
-                    <img src={identityPage && identityPage.image1} />
-                  </figure>
+    const showEdit = this.state.editPageTarget == identityPage
+    const canEdit = auth.user ? auth.user.is_admin == true : false
 
-           <div className="has-text-centered">
-                    <h1 className="title is-size-1">
-                        <span className="has-text-info">{identityPage && identityPage.subheader}</span> 
-                    </h1>
-                    <h3 className="subtitle is-size-3">{identityPage && identityPage.preblurb}</h3>
-             </div>   
-             <div className="section">
+    return (
+
+      <div className="section">
+        <div className="section">
+          {showEdit
+            ? <EditIdentitiesPages newPage={identityPage} submit={() => this.toggleEdit(null)} />
+            : <div>
+              <figure className="image">
+                <img src={identityPage && identityPage.image1} />
+              </figure>
+
+              <div className="has-text-centered">
+                <h1 className="title is-size-1">
+                  <span className="has-text-info">{identityPage && identityPage.subheader}</span>
+                </h1>
+                <h3 className="subtitle is-size-3">{identityPage && identityPage.preblurb}</h3>
+              </div>
+              <div className="section">
                 <p id='paras' className="is-size-3"><b>{identityPage && identityPage.title}</b></p>
                 <p id='paras' className="is-size-4">{identityPage && identityPage.blurb}</p>
-             </div>
-             </div>}
-             {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
-             </div>
+              </div>
+            </div>}
+          {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+        </div>
 
-             <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
+        <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
 
-         </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 
 
-const mapStateToProps = ({auth, identitiesPage}) => ({auth, identitiesPage})
+const mapStateToProps = ({ auth, identitiesPage }) => ({ auth, identitiesPage })
 
 
 export default connect(mapStateToProps)(Old)

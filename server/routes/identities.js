@@ -18,7 +18,7 @@ router.get('/young', function (req, res) {
             res.json(young)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })
@@ -29,7 +29,7 @@ router.get('/women', function (req, res) {
             res.json(women)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })
@@ -40,7 +40,7 @@ router.get('/lgbt', function (req, res) {
             res.json(lgbt)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })
@@ -51,7 +51,7 @@ router.get('/maori', function (req, res) {
             res.json(maori)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })
@@ -62,7 +62,7 @@ router.get('/old', function (req, res) {
             res.json(old)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })

@@ -1,23 +1,23 @@
 var router = require('express').Router()
 
-var {userExists, createUser} = require('../db/users')
+var { userExists, createUser } = require('../db/users')
 var token = require('../auth/token')
 
 router.post('/register', register, token.issue)
 
-function register (req, res, next) {
+function register(req, res, next) {
   console.log(req.body)
-  const {user_name, password} = req.body
+  const { user_name, password } = req.body
   userExists(user_name, req.app.get('db'))
     .then(exists => {
-      if (exists) return res.status(400).send({message:"User Name Taken"})
+      if (exists) return res.status(400).send({ message: "User Name Taken" })
       createUser(user_name, password, req.app.get('db'))
         .then(() => next())
-        
+
     })
     .catch(err => {
       console.log(err)
-      res.status(500).send({message: "Server Error"})
+      res.status(500).send({ message: "Server Error" })
     })
 }
 

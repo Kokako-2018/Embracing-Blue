@@ -1,4 +1,4 @@
-function posts (state = [], action) {
+function posts(state = [], action) {
 
   let newState = [...state]
 
@@ -17,7 +17,6 @@ function posts (state = [], action) {
 
     case 'DELETE_POST':
       return [...newState].filter((post) => post.id != action.id)
-      // return state.filter((post) => post.id !== action.id)
 
     default:
       return state

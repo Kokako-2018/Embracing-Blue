@@ -15,20 +15,20 @@ router.get('/depression', function (req, res) {
             res.json(depression)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })
 
-    router.get('/anxiety', function (req, res) {
-        depression.getAnxiety()
-            .then(anxiety => {
-                res.json(anxiety)
-            })
-            .catch(err => {
-                console.log({err})
-                res.status(500).send('DATABASE ERROR: ' + err.message)
-            })
+router.get('/anxiety', function (req, res) {
+    depression.getAnxiety()
+        .then(anxiety => {
+            res.json(anxiety)
+        })
+        .catch(err => {
+            console.log({ err })
+            res.status(500).send('DATABASE ERROR: ' + err.message)
+        })
 })
 
 router.get('/prevention', function (req, res) {
@@ -37,7 +37,7 @@ router.get('/prevention', function (req, res) {
             res.json(prevention)
         })
         .catch(err => {
-            console.log({err})
+            console.log({ err })
             res.status(500).send('DATABASE ERROR: ' + err.message)
         })
 })

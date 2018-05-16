@@ -12,11 +12,16 @@ class Lgbt extends React.Component {
     super(props)
     this.state = {
       editPageTarget: null,
+      identityPage: props.identitiesPage[0]
     }
   }
 
   componentDidMount() {
     this.props.dispatch(apiGetIdentitiesPage({ id: 1 }))
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({ identityPage: newProps.identitiesPage[0] })
   }
 
   toggleEdit(identityPage) {
@@ -25,20 +30,19 @@ class Lgbt extends React.Component {
   }
 
 
-
   render() {
     let { auth } = this.props
-    let identityPage = this.props.identitiesPage[0]
+    let identityPage = this.state.identityPage
 
     const showEdit = this.state.editPageTarget == identityPage
-    const canEdit = auth.user.is_admin == true
+    const canEdit = auth.user ? auth.user.is_admin == true : false
 
     return (
 
       <div className="section">
         <div className="section">
           {showEdit
-            ? <EditIdentitiesPages identityPage={identityPage} submit={() => this.toggleEdit(null)} />
+            ? <EditIdentitiesPages newPage={identityPage} submit={() => this.toggleEdit(null)} />
             : <div>
               <figure className="image">
                 <img src={identityPage && identityPage.image1} />
@@ -56,7 +60,7 @@ class Lgbt extends React.Component {
                 <p id='paras' className="is-size-4">{identityPage && identityPage.blurb}</p>
               </div>
             </div>}
-            {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+          {canEdit == true && <button className='button is-primary' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
         </div>
         <Link to='/'><button className='button has-background-info is-centered'>Back</button></Link>
 
@@ -67,7 +71,7 @@ class Lgbt extends React.Component {
 
 
 
-const mapStateToProps = ({auth, identitiesPage}) => ({auth, identitiesPage})
+const mapStateToProps = ({ auth, identitiesPage }) => ({ auth, identitiesPage })
 
 
 export default connect(mapStateToProps)(Lgbt)

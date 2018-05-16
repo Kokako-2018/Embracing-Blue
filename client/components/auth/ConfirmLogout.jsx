@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {logoutUser} from '../../actions/logout'
+import { logoutUser } from '../../actions/logout'
 
 class ConfirmLogout extends React.Component {
   constructor(props) {
@@ -13,11 +13,11 @@ class ConfirmLogout extends React.Component {
   }
   logout() {
     this.props.dispatch(logoutUser())
-    this.setState({loggedOut: true})
+    this.setState({ loggedOut: true })
   }
   render() {
-    const {close} = this.props
-    const {loggedOut} = this.state
+    const { close } = this.props
+    const { loggedOut } = this.state
     return (
       <div className="modal is-active">
         <div className="modal-background"></div>
@@ -35,7 +35,7 @@ class ConfirmLogout extends React.Component {
               : <div className="columns">
                 <button onClick={close} className="button is-large column is-6">Cancel</button>
                 <button onClick={this.logout.bind(this)} className="button is-large column is-6 is-warning">Logout</button>
-              </div>  
+              </div>
             }
           </div>
         </div>

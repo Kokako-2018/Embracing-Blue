@@ -29,26 +29,6 @@ test('RECEIVE_ALL_POSTS case', () => {
 
 
 
-// test('ADD_CAT case', () => {
-//   const initialState = [
-//     {post: 'This is a mega cool post'}
-//   ]
-
-//   const post = {
-//     post: 'This post is here to be added'
-//   }
-
-//   const expectedState = [
-//     {post: 'This is a mega cool post'},
-//     post
-//   ]
-
-//   const actual = postsReducer(initialState, action)
-//   expect(actual).toEqual(expectedState)
-//   expect(actual[1]).toBe(post)
-// })
-
-
 test('delete cat case', () => {
   const post = {
     content: 'this post is gona be deleted'
@@ -67,6 +47,6 @@ test('delete cat case', () => {
 
   const actual = postsReducer(initialState, action)
 
-  expect(actual).toHaveLength(initialState.length-1)
+  expect(actual).toHaveLength(initialState.length - 1)
   expect(actual.find(actualPost => actualPost.content == post.content)).toBeFalsy()
 })

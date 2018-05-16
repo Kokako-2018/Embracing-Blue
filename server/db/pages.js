@@ -4,20 +4,6 @@ var db = Knex(config)
 
 
 
-// function getAllResourcesPages(testDb) {
-// 	const conn = testDb || db
-// 	return conn('resources')
-// 		.select()
-// }
-
-
-// function getAllIdentitiesPages(testDb) {
-// 	const conn = testDb || db
-// 	return conn('identities')
-// 		.select()
-// }
-
-
 function getResourcesPage(id, testDb) {
 	const conn = testDb || db
 	return conn('resources')
@@ -59,7 +45,7 @@ function editIndentitiesPage(id, pageData, testDb) {
 			'title': pageData.title,
 			'header': pageData.header,
 			'subheader': pageData.subheader,
-			'preblurb': postData.preblurb,
+			'preblurb': pageData.preblurb,
 			'blurb': pageData.blurb,
 			'text_extra': pageData.text_extra
 		})

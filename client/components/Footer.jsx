@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
 								<i className="jam fas fa-lg jam-github-square" />
 							</a>
 						</span>
-						
+
 						{/* </a>   */}
 						<p>
 							<a href="/#/sitemap">Site Map </a>

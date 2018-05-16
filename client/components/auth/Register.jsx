@@ -34,21 +34,16 @@ class Register extends React.Component {
     let { user_name, password, confirm_password, email_address, contact_number } = this.state
     function confirmation() {
       if (confirm_password != password)
-      return false
+        return false
       else
-      return true
+        return true
     }
-    console.log('Does password match?', confirmation())
 
     const isEmail = this.validateEmail(email_address)
     const passwordsNotSame = (confirm_password != password)
-    console.log('heydff' + password)
 
     const isPass = this.checkPassword(password) >= 3 //This is strength of the password not the length
 
-    console.log('isEmail valid :' + isEmail)
-    console.log('passwords not same:' + passwordsNotSame)
-    console.log('Is the password valid?' + isPass)
     //console.log('hey',this.checkPassword())
 
     if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError("Incorrect email/Passwords don't match"))
@@ -66,7 +61,6 @@ class Register extends React.Component {
   }
 
   checkPassword(password) {
-    console.log('hey' + password)
     let strength = 0;
     // var strength = this.state.password_strength;
 
@@ -93,12 +87,6 @@ class Register extends React.Component {
     var strength = this.checkPassword(password)
     this.setState({ password_strength: strength });
   }
-
-  // validatePassword(pass) {
-  // var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  // var isPasswordValid = re.test(String(pass));
-  // return isPasswordValid
-  // }
 
   renderProgressBar() {
     const { password_strength } = this.state
@@ -137,32 +125,25 @@ class Register extends React.Component {
 
         <div className="columns">
           <label className="column is-6 label">
-             Password
+            Password
               <input className="input is-medium" required placeholder="Password" type="password" name="password" onChange={this.updateDetails} onKeyUp={this.handlePasswordChange} />
-            </label>
-              <label className="column is-6 label">
-                Confirm Password
+          </label>
+          <label className="column is-6 label">
+            Confirm Password
                 <input className={`${this.state.password != this.state.confirm_password ? 'is-danger' : ''} input is-medium`} required placeholder="Confirm Password" type="password" name="confirm_password" onChange={this.updateDetails} />
-            </label>
-          </div>
+          </label>
+        </div>
 
-          {this.renderProgressBar()}
-          {/* </div> */}
-          <input className="button is-primary" value="Register" type="submit" />
+        {this.renderProgressBar()}
+        {/* </div> */}
+        <input className="button is-primary" value="Register" type="submit" />
 
-        </form>
-      )
-    }
+      </form>
+    )
   }
+}
 
-  const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
+const mapStateToProps = ({ auth }) => ({ auth }) //auth is being passed in by props and then it executes it, auth is being destructured from state by this fn
 
-  //Structurin Mehn!
-  // function mapStateToProps (state) {
-  // var auth = state.auth
-  // return {
-  // auth: auth
-  // }
-  // }
 
-  export default connect(mapStateToProps)(Register)
+export default connect(mapStateToProps)(Register)
