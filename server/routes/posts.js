@@ -73,10 +73,7 @@ router.post('/posts/:id', decode, function (req, res) {
       ...req.body,
       user_id: req.user.id,
       post_id: req.params.id
-    }
-
-  console.log(newComment)
-  // user.id from user table will be equal
+    }                   // user.id from user table will be equal
   comments.addComment(newComment) //to user_id column in comments table
     .then(post => {
       res.json(post)
@@ -99,7 +96,6 @@ router.put('/posts/:id/comments/:comment_id', decode, function (req, res) {
 })
 
 router.delete('/posts/:id/comments/:comment_id', decode, function (req, res) {
-  console.log(req.params)
   comments.deleteComment(req.params.comment_id, )
     .then(post => {
       res.json(post)

@@ -40,7 +40,7 @@ export default class OurStories extends React.Component {
 
                         Mark’s career as a firefighter has impacted him deeply, and unfortunately he is not alone. <br /> <br />
 
-                        Priya lost her best friend at 16 to suicide. Sam remembers the trauma of losing a young classmate at school. Theta’s lost a handful of friends, and is impacted by annual losses across the queer community. Many of us have had family members who struggled with mental health, and all of us have friends who’ve struggled at one point. Indeed, none of us have been spared the impacts of this crisis. While we all carry it’s scars, we also all carry hope for a better way, and a responsibility to speak out and change the taboo. <br /> <br />
+                        Priya lost her best friend at 16 to suicide. Theta’s lost a handful of friends, and is impacted by annual losses across the queer community. Many of us have had family members who struggled with mental health, and all of us have friends who’ve struggled at one point. Indeed, none of us have been spared the impacts of this crisis. While we all carry it’s scars, we also all carry hope for a better way, and a responsibility to speak out and change the taboo. <br /> <br />
 
                         The stigmas around mental health only serve to further isolate, incriminate, and vilify those who most need support. In delivering Embracing Blue, we’ve crafted not only a beautiful, responsive website; we’ve also created a responsible website with crucial information to share and better shape our understanding of public health and the role we’re all to play in it.<br /> <br />
 

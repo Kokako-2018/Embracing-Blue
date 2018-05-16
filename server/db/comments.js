@@ -34,7 +34,6 @@ function editComment(id, commentData, testDb) {
 
 function deleteComment(id, testDb) {
   const conn = testDb || db
-  console.log('this is the ', id)
   return conn('comments')
     .where('id', id)
     .del()

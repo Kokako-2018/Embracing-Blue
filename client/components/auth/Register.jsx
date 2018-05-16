@@ -44,7 +44,6 @@ class Register extends React.Component {
 
     const isPass = this.checkPassword(password) >= 3 //This is strength of the password not the length
 
-    //console.log('hey',this.checkPassword())
 
     if (!isEmail || passwordsNotSame) return this.props.dispatch(loginError("Incorrect email/Passwords don't match"))
     //if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
@@ -56,7 +55,6 @@ class Register extends React.Component {
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var isValid = re.test(String(email).toLowerCase());
-    // console.log('No joke', isValid)
     return isValid
   }
 
