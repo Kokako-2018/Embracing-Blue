@@ -9,7 +9,7 @@ export default class OurStories extends React.Component {
             <div>
 
                 <div className="section">
-                    <p id='paras' className="is-size-3"><b>Developers With Purpose</b></p>
+                    <p id='paras' className="is-size-3"><b>Developers With Purpose</b></p> <br/><br/> 
                     <h3>
                     While our journey together learning to code at Enspiral Dev Academy has been arduous at times, when the moment came to chose our final projects, we were hungry to take on a challenge.  As a group, we started with the desire to develop something visually and structurally impressive. We soon found we shared the desire to make something meaningful as well, and aspired to help people with our new skill sets.  <br/> <br/>
 
@@ -18,7 +18,24 @@ export default class OurStories extends React.Component {
                     With the fire service now attending ambulance-related calls, Mark and his crew at the Fire Service have seen a dramatic increase in the frequency of mental-health related incidents. Mark has seen these crises become the majority of his job. Within the last 5 months, he’s attended 5 house fires and 24 suicides. <br/> <br/>
 
                     The room fell quiet with heavy emotion as Mark shared the weight of this silent tragedy. <br/> <br/>
+                    </h3>
+                </div>
 
+                <div className="section">
+                        <div className="testimonial-quote group">
+                             <div className="quote-container">
+                                <blockquote>
+                                 <p>We were so young, I remember how tiny she was. We didn’t even have a clue at that time, that people can even do that kind of thing. I’m nearly 43 now and I’ll never forget how quickly she was gone. </p>
+                                 </blockquote>
+                            </div>
+                        </div>
+                </div>
+
+
+                                
+
+                <div className="section">
+                    <h3>
                     “It’s still such a taboo in New Zealand,” Mark said, “and it affects us all.”<br/> <br/>
 
                     Mark’s career as a firefighter has impacted him deeply, and unfortunately he is not alone. <br/> <br/>
@@ -29,6 +46,17 @@ export default class OurStories extends React.Component {
 
                     We are developers with purpose, and we approve of this message! <br/> <br/>
                     </h3>
+
+                       <div className="section">
+                        <div className="testimonial-quote group">
+                             <div className="quote-container">
+                                <blockquote>
+                                 <p>I wonder often about what could have happened instead if they’d been able to talk to someone about what they were feeling, rather than feel like taking their lives were the only option.  </p>
+                                 </blockquote>
+                            </div>
+                        </div>
+                </div>
+
 
                     <p id='paras' className="is-size-4"><center>If you or someone you know is in immediate need of mental health support, call Lifeline NZ at</center><br/> </p>
 
