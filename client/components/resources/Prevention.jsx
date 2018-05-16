@@ -38,7 +38,7 @@ class Prevention extends React.Component {
         let resourcePage = this.state.resourcePage
 
         const showEdit = this.state.editPageTarget == resourcePage
-        const canEdit =   auth.user ? auth.user.is_admin == true : false
+        const canEdit = auth.user ? auth.user.is_admin == true : false
 
         return (
 
@@ -59,10 +59,13 @@ class Prevention extends React.Component {
                         </div>
                     }
 
-                    {canEdit == true && <button className='button has-background-info is-centered' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    <div className='field is-grouped'>
 
+                        {canEdit == true && <button className='button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(resourcePage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    </div>
                 </div>
-                <Link to='/'><button className='back button has-background-info is-centered'>Back</button></Link>
+                <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>
+
             </div>
 
         )

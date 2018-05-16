@@ -45,7 +45,7 @@ class CommentForm extends React.Component {
           value={this.state.comment.comment}
           onChange={this.handleChange}
         />
-        <input className='button is-primary' type='submit' value='Add Comment' />
+        <input className='button has-background-info is-centered has-text-light' type='submit' value='Add Comment' />
         {this.state.errorMessage && this.state.errorMessage}
       </form>
     )
