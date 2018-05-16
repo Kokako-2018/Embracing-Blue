@@ -11,8 +11,8 @@ const { decode } = require('../auth/token')
 
 
 
-router.get('/resources/edit/:id', decode, function (req, res) {
-	resources.getPages(req.params.id)
+router.get('/resources/:id', decode, function (req, res) {
+	resources.getResourcesPage(req.params.id)
 		.then(pages => {
 			res.json(pages)
 		})
@@ -20,6 +20,7 @@ router.get('/resources/edit/:id', decode, function (req, res) {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
 		})
 })
+
 
 router.put('/resources/edit/:id', decode, function (req, res) {
 	resources.editPages(req.params.id, req.body)
@@ -31,8 +32,9 @@ router.put('/resources/edit/:id', decode, function (req, res) {
 		})		
 })
 
-router.get('/identities/edit/:id', decode, function (req, res) {
-	identities.getPages(req.params.id)
+
+router.get('/identities/:id', decode, function (req, res) {
+	identities.getIdentitiesPage(req.params.id)
 		.then(pages => {
 			res.json(pages)
 		})
@@ -40,6 +42,7 @@ router.get('/identities/edit/:id', decode, function (req, res) {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
 		})
 })
+
 
 router.put('/identities/edit/:id', decode, function (req, res) {
 	identities.editPages(req.params.id, req.body)
@@ -50,5 +53,7 @@ router.put('/identities/edit/:id', decode, function (req, res) {
 			res.status(500).send('DATABASE ERROR: ' + err.message)
 		})		
 	})
+
+
 
 	module.exports = router

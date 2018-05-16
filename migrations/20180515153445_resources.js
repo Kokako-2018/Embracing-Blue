@@ -5,8 +5,11 @@ exports.up = function(knex, Promise) {
         table.string('image1')
         table.string('title')
         table.text('header')
+        table.text('subheader')
+        table.text('preblurb')
         table.text('blurb')
         table.text('text_extra')
+        table.text('text_extra2')
     })
 };
 

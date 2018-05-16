@@ -23,15 +23,20 @@ import Lgbt from './identities/Lgbt'
 import Invite from './Forum/Invite'
 import PostForm from './Forum/PostForm'
 import Posts from './Forum/Posts'
-// import FooterComponent from './FooterComponent'
 import Footer from './Footer'
 import SiteMap from './SiteMap'
+
 import { apiGetAllPosts } from '../actions/posts'
+import { apiGetResourcesPage, apiGetIdentitiesPage } from '../actions/pages'
+
+
 
 class App extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(apiGetAllPosts())
+    // this.props.dispatch(apiGetResourcesPage(page))
+    // this.props.dispatch(apiGetIdentitiesPage())
   }
 
   render() {
