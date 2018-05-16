@@ -26,6 +26,7 @@ import Posts from './Forum/Posts'
 // import FooterComponent from './FooterComponent'
 import Footer from './Footer'
 import SiteMap from './SiteMap'
+import OurStories from './OurStories'
 import { apiGetAllPosts } from '../actions/posts'
 
 class App extends React.Component {
@@ -104,6 +105,8 @@ class App extends React.Component {
               <Route exact path="/" component={Invite} />
 
               <Route exact path="/sitemap" component={SiteMap} />
+              <Route exact path="/ourstories" component={OurStories} />
+
 
 
             </div>
