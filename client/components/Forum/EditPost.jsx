@@ -48,7 +48,7 @@ class EditPost extends React.Component {
             </div>
 
 
-            <input className="button is-primary" type="submit" value='Submit' />
+            <input className="button has-background-info is-centered has-text-light" type="submit" value='Submit' />
           </div>
         </form>
       </div>

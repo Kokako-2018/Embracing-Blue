@@ -97,8 +97,19 @@
 }
 
 .textarea {
-  padding: 2%;
+  padding: 3%;
+  margin-left: 5%;
 }
+
+.fieldarea {
+  margin-top: 5%;
+}
+
+.submitbutton {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
 
 .resources {
   /* margin-top: 21%; */

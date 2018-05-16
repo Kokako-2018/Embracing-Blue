@@ -70,11 +70,11 @@ class Young extends React.Component {
                                 </h1>
                             </div>
                         </div>}
-                    {canEdit == true && <button className='button has-background-info is-centered' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
+                    {canEdit == true && <button className='button has-background-info is-centered has-text-light' onClick={() => this.toggleEdit(identityPage)}>{showEdit ? 'Cancel Edit' : 'Edit Page'}</button>}
                 </div>
 
 
-                <Link to='/'><button className='back button has-background-info is-centered'>Back</button></Link>
+                <Link to='/'><button className='back button has-background-info is-centered has-text-light'>Back</button></Link>
 
 
             </div>

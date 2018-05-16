@@ -101,7 +101,7 @@ class PostForm extends React.Component {
               }
             </div>
             <p className="control">
-              <a className="button is-light">
+              <a className="button has-background-info is-centered has-text-light">
                 Cancel
                     </a>
             </p>
