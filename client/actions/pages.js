@@ -23,7 +23,7 @@ export const editPageAction = (page) => {
 export function apiGetResourcesPage(page) {
     return (dispatch) => {
         authRequest('get', `resources/${page.id}`)
-            .then(res => {    
+            .then(res => {
                 dispatch(receivePageAction(res.body))
             }).catch(err => {
                 console.error(err.message)
@@ -32,9 +32,9 @@ export function apiGetResourcesPage(page) {
 }
 
 
-export function apiEditResourcesPage(page) {
+export function apiEditResourcesPage(id, page) {
     return (dispatch) => {
-        authRequest('put', `${page.id}`, page)
+        authRequest('put', `resources/edit/${id}`, page)
             .then(res => {
                 dispatch(editPageAction(page))
             })
@@ -48,7 +48,7 @@ export function apiEditResourcesPage(page) {
 export function apiGetIdentitiesPage(page) {
     return (dispatch) => {
         authRequest('get', `identities/${page.id}`)
-            .then(res => {    
+            .then(res => {
                 dispatch(receivePageAction(res.body))
             }).catch(err => {
                 console.error(err.message)
@@ -57,15 +57,15 @@ export function apiGetIdentitiesPage(page) {
 }
 
 
-export function apiEditIdentitiesPage(page) {
-    return (dispatch) => {
-        authRequest('put', `${page.id}`, page)
+export function apiEditIdentitiesPage(id, newPage) {
+    return (dispatch) => 
+        authRequest('put', `identities/edit/${id}`, newPage)
             .then(res => {
-                dispatch(editPageAction(page))
+                dispatch(editPageAction(newPage))
             })
             .catch(err => {
                 console.error(err.message)
             })
     }
-}
+
 

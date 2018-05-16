@@ -1,5 +1,5 @@
-var Knex = require ('knex')
-var config = require ('../../knexfile')[process.env.NODE_ENV || 'development']
+var Knex = require('knex')
+var config = require('../../knexfile')[process.env.NODE_ENV || 'development']
 var db = Knex(config)
 
 
@@ -12,31 +12,32 @@ function getAllPosts(testDb) {  //selecting all posts from 'posts' table
 }
 
 
-function addPost (post, testDb) {
-  console.log({post})
+function addPost(post, testDb) {
+  console.log({ post })
   const conn = testDb || db
   return conn('posts')            //adding post to 'posts' table
     .insert(post, 'id')           //matches id comlumn with id
     .then(id => {
       return conn('posts')
-        .where({id: id[0]})
+        .where({ id: id[0] })
         .first()
     })
 }
 
 
-function editPost (id, postData, testDb) {
+function editPost(id, postData, testDb) {
   const conn = testDb || db //passing in id and data attached to post
   return conn('posts')
     .where('id', id) //matching id param with id in table column
-    .update({'title': postData.title, //updates follwing collumns
-             'thread_content': postData.thread_content,
-             'image_url': postData.image_url
+    .update({
+      'title': postData.title, //updates follwing collumns
+      'thread_content': postData.thread_content,
+      'image_url': postData.image_url
     })
 }
 
 
-function deletePost (id, testDb) {
+function deletePost(id, testDb) {
   const conn = testDb || db
   return conn('posts')
     .where('id', id) //deleting post from table where id

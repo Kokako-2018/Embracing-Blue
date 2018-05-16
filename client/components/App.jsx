@@ -35,8 +35,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(apiGetAllPosts())
-    // this.props.dispatch(apiGetResourcesPage(page))
-    // this.props.dispatch(apiGetIdentitiesPage())
   }
 
   render() {
@@ -56,9 +54,9 @@ class App extends React.Component {
             </div>
 
             {/* resources button class */}
-            
+
             <Route exact path="/" component={Resources} />
-            
+
             <Route className="column is-one-fifth" exact path="/anxiety" component={Anxiety} />
             <Route className="column is-half" exact path="/depression" component={Depression} />
             <Route className="column is-half" exact path="/prevention" component={Prevention} />
@@ -77,32 +75,32 @@ class App extends React.Component {
                     </div>
 
                     <div className="section is-paddingless">
-                      
+
                       <div className="columns card-content">
-                        <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Youth"  /></Link>
+                        <Link className="column" to="/Young"><Tile src="images/young.jpg" linkText="Youth" /></Link>
                         <Link className="column" to="/Women"><Tile src="images/women.jpg" linkText="Women" /></Link>
                         <Link className="column" to="/Men"><Tile src="images/man3.jpg" linkText="Men" /></Link>
                       </div>
 
                       <div className="columns card-content" >
                         <Link className="column  " to="Māori"><Tile src="images/maori4.jpg" linkText="Māori" /></Link>
-                        <Link className="column" to="Old"><Tile  src="images/old.jpg" linkText="Elders" /></Link>
+                        <Link className="column" to="Old"><Tile src="images/old.jpg" linkText="Elders" /></Link>
                         <Link className="column" to="LGBT"> <Tile src="images/lgbt.jpg" linkText="LGBTQIA+" /></Link>
                       </div>
                     </div>
-                  </div>  
+                  </div>
 
                 )
               }
             } />
-            
+
             <div>
-              <Route exact path="/Young"  component={Young} />
-              <Route exact path="/Women"  component={Women} />
-              <Route exact path="/Men"  component={Men} />
-              <Route exact path="/Lgbt"  component={Lgbt} />
-              <Route exact path="/Old"  component={Old} />
-              <Route exact path="/Māori"  component={Māori} />
+              <Route exact path="/Young" component={Young} />
+              <Route exact path="/Women" component={Women} />
+              <Route exact path="/Men" component={Men} />
+              <Route exact path="/Lgbt" component={Lgbt} />
+              <Route exact path="/Old" component={Old} />
+              <Route exact path="/Māori" component={Māori} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
@@ -115,8 +113,8 @@ class App extends React.Component {
 
             </div>
             <Footer />
-              <div>
-              </div>
+            <div>
+            </div>
 
           </div>
         </div>

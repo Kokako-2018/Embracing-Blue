@@ -24,7 +24,7 @@ class EditPost extends React.Component {
     this.props.dispatch(apiEditPost(this.state.oldPost.id, this.state.newPost))
     this.props.submit()
   }
-  
+
 
   render() {
 

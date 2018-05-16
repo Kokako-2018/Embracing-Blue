@@ -13,7 +13,7 @@ export default function consume(method = 'get', endpoint, data = {}) {
   const headers = {
     Accept: 'application/json'
   }
-  if(isAuthenticated()) {
+  if (isAuthenticated()) {
     headers['Authorization'] = `Bearer ${token}`
   }
 

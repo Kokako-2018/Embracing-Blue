@@ -13,6 +13,4 @@ export const displayIdentities = (identity) => {
   return {
     type: 'DISPLAY_IDENTITIES'
   }
-} 
-
-// displayAll doesn't have a string that changes, since it's always going to do the one thing 
+}

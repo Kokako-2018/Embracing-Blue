@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
 import posts from './posts'
 import auth from './auth'
@@ -8,8 +8,8 @@ import identitiesPage from './identitiesPage'
 
 
 export default combineReducers({
-   posts,
-   auth,
-   identitiesPage,
-   resourcePage
+    posts,
+    auth,
+    identitiesPage,
+    resourcePage
 })

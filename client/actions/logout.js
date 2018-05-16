@@ -1,6 +1,6 @@
 import { removeUser } from '../utils/auth'
 
-function requestLogout () {
+function requestLogout() {
   return {
     type: 'LOGOUT_REQUEST',
     isFetching: true,
@@ -8,7 +8,7 @@ function requestLogout () {
   }
 }
 
-function receiveLogout () {
+function receiveLogout() {
   return {
     type: 'LOGOUT_SUCCESS',
     isFetching: false,
@@ -17,7 +17,7 @@ function receiveLogout () {
 }
 
 // Logs the user out
-export function logoutUser () {
+export function logoutUser() {
   return dispatch => {
     document.location = "/#/"
     dispatch(requestLogout())

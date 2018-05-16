@@ -1,5 +1,5 @@
-export default function identitiesPage (state = [], action) {
-    
+export default function identitiesPage(state = [], action) {
+
     let newState = [...state]
 
     switch (action.type) {
@@ -7,7 +7,7 @@ export default function identitiesPage (state = [], action) {
             return [...action.page]
 
         case 'EDIT_PAGE':
-            let idx = newState.findIndex(page => page.id == action.id)
+            let idx = newState.findIndex(page => page.id == action.page.id)
             newState[idx] = action.page
             return newState
 

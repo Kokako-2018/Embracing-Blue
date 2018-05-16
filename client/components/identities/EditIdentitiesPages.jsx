@@ -7,8 +7,8 @@ class EditIdentitiesPages extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            oldPage: { ...props.page },
-            newPage: { ...props.page }
+            oldPage: { ...props.newPage },
+            newPage: { ...props.newPage }
         }
         this.editPageDetails = this.editPageDetails.bind(this)
         this.submitEdit = this.submitEdit.bind(this)
@@ -34,18 +34,20 @@ class EditIdentitiesPages extends React.Component {
         return (
             <div classname='field'>
                 <form onSubmit={this.submitEdit}>
-                    <div className='field'>
-                    <input name='image1' type='text' value={newPage.image1} />
-                    <input name='header' type='text' value={newPage.header}/>
-                    <input name='subheader' type='text' value={newPage.subheader} />
-                    <input name='preblurb' type='text' value={newPage.preblurb} />
-                    <input name='title' type='text' value={newPage.title} />
-                    <input name='blurb' type='text' value={newPage.blurb} />
-                    <input name='text_extra' type='text' value={newPage.text_extra} />
-                    <input name='text_extra2' type='text' value={newPage.text_extra2} />
-                </div>
+                    <div className='form-container'>
+                        <div className='field'>
+                        <input name='image1' type='text' value={newPage && newPage.image1} onChange={this.editPageDetails} />
+                        </div>
+                        <input name='header' type='text' value={newPage.header} onChange={this.editPageDetails} />
+                        <input name='subheader' type='text' value={newPage.subheader} onChange={this.editPageDetails} />
+                        <input name='preblurb' type='text' value={newPage.preblurb} onChange={this.editPageDetails} />
+                        <input name='title' type='text' value={newPage.title} onChange={this.editPageDetails} />
+                        <input name='blurb' type='text' value={newPage.blurb} onChange={this.editPageDetails} />
+                        <input name='text_extra' type='text' value={newPage.text_extra} onChange={this.editPageDetails} />
+                        <input name='text_extra2' type='text' value={newPage.text_extra2} onChange={this.editPageDetails} />
+                    </div>
 
-                <input className='button is-primary' type='submit' value='Submit' />
+                    <input className='button is-primary' type='submit' value='Submit' />
 
                 </form>
             </div>
