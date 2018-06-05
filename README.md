@@ -2,6 +2,8 @@
 
 http://embracing-blue.herokuapp.com/
 
+This is the final group-project of our 9 week EDA journey. We had one week to build this.
+
 The focus of this website is to provide mental health resources for those affected and their communities
 
 We wanted to include the full stack (including auth) in a large-scale app
