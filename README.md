@@ -1,8 +1,12 @@
-# Out Of The Blue
+# Embracing Blue
+
+http://embracing-blue.herokuapp.com/
 
 The focus of this website is to provide mental health resources for those affected and their communities
 
 We wanted to include the full stack (including auth) in a large-scale app
+
+Some of the technologies used include JavaScript, React, Redux, HTML, CSS, Bulma, Express, Node, Knex, PostgreSQL, SQLite3, Enzyme, and Cypress
 
 Our hopes are to help as many people as possible
 
